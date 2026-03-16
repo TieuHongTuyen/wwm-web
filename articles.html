@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Danh sÃ¡ch bÃ i viáº¿t hÆ°á»›ng dáº«n Where Winds Meet â€” HÆ°á»›ng dáº«n, PhÃ¢n tÃ­ch nhÃ¢n váº­t, Podcast, Meta.">
-<title>BÃ i Viáº¿t â€” Yáº¿n VÃ¢n Guide</title>
+<meta name="description" content="Danh sách bài viết hướng dẫn Where Winds Meet — Hướng dẫn, Phân tích nhân vật, Podcast, Meta.">
+<title>Bài Viết — Yến Vân Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,10 +18,10 @@
   <div class="page-hero">
     <div class="page-hero-inner">
       <div>
-        <h1>BÃ i <span>Viáº¿t</span></h1>
-        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">HÆ°á»›ng dáº«n Â· PhÃ¢n tÃ­ch Â· Podcast Â· Tin tá»©c</p>
+        <h1>Bài <span>Viết</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Hướng dẫn · Phân tích · Podcast · Tin tức</p>
       </div>
-      <div class="page-hero-meta" id="art-hero-meta">Äang táº£i...</div>
+      <div class="page-hero-meta" id="art-hero-meta">Đang tải...</div>
     </div>
   </div>
 
@@ -35,11 +35,11 @@
     </div>
     <div class="articles-sidebar">
       <div class="sidebar-section">
-        <div class="sidebar-title">Video liÃªn quan</div>
+        <div class="sidebar-title">Video liên quan</div>
         <div id="sidebar-videos"></div>
       </div>
       <div class="sidebar-section">
-        <div class="sidebar-title">BÃ i Ä‘á»c nhiá»u</div>
+        <div class="sidebar-title">Bài đọc nhiều</div>
         <div id="sidebar-popular"></div>
       </div>
     </div>
@@ -63,7 +63,7 @@
     fetch('data/videos.json').then(r => r.json()),
   ]);
 
-  // Sort: pinned trÆ°á»›c, rá»“i má»›i nháº¥t
+  // Sort: pinned trước, rồi mới nhất
   const sorted = [...articles].sort((a, b) => {
     if (a.pinned && !b.pinned) return -1;
     if (!a.pinned && b.pinned) return 1;
@@ -73,29 +73,29 @@
   // Page hero meta
   const latest = sorted[0];
   document.getElementById('art-hero-meta').textContent =
-    `${articles.length} bÃ i Â· Cáº­p nháº­t ${latest ? formatDate(latest.date) : ''}`;
+    `${articles.length} bài · Cập nhật ${latest ? formatDate(latest.date) : ''}`;
 
-  // --- Äá»c filter tá»« query string ?filter=xxx ---
-  let initialFilter = 'Táº¥t cáº£';
+  // --- Đọc filter từ query string ?filter=xxx ---
+  let initialFilter = 'Tất cả';
   const qpFilter = new URLSearchParams(location.search).get('filter');
   if (qpFilter) initialFilter = qpFilter;
 
-  // Render articles vá»›i filter
+  // Render articles với filter
   let currentFilter = initialFilter;
 
   function renderArticles(filter) {
     currentFilter = filter;
-    const list = filter === 'Táº¥t cáº£'
+    const list = filter === 'Tất cả'
       ? sorted
       : sorted.filter(a => a.category === filter);
 
     document.getElementById('art-main').innerHTML = list.length
       ? list.map(a => renderArtListItem(a)).join('')
-      : `<p style="color:var(--text3);padding:2rem 0;">ChÆ°a cÃ³ bÃ i viáº¿t trong danh má»¥c nÃ y.</p>`;
+      : `<p style="color:var(--text3);padding:2rem 0;">Chưa có bài viết trong danh mục này.</p>`;
   }
 
   // Filter bar
-  const cats = ['Táº¥t cáº£', 'HÆ°á»›ng dáº«n', 'NhÃ¢n váº­t', 'Podcast', 'Meta'];
+  const cats = ['Tất cả', 'Hướng dẫn', 'Nhân vật', 'Podcast', 'Meta'];
   const filterEl = document.getElementById('art-filter');
   filterEl.innerHTML = cats.map(c =>
     `<button class="f-btn ${c === initialFilter ? 'active' : ''}"
@@ -110,7 +110,7 @@
 
   renderArticles(initialFilter);
 
-  // Sidebar: 3 video má»›i nháº¥t
+  // Sidebar: 3 video mới nhất
   const sortedVids = [...videos].sort((a, b) => new Date(b.date) - new Date(a.date));
   document.getElementById('sidebar-videos').innerHTML = sortedVids.slice(0, 3).map((v, i) =>
     `<div class="sidebar-item" onclick="openModal('${v.id}','${escHtml(v.title)}','${escHtml(v.tags.join(','))}')">
@@ -122,14 +122,14 @@
     </div>`
   ).join('');
 
-  // Sidebar: 4 bÃ i Ä‘á»c nhiá»u nháº¥t
+  // Sidebar: 4 bài đọc nhiều nhất
   const popular = [...articles].sort((a, b) => Number(b.views) - Number(a.views));
   document.getElementById('sidebar-popular').innerHTML = popular.slice(0, 4).map((a, i) =>
     `<div class="sidebar-item" onclick="location.href='article.html?id=${a.id}'">
       <div class="sidebar-item-num">0${i + 1}</div>
       <div>
         <div class="sidebar-item-title">${escHtml(a.title)}</div>
-        <div class="sidebar-item-date">${formatViews(a.views)} lÆ°á»£t xem</div>
+        <div class="sidebar-item-date">${formatViews(a.views)} lượt xem</div>
       </div>
     </div>`
   ).join('');
@@ -138,4 +138,3 @@
 </script>
 </body>
 </html>
-

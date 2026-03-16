@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Video hÆ°á»›ng dáº«n Where Winds Meet â€” nhÃºng trá»±c tiáº¿p tá»« TikTok @tiu.hng.tuyn">
-<title>Video â€” Yáº¿n VÃ¢n Guide</title>
+<meta name="description" content="Video hướng dẫn Where Winds Meet — nhúng trực tiếp từ TikTok @tiu.hng.tuyn">
+<title>Video — Yến Vân Guide</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -18,10 +18,10 @@
   <div class="page-hero">
     <div class="page-hero-inner">
       <div>
-        <h1>Video <span>HÆ°á»›ng Dáº«n</span></h1>
-        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">NhÃºng trá»±c tiáº¿p tá»« TikTok Â· <span id="vid-count">â€”</span> video</p>
+        <h1>Video <span>Hướng Dẫn</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Nhúng trực tiếp từ TikTok · <span id="vid-count">—</span> video</p>
       </div>
-      <div class="page-hero-meta" id="vid-hero-meta">Äang táº£i...</div>
+      <div class="page-hero-meta" id="vid-hero-meta">Đang tải...</div>
     </div>
   </div>
 
@@ -47,10 +47,10 @@
   document.getElementById('modal-root').innerHTML = buildModal();
   document.getElementById('footer-root').innerHTML = buildFooter();
 
-  // Fetch videos (cache busting Ä‘á»ƒ luÃ´n láº¥y cáº¥u trÃºc má»›i)
+  // Fetch videos (cache busting để luôn lấy cấu trúc mới)
   const videos = await fetch('data/videos.json?v=' + Date.now()).then(r => r.json());
 
-  // Sort: pinned Ä‘áº§u, rá»“i má»›i nháº¥t
+  // Sort: pinned đầu, rồi mới nhất
   const sorted = [...videos].sort((a, b) => {
     if (a.pinned && !b.pinned) return -1;
     if (!a.pinned && b.pinned) return 1;
@@ -61,15 +61,15 @@
   document.getElementById('vid-count').textContent = videos.length;
   const latest = sorted[0];
   document.getElementById('vid-hero-meta').textContent =
-    latest ? `Cáº­p nháº­t ${formatDate(latest.date)}` : '';
+    latest ? `Cập nhật ${formatDate(latest.date)}` : '';
 
   // Collect unique tags
   const allTags = new Set();
   videos.forEach(v => v.tags.forEach(t => allTags.add(t)));
-  const tagList = ['Táº¥t cáº£', ...Array.from(allTags)];
+  const tagList = ['Tất cả', ...Array.from(allTags)];
 
-  // Render logic vá»›i Load More (20 video / trang)
-  let currentTag = 'Táº¥t cáº£';
+  // Render logic với Load More (20 video / trang)
+  let currentTag = 'Tất cả';
   let currentPage = 1;
   const ITEMS_PER_PAGE = 20;
 
@@ -79,11 +79,11 @@
       currentPage = 1;
     }
 
-    const list = currentTag === 'Táº¥t cáº£'
+    const list = currentTag === 'Tất cả'
       ? sorted
       : sorted.filter(v => v.tags.includes(currentTag));
 
-    // TÃ­nh má»‘c data hiá»ƒn thá»‹ hiá»‡n táº¡i
+    // Tính mốc data hiển thị hiện tại
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
     const chunk = list.slice(startIndex, endIndex);
@@ -92,12 +92,12 @@
 
     const grid = document.getElementById('vid-grid');
     if (!append) {
-      grid.innerHTML = html || `<p style="color:var(--text3);padding:2rem 0;grid-column:1/-1">ChÆ°a cÃ³ video trong danh má»¥c nÃ y.</p>`;
+      grid.innerHTML = html || `<p style="color:var(--text3);padding:2rem 0;grid-column:1/-1">Chưa có video trong danh mục này.</p>`;
     } else {
       grid.insertAdjacentHTML('beforeend', html);
     }
 
-    // Xá»­ lÃ½ nÃºt Load More
+    // Xử lý nút Load More
     let loadMoreBtn = document.getElementById('btn-load-more');
     if (!loadMoreBtn) {
       loadMoreBtn = document.createElement('div');
@@ -106,7 +106,7 @@
       loadMoreBtn.style.margin = '3rem auto 0';
       loadMoreBtn.style.display = 'table';
       loadMoreBtn.style.cursor = 'pointer';
-      loadMoreBtn.textContent = 'Táº£i thÃªm video â†“';
+      loadMoreBtn.textContent = 'Tải thêm video ↓';
       loadMoreBtn.onclick = () => {
         currentPage++;
         renderGrid(currentTag, true);
@@ -114,7 +114,7 @@
       grid.parentNode.appendChild(loadMoreBtn);
     }
     
-    // áº¨n/Hiá»‡n nÃºt Load More
+    // Ẩn/Hiện nút Load More
     if (endIndex >= list.length) {
       loadMoreBtn.style.display = 'none';
     } else {
@@ -134,10 +134,9 @@
     renderGrid(tag, false);
   };
 
-  renderGrid('Táº¥t cáº£', false);
+  renderGrid('Tất cả', false);
 
 })().catch(console.error);
 </script>
 </body>
 </html>
-
