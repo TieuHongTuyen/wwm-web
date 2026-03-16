@@ -9,22 +9,13 @@
     "order": 1
   },
   {
-    "name": "Discord — SangTacViet",
-    "description": "Server Discord của team SangTacViet · 2.000+ thành viên · Nơi hỏi đáp, chia sẻ thực chiến và cập nhật tin tức game",
-    "url": "https://discord.com/invite/CzfJeDdvtt",
-    "icon": "💬",
-    "color": "#5865F2",
-    "bg": "rgba(88,101,242,0.12)",
-    "order": 2
-  },
-  {
     "name": "Facebook",
     "description": "Group cộng đồng game thủ Việt",
     "url": "https://www.facebook.com/tieu.hong.tuyen",
     "icon": "👥",
     "color": "#1877F2",
     "bg": "rgba(24,119,242,0.1)",
-    "order": 3
+    "order": 2
   },
   {
     "name": "YouTube",
@@ -33,7 +24,7 @@
     "icon": "▶",
     "color": "#FF0000",
     "bg": "rgba(255,0,0,0.1)",
-    "order": 4
+    "order": 3
   },
   {
     "name": "WWM Map",
@@ -42,6 +33,15 @@
     "icon": "🗺️",
     "color": "#4ecdc4",
     "bg": "rgba(78,205,196,0.1)",
+    "order": 4
+  },
+  {
+    "name": "Discord — SangTacViet",
+    "description": "Server Discord của team SangTacViet · 2.000+ thành viên · Nơi hỏi đáp, chia sẻ thực chiến và cập nhật tin tức game",
+    "url": "https://discord.com/invite/CzfJeDdvtt",
+    "icon": "💬",
+    "color": "#5865F2",
+    "bg": "rgba(88,101,242,0.12)",
     "order": 5
   }
 ]
