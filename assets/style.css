@@ -89,17 +89,6 @@ nav {
 .nav-btn:hover { color: var(--text); background: var(--surface); }
 .nav-btn.active { color: var(--accent); }
 
-.nav-discord {
-  margin-left: 0.5rem;
-  background: #5865F2;
-  color: white !important;
-  border-radius: 6px;
-  padding: 0.4rem 0.9rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-.nav-discord:hover { background: #4752c4 !important; color: white !important; }
-
 /* ── FADE ANIMATION ── */
 .page-wrap { padding-top: 60px; min-height: 100vh; animation: fadeUp 0.35s ease; }
 @keyframes fadeUp {

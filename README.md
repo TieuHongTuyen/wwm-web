@@ -174,7 +174,7 @@ Nội dung, UI, body text    : 'Be Vietnam Pro'       (Google Fonts)
 3. Category strip: 4 ô — Hướng dẫn / Nhân vật / Video / Podcast
 4. Section "Bài viết nổi bật": editorial grid 1 to + 2 nhỏ
 5. Section "Video mới nhất": 5 card 9:16 (top 5 mới nhất từ videos.json)
-6. Community strip: stats + CTA Discord/TikTok
+6. Community strip: stats + Liên kết nổi bật
 7. Footer
 
 **articles.html**
