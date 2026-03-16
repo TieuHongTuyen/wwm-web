@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Đọc bài viết hướng dẫn chi tiết — Where Winds Meet Yến Vân Guide">
-<title>Bài viết — Yến Vân Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Äá»c bÃ i viáº¿t hÆ°á»›ng dáº«n chi tiáº¿t â€” Where Winds Meet Yáº¿n VÃ¢n Guide">
+<title>BÃ i viáº¿t â€” Yáº¿n VÃ¢n Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
-<!-- marked.js để render Markdown -->
+<!-- marked.js Ä‘á»ƒ render Markdown -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
 </head>
 <body>
@@ -19,15 +19,15 @@
 
     <!-- LOADING STATE -->
     <div id="art-loading" style="text-align:center;padding:4rem 0;color:var(--text3)">
-      <div style="font-size:2rem;margin-bottom:1rem">⏳</div>
-      <div>Đang tải bài viết...</div>
+      <div style="font-size:2rem;margin-bottom:1rem">â³</div>
+      <div>Äang táº£i bÃ i viáº¿t...</div>
     </div>
 
     <!-- ERROR STATE -->
     <div id="art-error" style="display:none;text-align:center;padding:4rem 0;color:var(--text3)">
-      <div style="font-size:2rem;margin-bottom:1rem">⚠️</div>
-      <div id="art-error-msg">Không tìm thấy bài viết.</div>
-      <a href="articles.html" class="btn-ghost" style="margin-top:1.5rem;display:inline-block;font-size:0.75rem">← Quay lại bài viết</a>
+      <div style="font-size:2rem;margin-bottom:1rem">âš ï¸</div>
+      <div id="art-error-msg">KhÃ´ng tÃ¬m tháº¥y bÃ i viáº¿t.</div>
+      <a href="articles.html" class="btn-ghost" style="margin-top:1.5rem;display:inline-block;font-size:0.75rem">â† Quay láº¡i bÃ i viáº¿t</a>
     </div>
 
     <!-- ARTICLE CONTENT -->
@@ -45,21 +45,21 @@
       <!-- Body: Markdown render -->
       <div class="article-body" id="art-body"></div>
 
-      <!-- Video embed block (nếu có related_video_id) -->
+      <!-- Video embed block (náº¿u cÃ³ related_video_id) -->
       <div id="art-video-block" style="display:none">
         <div class="video-embed-block">
-          <div class="video-embed-preview">▶</div>
+          <div class="video-embed-preview">â–¶</div>
           <div class="video-embed-info">
-            <h4 id="art-video-title">Video liên quan</h4>
-            <p>Xem video phân tích đầy đủ trên TikTok với các ví dụ thực chiến</p>
-            <button class="video-embed-btn" id="art-video-btn">▶ Xem video</button>
+            <h4 id="art-video-title">Video liÃªn quan</h4>
+            <p>Xem video phÃ¢n tÃ­ch Ä‘áº§y Ä‘á»§ trÃªn TikTok vá»›i cÃ¡c vÃ­ dá»¥ thá»±c chiáº¿n</p>
+            <button class="video-embed-btn" id="art-video-btn">â–¶ Xem video</button>
           </div>
         </div>
       </div>
 
       <!-- Back button -->
       <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border2)">
-        <a href="articles.html" class="btn-ghost" style="font-size:0.75rem">← Quay lại bài viết</a>
+        <a href="articles.html" class="btn-ghost" style="font-size:0.75rem">â† Quay láº¡i bÃ i viáº¿t</a>
       </div>
     </div>
 
@@ -76,10 +76,10 @@
   document.getElementById('modal-root').innerHTML = buildModal();
   document.getElementById('footer-root').innerHTML = buildFooter();
 
-  // Cấu hình marked.js: renderer custom cho h2
+  // Cáº¥u hÃ¬nh marked.js: renderer custom cho h2
   const renderer = new marked.Renderer();
   renderer.heading = function(text, level) {
-    // text có thể là object (marked v9) hoặc string
+    // text cÃ³ thá»ƒ lÃ  object (marked v9) hoáº·c string
     const txt = (typeof text === 'object' && text.text) ? text.text : String(text);
     const lv  = (typeof text === 'object' && text.depth) ? text.depth : Number(level);
     if (lv === 2) {
@@ -89,21 +89,21 @@
   };
   marked.use({ renderer });
 
-  // Lấy id từ URL
+  // Láº¥y id tá»« URL
   const id = new URLSearchParams(location.search).get('id');
-  if (!id) { showError('Thiếu tham số ?id='); return; }
+  if (!id) { showError('Thiáº¿u tham sá»‘ ?id='); return; }
 
   // Fetch articles.json
   let articles;
   try {
     articles = await fetch('data/articles.json').then(r => r.json());
-  } catch(e) { showError('Không tải được danh sách bài viết.'); return; }
+  } catch(e) { showError('KhÃ´ng táº£i Ä‘Æ°á»£c danh sÃ¡ch bÃ i viáº¿t.'); return; }
 
   const article = articles.find(a => a.id === id);
-  if (!article) { showError(`Không tìm thấy bài viết với id="${id}"`); return; }
+  if (!article) { showError(`KhÃ´ng tÃ¬m tháº¥y bÃ i viáº¿t vá»›i id="${id}"`); return; }
 
-  // Cập nhật title trang
-  document.title = article.title + ' — Yến Vân Guide';
+  // Cáº­p nháº­t title trang
+  document.title = article.title + ' â€” Yáº¿n VÃ¢n Guide';
   document.querySelector('meta[name="description"]').content = article.description;
 
   // Fetch Markdown
@@ -112,15 +112,15 @@
     const mdRes = await fetch(article.file);
     if (!mdRes.ok) throw new Error('404');
     markdown = await mdRes.text();
-  } catch(e) { showError('Không tải được nội dung bài viết.'); return; }
+  } catch(e) { showError('KhÃ´ng táº£i Ä‘Æ°á»£c ná»™i dung bÃ i viáº¿t.'); return; }
 
-  // Xóa dòng `# Tiêu đề` đầu tiên (đã render bằng article-detail-title)
+  // XÃ³a dÃ²ng `# TiÃªu Ä‘á»` Ä‘áº§u tiÃªn (Ä‘Ã£ render báº±ng article-detail-title)
   const mdLines = markdown.split('\n');
   const bodyLines = mdLines[0].startsWith('# ')
     ? mdLines.slice(1).join('\n').trimStart()
     : markdown;
 
-  // Tách lead paragraph (đoạn đầu trước ## đầu tiên)
+  // TÃ¡ch lead paragraph (Ä‘oáº¡n Ä‘áº§u trÆ°á»›c ## Ä‘áº§u tiÃªn)
   const firstSection = bodyLines.split(/^##\s/m);
   let leadText = '';
   let bodyText = bodyLines;
@@ -138,10 +138,10 @@
   document.getElementById('art-lead').textContent = article.description;
   document.getElementById('art-meta').innerHTML = `
     <span>${formatDate(article.date)}</span>
-    <span>·</span>
-    <span>${escHtml(article.readtime)} đọc</span>
-    <span>·</span>
-    <span>${formatViews(article.views)} lượt xem</span>`;
+    <span>Â·</span>
+    <span>${escHtml(article.readtime)} Ä‘á»c</span>
+    <span>Â·</span>
+    <span>${formatViews(article.views)} lÆ°á»£t xem</span>`;
 
   // Render body
   document.getElementById('art-body').innerHTML = marked.parse(bodyText);
@@ -150,13 +150,13 @@
   if (article.related_video_id) {
     const videoBlock = document.getElementById('art-video-block');
     videoBlock.style.display = 'block';
-    document.getElementById('art-video-title').textContent = article.title + ' — Video chi tiết';
+    document.getElementById('art-video-title').textContent = article.title + ' â€” Video chi tiáº¿t';
     document.getElementById('art-video-btn').onclick = function() {
       openModal(article.related_video_id, article.title, article.category);
     };
   }
 
-  // Hiển thị content
+  // Hiá»ƒn thá»‹ content
   document.getElementById('art-loading').style.display = 'none';
   document.getElementById('art-content').style.display  = 'block';
 
@@ -180,3 +180,4 @@ function showError(msg) {
 </script>
 </body>
 </html>
+

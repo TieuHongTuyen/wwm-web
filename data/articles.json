@@ -1,67 +1,15 @@
 [
   {
     "id": "art-001",
-    "title": "Phân tích Doanh Doanh — Cơ chế, Lên đồ và Combo tối ưu",
-    "category": "Nhân vật",
-    "description": "Doanh Doanh là nhân vật hỗ trợ linh hoạt nhất trong meta hiện tại. Bài viết phân tích sâu về bộ kỹ năng, cách lên đồ theo từng playstyle và các combo quan trọng khi đấu nhóm.",
-    "file": "posts/phan-tich-doanh-doanh.md",
-    "icon": "👤",
-    "date": "2026-02-20",
-    "readtime": "12 phút",
-    "views": "1853",
-    "pinned": false,
-    "related_video_id": "7608841751616359700"
-  },
-  {
-    "id": "art-002",
-    "title": "Hướng dẫn Boss Quỷ Thần Sầu — Toàn bộ Phase",
+    "title": "Hướng dẫn toàn tập: Bài viết mẫu chuẩn SEO — Trải nghiệm Web Yến Vân",
     "category": "Hướng dẫn",
-    "description": "Tổng hợp 5 phần hướng dẫn boss Quỷ Thần Sầu, từ cơ chế đến chiến thuật solo từng nhân vật. Bao gồm timing né skill và xử lý phase 2.",
-    "file": "posts/huong-dan-boss-quy-than-sau.md",
-    "icon": "⚔️",
-    "date": "2026-03-07",
-    "readtime": "18 phút",
-    "views": "2241",
-    "pinned": false,
-    "related_video_id": "7614385877569195284"
-  },
-  {
-    "id": "art-003",
-    "title": "Podcast Tin tức 13/03 — Tổng hợp tuần",
-    "category": "Podcast",
-    "description": "Tóm tắt toàn bộ thông báo chính thức từ nhà phát triển, buff nerf nhân vật và sự kiện sắp tới trong tuần.",
-    "file": "posts/podcast-tin-tuc-13-03.md",
-    "icon": "🎙️",
-    "date": "2026-03-13",
-    "readtime": "4 phút",
-    "views": "324",
-    "pinned": false,
-    "related_video_id": "7616618393407393045"
-  },
-  {
-    "id": "art-004",
-    "title": "Phân tích Vân Lôi — Sức mạnh thực sự sau Patch 2.3",
-    "category": "Nhân vật",
-    "description": "Vân Lôi được buff đáng kể sau bản 2.3, liệu đây có phải lúc pull nhân vật này? Đánh giá chi tiết kỹ năng, trang bị và hiệu quả thực chiến.",
-    "file": "posts/phan-tich-van-loi.md",
-    "icon": "👤",
-    "date": "2026-03-02",
-    "readtime": "9 phút",
-    "views": "987",
-    "pinned": false,
-    "related_video_id": "7612826745231827221"
-  },
-  {
-    "id": "art-005",
-    "title": "Tier List Đội Hình PvE — Mùa 2 Update",
-    "category": "Meta",
-    "description": "Xếp hạng đội hình mạnh nhất cho nội dung PvE sau bản cập nhật mùa 2. Phân tích các tổ hợp synergy, đội hình budget và đội hình full-invest.",
-    "file": "posts/tier-list-doi-hinh-pve.md",
-    "icon": "🏆",
-    "date": "2026-03-15",
-    "readtime": "7 phút",
-    "views": "1120",
+    "description": "Đây là bài viết mẫu nhằm trình diễn tính năng đọc Markdown và hiển thị ảnh responsive siêu đẹp theo đúng quy tắc Slug mới. Tích hợp cover ảnh và meta đầy đủ.",
+    "file": "posts/bai-viet-mau.md",
+    "icon": "📄",
+    "date": "2026-03-16",
+    "readtime": "5 phút",
+    "views": "199",
     "pinned": true,
-    "related_video_id": ""
+    "related_video_id": "7616618393407393045"
   }
 ]

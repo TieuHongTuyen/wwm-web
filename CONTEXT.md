@@ -150,8 +150,8 @@ Chạy lại script là đủ — nó sẽ làm mới toàn bộ thumbnail URL t
 ### 5.2 Typography
 
 ```
-Tiêu đề, logo, heading lớn : 'Bebas Neue'    (Google Fonts)
-Nội dung, UI, body text    : 'Be Vietnam Pro' (Google Fonts)
+Tiêu đề, logo, heading lớn : 'Oswald' weight 700   (Google Fonts — hỗ trợ đầy đủ tiếng Việt)
+Nội dung, UI, body text    : 'Be Vietnam Pro'       (Google Fonts)
 ```
 
 ### 5.3 Phong cách
