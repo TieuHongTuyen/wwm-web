@@ -1,5 +1,27 @@
 [
   {
+    "id": "art-003",
+    "title": "Bài Viết Mẫu Số 3",
+    "category": "Meta",
+    "description": "",
+    "file": "posts/bai-viet-mau-so-3.md",
+    "icon": "🏆",
+    "date": "2026-03-16",
+    "pinned": false,
+    "related_video_id": ""
+  },
+  {
+    "id": "art-002",
+    "title": "Bài hướng dẫn mẫu",
+    "category": "Hướng dẫn",
+    "description": "Đây là bài viết mẫu 2",
+    "file": "posts/bai-huong-dan-mau.md",
+    "icon": "⚔️",
+    "date": "2026-03-16",
+    "pinned": true,
+    "related_video_id": "7570720856855399698"
+  },
+  {
     "id": "art-001",
     "title": "Hướng dẫn toàn tập: Bài viết mẫu chuẩn SEO — Trải nghiệm Web Yến Vân",
     "category": "Hướng dẫn",

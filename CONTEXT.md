@@ -412,26 +412,48 @@ Trong file `.md`:
 
 ---
 
-### Workflow thêm bài mới (Tự động hóa)
+### Workflow thêm bài mới
 
-Chỉ cần chạy lệnh Python, không cần tạo file hay thư mục bằng tay:
+```
+Bước 1 — Tạo bài mới bằng script (terminal)
+  python scripts/new_post.py "Tên bài" "Loại bài"
+  Loại bài hợp lệ: Nhân vật · Hướng dẫn · Meta · Podcast
+  Script tự tạo: slug, thư mục ảnh, file .md từ template, entry JSON
 
-```bash
-# Cú pháp: python scripts/new_post.py "Tiêu đề" "Danh mục"
-python scripts/new_post.py "Phân tích kĩ năng Doanh Doanh" "Nhân vật"
+Bước 2 — Chuẩn bị ảnh
+  Thả ảnh bìa vào assets/images/[slug]/
+  Đặt tên ảnh bìa: 01-cover.jpg
+  Đặt tên ảnh tiếp theo: 02-[mo-ta].jpg, 03-[mo-ta].jpg...
+
+Bước 3 — Viết bài trong Obsidian
+  Mở Obsidian (vault = thư mục wwm-web/)
+  Mở file posts/[slug].md
+  Viết nội dung theo đúng cấu trúc template
+  Kéo thả ảnh vào đúng vị trí trong bài
+  Dùng Markdown links chuẩn cho phần Xem thêm:
+    [Tên bài](slug-bai-lien-quan)
+  KHÔNG dùng [[Wikilinks]] — sẽ không render được trên web
+
+Bước 4 — Hoàn thiện metadata
+  Mở data/articles.json
+  Điền "description" cho bài vừa viết
+  Điền "related_video_id" nếu có video TikTok liên quan
+
+Bước 5 — Deploy
+  git add -A && git commit -m "bai moi: [slug]" && git push
+  Cloudflare Pages tự deploy trong ~30 giây
 ```
 
-**Script tự động làm 4 việc trong 1 giây:**
-1. Tạo slug chuẩn: `phan-tich-ki-nang-doanh-doanh`
-2. Tạo thư mục ảnh: `assets/images/phan-tich-ki-nang-doanh-doanh/`
-3. Tạo phôi Markdown: `posts/phan-tich-ki-nang-doanh-doanh.md` (có sẵn `![Cover]`)
-4. Khởi tạo thẻ bài viết mới tại `data/articles.json` (Ngày tháng hiện tại, ID tự động)
+### Obsidian Graph View
 
-**Việc của bạn:**
-1. Thả ảnh vào thư mục vừa sinh (đổi tên ảnh bìa thành `01-cover.jpg`)
-2. Mở file `.md` viết nội dung chuẩn
-3. Vô `articles.json` sửa lại dòng `"description"` và `"related_video_id"` (nếu có)
-4. `git add -A && git commit -m "bai moi" && git push`
+```
+Nhấn Ctrl+G trong Obsidian để xem bản đồ liên kết giữa các bài.
+Các bài có link [Xem thêm] trỏ vào nhau sẽ hiện đường nối trên graph.
+Dùng graph để:
+- Phát hiện bài nào bị cô lập (chưa liên kết) → ưu tiên viết bài liên quan
+- Xác định bài nào là hub trung tâm (nhiều bài trỏ vào) → đánh dấu pinned: true
+- Lên kế hoạch nội dung theo cụm chủ đề
+```
 
 ---
 

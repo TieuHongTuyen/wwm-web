@@ -1,9 +1,16 @@
 # File cấu hình local (không deploy)
 danh-sach-video.txt
 export-tiktok-videos.csv
+PROMPT-obsidian.md
 
 # Ảnh thumbnails tải về cục bộ (không cần vào repo)
 assets/thumbnails/
+
+# Obsidian
+.obsidian/
+
+# HTML cũ
+wwm-guide-v2.html
 
 # Python cache
 __pycache__/
