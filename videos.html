@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Video hướng dẫn Where Winds Meet — nhúng trực tiếp từ TikTok @tiu.hng.tuyn">
+<title>Video — Yến Vân Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<div class="page-wrap">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <h1>Video <span>Hướng Dẫn</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Nhúng trực tiếp từ TikTok · <span id="vid-count">—</span> video</p>
+      </div>
+      <div class="page-hero-meta" id="vid-hero-meta">Đang tải...</div>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-wrap" id="vid-filter"></div>
+
+  <!-- GRID -->
+  <div class="videos-layout">
+    <div class="videos-grid" id="vid-grid">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+</div>
+
+<div id="modal-root"></div>
+<div id="footer-root"></div>
+
+<script src="assets/main.js"></script>
+<script>
+(async function() {
+  document.getElementById('nav-root').innerHTML = buildNav('videos');
+  document.getElementById('modal-root').innerHTML = buildModal();
+  document.getElementById('footer-root').innerHTML = buildFooter();
+
+  // Fetch videos (cache busting để luôn lấy cấu trúc mới)
+  const videos = await fetch('data/videos.json?v=' + Date.now()).then(r => r.json());
+
+  // Sort: pinned đầu, rồi mới nhất
+  const sorted = [...videos].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  // Page hero
+  document.getElementById('vid-count').textContent = videos.length;
+  const latest = sorted[0];
+  document.getElementById('vid-hero-meta').textContent =
+    latest ? `Cập nhật ${formatDate(latest.date)}` : '';
+
+  // Collect unique tags
+  const allTags = new Set();
+  videos.forEach(v => v.tags.forEach(t => allTags.add(t)));
+  const tagList = ['Tất cả', ...Array.from(allTags)];
+
+  // Render logic với Load More (20 video / trang)
+  let currentTag = 'Tất cả';
+  let currentPage = 1;
+  const ITEMS_PER_PAGE = 20;
+
+  function renderGrid(tag, append = false) {
+    if (!append) {
+      currentTag = tag;
+      currentPage = 1;
+    }
+
+    const list = currentTag === 'Tất cả'
+      ? sorted
+      : sorted.filter(v => v.tags.includes(currentTag));
+
+    // Tính mốc data hiển thị hiện tại
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const chunk = list.slice(startIndex, endIndex);
+
+    const html = chunk.map((v, i) => renderVideoCard(v, startIndex + i)).join('');
+
+    const grid = document.getElementById('vid-grid');
+    if (!append) {
+      grid.innerHTML = html || `<p style="color:var(--text3);padding:2rem 0;grid-column:1/-1">Chưa có video trong danh mục này.</p>`;
+    } else {
+      grid.insertAdjacentHTML('beforeend', html);
+    }
+
+    // Xử lý nút Load More
+    let loadMoreBtn = document.getElementById('btn-load-more');
+    if (!loadMoreBtn) {
+      loadMoreBtn = document.createElement('div');
+      loadMoreBtn.id = 'btn-load-more';
+      loadMoreBtn.className = 'btn-ghost';
+      loadMoreBtn.style.margin = '3rem auto 0';
+      loadMoreBtn.style.display = 'table';
+      loadMoreBtn.style.cursor = 'pointer';
+      loadMoreBtn.textContent = 'Tải thêm video ↓';
+      loadMoreBtn.onclick = () => {
+        currentPage++;
+        renderGrid(currentTag, true);
+      };
+      grid.parentNode.appendChild(loadMoreBtn);
+    }
+    
+    // Ẩn/Hiện nút Load More
+    if (endIndex >= list.length) {
+      loadMoreBtn.style.display = 'none';
+    } else {
+      loadMoreBtn.style.display = 'table';
+    }
+  }
+
+  // Filter bar
+  document.getElementById('vid-filter').innerHTML = tagList.map((t, i) =>
+    `<button class="f-btn ${i === 0 ? 'active' : ''}"
+      onclick="filterVids('${escHtml(t)}', this)">${escHtml(t)}</button>`
+  ).join('');
+
+  window.filterVids = function(tag, btn) {
+    document.querySelectorAll('#vid-filter .f-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderGrid(tag, false);
+  };
+
+  renderGrid('Tất cả', false);
+
+})().catch(console.error);
+</script>
+</body>
+</html>

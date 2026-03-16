@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Danh sách bài viết hướng dẫn Where Winds Meet — Hướng dẫn, Phân tích nhân vật, Podcast, Meta.">
+<title>Bài Viết — Yến Vân Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<div class="page-wrap">
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <h1>Bài <span>Viết</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Hướng dẫn · Phân tích · Podcast · Tin tức</p>
+      </div>
+      <div class="page-hero-meta" id="art-hero-meta">Đang tải...</div>
+    </div>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-wrap" id="art-filter"></div>
+
+  <!-- ARTICLES LAYOUT -->
+  <div class="articles-layout">
+    <div class="articles-main" id="art-main">
+      <!-- Filled by JS -->
+    </div>
+    <div class="articles-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Video liên quan</div>
+        <div id="sidebar-videos"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Bài đọc nhiều</div>
+        <div id="sidebar-popular"></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="modal-root"></div>
+<div id="footer-root"></div>
+
+<script src="assets/main.js"></script>
+<script>
+(async function() {
+  document.getElementById('nav-root').innerHTML = buildNav('articles');
+  document.getElementById('modal-root').innerHTML = buildModal();
+  document.getElementById('footer-root').innerHTML = buildFooter();
+
+  // Fetch
+  const [articles, videos] = await Promise.all([
+    fetch('data/articles.json').then(r => r.json()),
+    fetch('data/videos.json').then(r => r.json()),
+  ]);
+
+  // Sort: pinned trước, rồi mới nhất
+  const sorted = [...articles].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  // Page hero meta
+  const latest = sorted[0];
+  document.getElementById('art-hero-meta').textContent =
+    `${articles.length} bài · Cập nhật ${latest ? formatDate(latest.date) : ''}`;
+
+  // --- Đọc filter từ query string ?filter=xxx ---
+  let initialFilter = 'Tất cả';
+  const qpFilter = new URLSearchParams(location.search).get('filter');
+  if (qpFilter) initialFilter = qpFilter;
+
+  // Render articles với filter
+  let currentFilter = initialFilter;
+
+  function renderArticles(filter) {
+    currentFilter = filter;
+    const list = filter === 'Tất cả'
+      ? sorted
+      : sorted.filter(a => a.category === filter);
+
+    document.getElementById('art-main').innerHTML = list.length
+      ? list.map(a => renderArtListItem(a)).join('')
+      : `<p style="color:var(--text3);padding:2rem 0;">Chưa có bài viết trong danh mục này.</p>`;
+  }
+
+  // Filter bar
+  const cats = ['Tất cả', 'Hướng dẫn', 'Nhân vật', 'Podcast', 'Meta'];
+  const filterEl = document.getElementById('art-filter');
+  filterEl.innerHTML = cats.map(c =>
+    `<button class="f-btn ${c === initialFilter ? 'active' : ''}"
+      onclick="filterArticles('${escHtml(c)}', this)">${escHtml(c)}</button>`
+  ).join('');
+
+  window.filterArticles = function(cat, btn) {
+    document.querySelectorAll('#art-filter .f-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderArticles(cat);
+  };
+
+  renderArticles(initialFilter);
+
+  // Sidebar: 3 video mới nhất
+  const sortedVids = [...videos].sort((a, b) => new Date(b.date) - new Date(a.date));
+  document.getElementById('sidebar-videos').innerHTML = sortedVids.slice(0, 3).map((v, i) =>
+    `<div class="sidebar-item" onclick="openModal('${v.id}','${escHtml(v.title)}','${escHtml(v.tags.join(','))}')">
+      <div class="sidebar-item-num">0${i + 1}</div>
+      <div>
+        <div class="sidebar-item-title">${escHtml(v.title)}</div>
+        <div class="sidebar-item-date">${formatDate(v.date)}</div>
+      </div>
+    </div>`
+  ).join('');
+
+  // Sidebar: 4 bài đọc nhiều nhất
+  const popular = [...articles].sort((a, b) => Number(b.views) - Number(a.views));
+  document.getElementById('sidebar-popular').innerHTML = popular.slice(0, 4).map((a, i) =>
+    `<div class="sidebar-item" onclick="location.href='article.html?id=${a.id}'">
+      <div class="sidebar-item-num">0${i + 1}</div>
+      <div>
+        <div class="sidebar-item-title">${escHtml(a.title)}</div>
+        <div class="sidebar-item-date">${formatViews(a.views)} lượt xem</div>
+      </div>
+    </div>`
+  ).join('');
+
+})().catch(console.error);
+</script>
+</body>
+</html>

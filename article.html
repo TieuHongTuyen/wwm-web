@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Đọc bài viết hướng dẫn chi tiết — Where Winds Meet Yến Vân Guide">
+<title>Bài viết — Yến Vân Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<!-- marked.js để render Markdown -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+</head>
+<body>
+
+<div id="nav-root"></div>
+
+<div class="page-wrap">
+  <div class="article-detail">
+
+    <!-- LOADING STATE -->
+    <div id="art-loading" style="text-align:center;padding:4rem 0;color:var(--text3)">
+      <div style="font-size:2rem;margin-bottom:1rem">⏳</div>
+      <div>Đang tải bài viết...</div>
+    </div>
+
+    <!-- ERROR STATE -->
+    <div id="art-error" style="display:none;text-align:center;padding:4rem 0;color:var(--text3)">
+      <div style="font-size:2rem;margin-bottom:1rem">⚠️</div>
+      <div id="art-error-msg">Không tìm thấy bài viết.</div>
+      <a href="articles.html" class="btn-ghost" style="margin-top:1.5rem;display:inline-block;font-size:0.75rem">← Quay lại bài viết</a>
+    </div>
+
+    <!-- ARTICLE CONTENT -->
+    <div id="art-content" style="display:none">
+      <!-- Header -->
+      <div class="article-detail-header">
+        <div class="article-detail-cat">
+          <span class="art-cat-badge" id="art-badge"></span>
+        </div>
+        <h1 class="article-detail-title" id="art-title"></h1>
+        <p class="article-detail-lead" id="art-lead"></p>
+        <div class="article-detail-meta" id="art-meta"></div>
+      </div>
+
+      <!-- Body: Markdown render -->
+      <div class="article-body" id="art-body"></div>
+
+      <!-- Video embed block (nếu có related_video_id) -->
+      <div id="art-video-block" style="display:none">
+        <div class="video-embed-block">
+          <div class="video-embed-preview">▶</div>
+          <div class="video-embed-info">
+            <h4 id="art-video-title">Video liên quan</h4>
+            <p>Xem video phân tích đầy đủ trên TikTok với các ví dụ thực chiến</p>
+            <button class="video-embed-btn" id="art-video-btn">▶ Xem video</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Back button -->
+      <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border2)">
+        <a href="articles.html" class="btn-ghost" style="font-size:0.75rem">← Quay lại bài viết</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="footer-root"></div>
+
+<script src="assets/main.js"></script>
+<script>
+(async function() {
+  document.getElementById('nav-root').innerHTML = buildNav('articles');
+  document.getElementById('modal-root').innerHTML = buildModal();
+  document.getElementById('footer-root').innerHTML = buildFooter();
+
+  // Cấu hình marked.js: renderer custom cho h2
+  const renderer = new marked.Renderer();
+  renderer.heading = function(text, level) {
+    // text có thể là object (marked v9) hoặc string
+    const txt = (typeof text === 'object' && text.text) ? text.text : String(text);
+    const lv  = (typeof text === 'object' && text.depth) ? text.depth : Number(level);
+    if (lv === 2) {
+      return `<h2>${txt}</h2>`;
+    }
+    return `<h${lv}>${txt}</h${lv}>`;
+  };
+  marked.use({ renderer });
+
+  // Lấy id từ URL
+  const id = new URLSearchParams(location.search).get('id');
+  if (!id) { showError('Thiếu tham số ?id='); return; }
+
+  // Fetch articles.json
+  let articles;
+  try {
+    articles = await fetch('data/articles.json').then(r => r.json());
+  } catch(e) { showError('Không tải được danh sách bài viết.'); return; }
+
+  const article = articles.find(a => a.id === id);
+  if (!article) { showError(`Không tìm thấy bài viết với id="${id}"`); return; }
+
+  // Cập nhật title trang
+  document.title = article.title + ' — Yến Vân Guide';
+  document.querySelector('meta[name="description"]').content = article.description;
+
+  // Fetch Markdown
+  let markdown;
+  try {
+    const mdRes = await fetch(article.file);
+    if (!mdRes.ok) throw new Error('404');
+    markdown = await mdRes.text();
+  } catch(e) { showError('Không tải được nội dung bài viết.'); return; }
+
+  // Xóa dòng `# Tiêu đề` đầu tiên (đã render bằng article-detail-title)
+  const mdLines = markdown.split('\n');
+  const bodyLines = mdLines[0].startsWith('# ')
+    ? mdLines.slice(1).join('\n').trimStart()
+    : markdown;
+
+  // Tách lead paragraph (đoạn đầu trước ## đầu tiên)
+  const firstSection = bodyLines.split(/^##\s/m);
+  let leadText = '';
+  let bodyText = bodyLines;
+  if (firstSection.length > 1) {
+    const leadBlock = firstSection[0].trim();
+    leadText = leadBlock;
+    bodyText = bodyLines.slice(bodyLines.indexOf('##'));
+  }
+
+  // Render header
+  const badge = getCategoryBadge(article.category);
+  document.getElementById('art-badge').className = `art-cat-badge ${badge.cls}`;
+  document.getElementById('art-badge').textContent = `${badge.icon} ${article.category}`;
+  document.getElementById('art-title').textContent = article.title;
+  document.getElementById('art-lead').textContent = article.description;
+  document.getElementById('art-meta').innerHTML = `
+    <span>${formatDate(article.date)}</span>
+    <span>·</span>
+    <span>${escHtml(article.readtime)} đọc</span>
+    <span>·</span>
+    <span>${formatViews(article.views)} lượt xem</span>`;
+
+  // Render body
+  document.getElementById('art-body').innerHTML = marked.parse(bodyText);
+
+  // Video embed block
+  if (article.related_video_id) {
+    const videoBlock = document.getElementById('art-video-block');
+    videoBlock.style.display = 'block';
+    document.getElementById('art-video-title').textContent = article.title + ' — Video chi tiết';
+    document.getElementById('art-video-btn').onclick = function() {
+      openModal(article.related_video_id, article.title, article.category);
+    };
+  }
+
+  // Hiển thị content
+  document.getElementById('art-loading').style.display = 'none';
+  document.getElementById('art-content').style.display  = 'block';
+
+  function showError(msg) {
+    document.getElementById('art-loading').style.display = 'none';
+    document.getElementById('art-error').style.display   = 'block';
+    document.getElementById('art-error-msg').textContent = msg;
+  }
+
+})().catch(err => {
+  console.error(err);
+  document.getElementById('art-loading').style.display = 'none';
+  document.getElementById('art-error').style.display   = 'block';
+});
+
+function showError(msg) {
+  document.getElementById('art-loading').style.display = 'none';
+  document.getElementById('art-error').style.display   = 'block';
+  document.getElementById('art-error-msg').textContent = msg;
+}
+</script>
+</body>
+</html>

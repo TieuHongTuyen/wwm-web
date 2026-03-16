@@ -1,0 +1,13 @@
+# File cấu hình local (không deploy)
+danh-sach-video.txt
+export-tiktok-videos.csv
+
+# Ảnh media (lưu ngoài CDN, không vào repo theo CONTEXT.md quy tắc #8)
+assets/hero_bg.png
+assets/thumbnails/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.env

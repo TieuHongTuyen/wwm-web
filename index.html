@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kho hướng dẫn tiếng Việt toàn diện cho game Where Winds Meet (Yến Vân Thập Lục Thanh) — bài viết, video TikTok, phân tích nhân vật.">
+<title>Yến Vân Guide — Where Winds Meet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<div id="nav-root"></div>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-tag">Game Guide</span>
+        <div class="hero-eyebrow-line"></div>
+      </div>
+      <h1 class="hero-title">
+        Where<br>Winds<br><span class="accent">Meet</span>
+      </h1>
+      <p class="hero-desc">Kho hướng dẫn tiếng Việt toàn diện — từ thực chiến đến phân tích nhân vật, cập nhật liên tục theo meta.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">8.6K</div>
+          <div class="hero-stat-label">TikTok Followers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2K</div>
+          <div class="hero-stat-label">Discord Members</div>
+        </div>
+        <div>
+          <div class="hero-stat-num" id="hero-art-count">—</div>
+          <div class="hero-stat-label">Bài hướng dẫn</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn-primary" href="articles.html">Đọc bài viết</a>
+        <a class="btn-ghost" href="videos.html">Xem video</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-bg"></div>
+      <div class="hero-right-grid"></div>
+      <div class="hero-right-glow"></div>
+      <a class="hero-featured-card" href="article.html?id=art-005" id="hero-featured">
+        <div class="hero-featured-label">📌 Bài nổi bật</div>
+        <div class="hero-featured-title" id="hero-featured-title">Đang tải...</div>
+        <div class="hero-featured-meta" id="hero-featured-meta"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- CATEGORY STRIP -->
+  <div class="cat-strip">
+    <a class="cat-item" href="articles.html?filter=Hướng dẫn">
+      <div class="cat-icon" style="background:rgba(232,184,75,0.1)">⚔️</div>
+      <div>
+        <div class="cat-name">Hướng dẫn</div>
+        <div class="cat-count" id="cat-count-guide">— bài viết</div>
+      </div>
+    </a>
+    <a class="cat-item" href="articles.html?filter=Nhân vật">
+      <div class="cat-icon" style="background:rgba(78,205,196,0.1)">👤</div>
+      <div>
+        <div class="cat-name">Nhân vật</div>
+        <div class="cat-count" id="cat-count-char">— phân tích</div>
+      </div>
+    </a>
+    <a class="cat-item" href="videos.html">
+      <div class="cat-icon" style="background:rgba(74,158,255,0.1)">🎬</div>
+      <div>
+        <div class="cat-name">Video</div>
+        <div class="cat-count" id="cat-count-video">— video TikTok</div>
+      </div>
+    </a>
+    <a class="cat-item" href="articles.html?filter=Podcast">
+      <div class="cat-icon" style="background:rgba(224,82,82,0.1)">🎙️</div>
+      <div>
+        <div class="cat-name">Podcast</div>
+        <div class="cat-count" id="cat-count-podcast">— tập tin tức</div>
+      </div>
+    </a>
+  </div>
+
+  <div class="content-wrap">
+
+    <!-- FEATURED ARTICLES -->
+    <div class="section-label">
+      <span class="section-label-text">Bài viết <span class="section-label-accent">nổi bật</span></span>
+      <div class="section-label-line"></div>
+      <a class="section-label-more" href="articles.html">Xem tất cả →</a>
+    </div>
+
+    <div class="editorial-grid" id="featured-grid">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- LATEST VIDEOS -->
+    <div class="section-label">
+      <span class="section-label-text">Video <span class="section-label-accent">mới nhất</span></span>
+      <div class="section-label-line"></div>
+      <a class="section-label-more" href="videos.html">Xem tất cả →</a>
+    </div>
+
+    <div class="video-row" id="home-video-row">
+      <!-- Filled by JS -->
+    </div>
+
+    <!-- COMMUNITY -->
+    <div class="community-strip">
+      <div class="community-text">
+        <h3>Tham gia cộng đồng</h3>
+        <p>Hỏi đáp, chia sẻ build, cập nhật meta nhanh nhất</p>
+      </div>
+      <div class="community-stats">
+        <div class="comm-stat">
+          <div class="comm-stat-num">8.6K</div>
+          <div class="comm-stat-label">TikTok</div>
+        </div>
+        <div class="comm-stat">
+          <div class="comm-stat-num">2K</div>
+          <div class="comm-stat-label">Discord</div>
+        </div>
+      </div>
+      <div class="community-actions">
+        <a class="btn-primary" href="https://discord.gg/INVITE_CODE" target="_blank" rel="noopener">💬 Vào Discord</a>
+        <a class="btn-ghost" href="https://tiktok.com/@tiu.hng.tuyn" target="_blank" rel="noopener">🎵 TikTok</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal-root"></div>
+
+<!-- FOOTER -->
+<div id="footer-root"></div>
+
+<script src="assets/main.js"></script>
+<script>
+(async function() {
+  // Inject nav, modal, footer
+  document.getElementById('nav-root').innerHTML = buildNav('home');
+  document.getElementById('modal-root').innerHTML = buildModal();
+  document.getElementById('footer-root').innerHTML = buildFooter();
+
+  // Fetch data
+  const [articles, videos] = await Promise.all([
+    fetch('data/articles.json?v=' + Date.now()).then(r => r.json()),
+    fetch('data/videos.json?v=' + Date.now()).then(r => r.json()),
+  ]);
+
+  // Sort: pinned first, rồi mới nhất
+  const sortedArts = [...articles].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  // Hero count
+  document.getElementById('hero-art-count').textContent = articles.length + '+';
+
+  // Hero featured card: bài pinned đầu tiên
+  const featured = sortedArts[0];
+  if (featured) {
+    document.getElementById('hero-featured').href = `article.html?id=${featured.id}`;
+    document.getElementById('hero-featured-title').textContent = featured.title;
+    document.getElementById('hero-featured-meta').textContent =
+      `${getCategoryBadge(featured.category).icon} ${featured.category} · ${formatDate(featured.date)} · ${featured.readtime} đọc`;
+  }
+
+  // Category counts
+  const countBy = cat => articles.filter(a => a.category === cat).length;
+  document.getElementById('cat-count-guide').textContent   = countBy('Hướng dẫn') + ' bài viết';
+  document.getElementById('cat-count-char').textContent    = countBy('Nhân vật') + ' phân tích';
+  document.getElementById('cat-count-video').textContent   = videos.length + ' video TikTok';
+  document.getElementById('cat-count-podcast').textContent = countBy('Podcast') + ' tập tin tức';
+
+  // Featured articles grid: 1 big + 2 small
+  const big   = sortedArts[0];
+  const small1 = sortedArts[1];
+  const small2 = sortedArts[2];
+
+  function bigCardHtml(a) {
+    const badge = getCategoryBadge(a.category);
+    return `<a class="art-card art-card-big" href="article.html?id=${a.id}">
+      <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
+      <div class="art-title">${escHtml(a.title)}</div>
+      <div class="art-desc">${escHtml(a.description)}</div>
+      <div class="art-meta">
+        <span>${formatDate(a.date)}</span>
+        <div class="art-meta-dot"></div>
+        <span>${escHtml(a.readtime)} đọc</span>
+        <div class="art-meta-dot"></div>
+        <span>${formatViews(a.views)} lượt xem</span>
+      </div>
+    </a>`;
+  }
+
+  function smallCardHtml(a) {
+    const badge = getCategoryBadge(a.category);
+    return `<a class="art-card" href="article.html?id=${a.id}">
+      <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
+      <div class="art-title art-title-sm">${escHtml(a.title)}</div>
+      <div class="art-desc art-desc-sm">${escHtml(a.description)}</div>
+      <div class="art-meta">
+        <span>${formatDate(a.date)}</span>
+        <div class="art-meta-dot"></div>
+        <span>${escHtml(a.readtime)} đọc</span>
+      </div>
+    </a>`;
+  }
+
+  const grid = document.getElementById('featured-grid');
+  if (big) {
+    grid.innerHTML = bigCardHtml(big) +
+      `<div class="editorial-grid-right">
+        ${small1 ? smallCardHtml(small1) : ''}
+        ${small2 ? smallCardHtml(small2) : ''}
+      </div>`;
+  }
+
+  // Latest videos: top 5
+  const sortedVids = [...videos].sort((a, b) => {
+    if (a.pinned && !b.pinned) return -1;
+    if (!a.pinned && b.pinned) return 1;
+    return new Date(b.date) - new Date(a.date);
+  });
+  document.getElementById('home-video-row').innerHTML =
+    sortedVids.slice(0, 5).map((v, i) => renderVideoCard(v, i)).join('');
+
+})().catch(console.error);
+</script>
+</body>
+</html>

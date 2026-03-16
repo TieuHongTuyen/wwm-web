@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yến Vân Guide — Where Winds Meet</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c0f;
+  --bg2: #111318;
+  --bg3: #181c24;
+  --surface: #1e2330;
+  --surface2: #252b3a;
+  --accent: #e8b84b;
+  --accent2: #f0d080;
+  --red: #e05252;
+  --teal: #4ecdc4;
+  --blue: #4a9eff;
+  --text: #e8eaf0;
+  --text2: #9aa0b4;
+  --text3: #5a6070;
+  --border: rgba(232,184,75,0.15);
+  --border2: rgba(255,255,255,0.06);
+  --glow: rgba(232,184,75,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 60px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(10,12,15,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border2);
+}
+
+.nav-logo {
+  display: flex; align-items: center; gap: 0.75rem;
+  cursor: pointer;
+}
+.nav-logo-icon {
+  width: 32px; height: 32px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+}
+.nav-logo-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+.nav-logo-text span { color: var(--accent); }
+
+.nav-links { display: flex; gap: 0.25rem; align-items: center; }
+.nav-btn {
+  background: none; border: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+.nav-btn:hover { color: var(--text); background: var(--surface); }
+.nav-btn.active { color: var(--accent); }
+
+.nav-discord {
+  margin-left: 0.5rem;
+  background: #5865F2;
+  color: white !important;
+  border-radius: 6px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.nav-discord:hover { background: #4752c4 !important; }
+
+/* ── PAGES ── */
+.page { display: none; padding-top: 60px; min-height: 100vh; }
+.page.active { display: block; animation: fadeUp 0.35s ease; }
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(12px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* ════════════════════════
+   HOME PAGE
+════════════════════════ */
+
+/* HERO — editorial split layout */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 60px);
+  max-height: 700px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-left {
+  padding: 4rem 3rem 4rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-eyebrow {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.hero-tag {
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+}
+.hero-eyebrow-line {
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  opacity: 0.4;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+}
+.hero-title .accent { color: var(--accent); display: block; }
+
+.hero-desc {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.7;
+  max-width: 360px;
+  margin-bottom: 2rem;
+}
+
+.hero-stats {
+  display: flex; gap: 2rem; margin-bottom: 2.5rem;
+}
+.hero-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 0.7rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 0.2rem;
+}
+
+.hero-cta { display: flex; gap: 0.75rem; }
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border2);
+  padding: 0.7rem 1.5rem;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-right-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(135deg, #1a2a1a 0%, #0d1a2e 50%, #1a0d1a 100%);
+}
+.hero-right-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(232,184,75,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,184,75,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-right-glow {
+  position: absolute;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(78,205,196,0.15) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%,-50%) scale(1); opacity:0.6; }
+  50% { transform: translate(-50%,-50%) scale(1.2); opacity:1; }
+}
+
+/* Featured article card inside hero */
+.hero-featured-card {
+  position: absolute;
+  bottom: 2rem; left: 50%; transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  background: rgba(10,12,15,0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+.hero-featured-card:hover { border-color: var(--accent); transform: translateX(-50%) translateY(-3px); }
+.hero-featured-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.hero-featured-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.hero-featured-meta {
+  font-size: 0.7rem;
+  color: var(--text3);
+}
+
+/* CATEGORY STRIP */
+.cat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border2);
+}
+.cat-item {
+  padding: 1.25rem 1.5rem;
+  border-right: 1px solid var(--border2);
+  display: flex; align-items: center; gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.cat-item:last-child { border-right: none; }
+.cat-item::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.cat-item:hover::before { transform: scaleX(1); }
+.cat-item:hover { background: var(--bg2); }
+
+.cat-icon {
+  width: 40px; height: 40px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.cat-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.cat-count {
+  font-size: 0.7rem;
+  color: var(--text3);
+  margin-top: 0.15rem;
+}
+
+/* MAIN CONTENT GRID */
+.content-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.section-label {
+  display: flex; align-items: center; gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.section-label-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: var(--text);
+}
+.section-label-accent { color: var(--accent); }
+.section-label-line {
+  flex: 1; height: 1px;
+  background: var(--border2);
+}
+.section-label-more {
+  font-size: 0.72rem;
+  color: var(--accent);
+  background: none; border: none;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+.section-label-more:hover { color: var(--accent2); }
+
+/* ARTICLE CARDS — editorial style */
+.editorial-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5px;
+  background: var(--border2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+.editorial-grid-right {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5px;
+  background: var(--border2);
+}
+
+.art-card {
+  background: var(--bg2);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.art-card:hover { background: var(--bg3); }
+
+.art-card-big { padding: 2rem; }
+
+.art-cat-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+}
+.badge-guide { background: rgba(232,184,75,0.15); color: var(--accent); }
+.badge-char { background: rgba(78,205,196,0.12); color: var(--teal); }
+.badge-meta { background: rgba(74,158,255,0.12); color: var(--blue); }
+.badge-podcast { background: rgba(224,82,82,0.12); color: var(--red); }
+
+.art-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.art-title-sm {
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+.art-desc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.art-desc-sm { -webkit-line-clamp: 2; margin-bottom: 0.6rem; }
+.art-meta {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.7rem;
+  color: var(--text3);
+}
+.art-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--text3); }
+
+/* Decorative number */
+.art-card-big::after {
+  content: '01';
+  position: absolute; bottom: 1.5rem; right: 2rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  color: rgba(232,184,75,0.04);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* VIDEO SECTION */
+.video-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.vid-card {
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+.vid-card:hover { transform: translateY(-4px); }
+
+.vid-thumb {
+  aspect-ratio: 9/16;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.6rem;
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+}
+.vid-thumb-bg {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.vid-play {
+  width: 38px; height: 38px;
+  background: rgba(232,184,75,0.9);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--bg);
+  font-size: 14px;
+  transition: all 0.2s;
+  position: relative; z-index: 2;
+}
+.vid-card:hover .vid-play { transform: scale(1.15); background: var(--accent2); }
+
+.vid-tag-pill {
+  position: absolute; top: 8px; left: 8px;
+  background: rgba(10,12,15,0.85);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.vid-title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+.vid-date { font-size: 0.68rem; color: var(--text3); }
+
+/* COMMUNITY STRIP */
+.community-strip {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.community-strip::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(232,184,75,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.community-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.community-text p { font-size: 0.82rem; color: var(--text2); }
+.community-stats { display: flex; gap: 2.5rem; }
+.comm-stat { text-align: center; }
+.comm-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1;
+}
+.comm-stat-label { font-size: 0.7rem; color: var(--text3); margin-top: 0.2rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.community-actions { display: flex; gap: 0.75rem; flex-shrink: 0; }
+
+/* ════════════════════════
+   ARTICLES PAGE
+════════════════════════ */
+.page-hero {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border2);
+  padding: 2.5rem 2rem;
+}
+.page-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; align-items: flex-end; justify-content: space-between;
+}
+.page-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.page-hero h1 span { color: var(--accent); }
+.page-hero-meta { font-size: 0.8rem; color: var(--text3); }
+
+/* Filter */
+.filter-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.25rem 2rem;
+  display: flex; gap: 0.5rem; flex-wrap: wrap;
+  border-bottom: 1px solid var(--border2);
+}
+.f-btn {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.f-btn:hover { border-color: var(--accent); color: var(--accent); }
+.f-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+/* Articles list — newspaper style */
+.articles-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2rem;
+}
+
+.articles-main {}
+.articles-sidebar {}
+
+.art-list-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border2);
+  cursor: pointer;
+  transition: all 0.2s;
+  align-items: start;
+}
+.art-list-item:hover .art-list-title { color: var(--accent); }
+.art-list-item:first-child { padding-top: 0; }
+
+.art-list-cat { margin-bottom: 0.5rem; }
+.art-list-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+.art-list-desc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.65;
+  margin-bottom: 0.6rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.art-list-meta { font-size: 0.7rem; color: var(--text3); display: flex; align-items: center; gap: 0.5rem; }
+.art-list-thumb {
+  width: 110px; height: 80px;
+  background: var(--bg3);
+  border-radius: 6px;
+  border: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+/* Sidebar */
+.sidebar-section {
+  margin-bottom: 2rem;
+}
+.sidebar-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  color: var(--text3);
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border2);
+  margin-bottom: 1rem;
+}
+.sidebar-item {
+  display: flex; gap: 0.75rem; align-items: start;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--border2);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.sidebar-item:hover .sidebar-item-title { color: var(--accent); }
+.sidebar-item-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  color: var(--text3);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 20px;
+}
+.sidebar-item-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text2);
+  line-height: 1.4;
+  transition: color 0.2s;
+}
+.sidebar-item-date { font-size: 0.68rem; color: var(--text3); margin-top: 0.2rem; }
+
+/* ════════════════════════
+   VIDEOS PAGE
+════════════════════════ */
+.videos-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.videos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+}
+
+/* ════════════════════════
+   ARTICLE DETAIL PAGE
+════════════════════════ */
+.article-detail {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.article-detail-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border2);
+}
+.article-detail-cat { margin-bottom: 1rem; }
+.article-detail-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+.article-detail-lead {
+  font-size: 1rem;
+  color: var(--text2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+.article-detail-meta {
+  display: flex; align-items: center; gap: 1rem;
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+
+.article-body { font-size: 0.92rem; line-height: 1.8; color: var(--text2); }
+.article-body h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin: 2.5rem 0 1rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent);
+}
+.article-body p { margin-bottom: 1.25rem; }
+.article-body strong { color: var(--text); font-weight: 600; }
+
+.video-embed-block {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  display: flex; align-items: center; gap: 1.5rem;
+}
+.video-embed-preview {
+  width: 80px; height: 120px;
+  background: var(--bg3);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  border: 1px solid var(--border2);
+}
+.video-embed-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.video-embed-info p { font-size: 0.8rem; color: var(--text2); margin: 0; }
+.video-embed-btn {
+  margin-top: 0.75rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* LINKS PAGE */
+.links-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+.links-profile {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.links-avatar {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--accent), var(--teal));
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: 0 auto 1rem;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.75rem;
+}
+.links-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+.links-bio { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
+
+.link-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.link-card:hover { border-color: var(--accent); transform: translateX(4px); }
+.link-card-icon {
+  width: 42px; height: 42px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.link-card-text { flex: 1; }
+.link-card-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+.link-card-desc { font-size: 0.75rem; color: var(--text3); margin-top: 0.15rem; }
+.link-card-arrow { color: var(--text3); font-size: 0.9rem; }
+
+/* MODAL */
+.modal-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  align-items: center; justify-content: center;
+}
+.modal-overlay.open { display: flex; animation: fadeIn 0.2s ease; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+.modal-box {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  width: 90%; max-width: 420px;
+  overflow: hidden;
+  animation: modalUp 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+@keyframes modalUp { from { opacity:0; transform:scale(0.9) translateY(30px); } to { opacity:1; transform:scale(1) translateY(0); } }
+
+.modal-head {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.modal-head-title { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.modal-close { background: none; border: none; color: var(--text2); cursor: pointer; font-size: 1.1rem; transition: color 0.2s; }
+.modal-close:hover { color: var(--text); }
+.modal-body-embed {
+  aspect-ratio: 9/16;
+  background: var(--bg3);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: var(--text3); gap: 0.5rem; font-size: 0.8rem;
+}
+.modal-body-embed .embed-icon { font-size: 2.5rem; }
+.modal-footer { padding: 1rem 1.25rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.modal-tag-pill {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; max-height: none; }
+  .hero-right { height: 250px; }
+  .cat-strip { grid-template-columns: repeat(2, 1fr); }
+  .editorial-grid { grid-template-columns: 1fr; }
+  .editorial-grid-right { grid-template-rows: auto; }
+  .video-row, .videos-grid { grid-template-columns: repeat(3, 1fr); }
+  .articles-layout { grid-template-columns: 1fr; }
+  .articles-sidebar { display: none; }
+  .community-strip { flex-direction: column; text-align: center; }
+}
+
+/* Thumb colors */
+.t1 { background: linear-gradient(160deg,#1a2e1a,#0d1a0d); }
+.t2 { background: linear-gradient(160deg,#2e1a0d,#1a0d05); }
+.t3 { background: linear-gradient(160deg,#0d1a2e,#050d1a); }
+.t4 { background: linear-gradient(160deg,#2e0d1a,#1a0509); }
+.t5 { background: linear-gradient(160deg,#1a1a2e,#0d0d1a); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">
+    <div class="nav-logo-icon">⚔</div>
+    <div class="nav-logo-text">Yến Vân <span>Guide</span></div>
+  </div>
+  <div class="nav-links">
+    <button class="nav-btn active" id="nav-home" onclick="showPage('home')">Trang chủ</button>
+    <button class="nav-btn" id="nav-articles" onclick="showPage('articles')">Bài viết</button>
+    <button class="nav-btn" id="nav-videos" onclick="showPage('videos')">Video</button>
+    <button class="nav-btn" id="nav-links" onclick="showPage('links')">Liên kết</button>
+    <button class="nav-btn nav-discord" onclick="showPage('links')">💬 Discord</button>
+  </div>
+</nav>
+
+<!-- ══ HOME ══ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <span class="hero-tag">Game Guide</span>
+        <div class="hero-eyebrow-line"></div>
+      </div>
+      <h1 class="hero-title">
+        Where<br>Winds<br><span class="accent">Meet</span>
+      </h1>
+      <p class="hero-desc">Kho hướng dẫn tiếng Việt toàn diện — từ thực chiến đến phân tích nhân vật, cập nhật liên tục theo meta.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">8.6K</div>
+          <div class="hero-stat-label">TikTok Followers</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2K</div>
+          <div class="hero-stat-label">Discord Members</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">42+</div>
+          <div class="hero-stat-label">Bài hướng dẫn</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('articles')">Đọc bài viết</button>
+        <button class="btn-ghost" onclick="showPage('videos')">Xem video</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-right-bg"></div>
+      <div class="hero-right-grid"></div>
+      <div class="hero-right-glow"></div>
+      <div class="hero-featured-card" onclick="showPage('articles')">
+        <div class="hero-featured-label">📌 Bài nổi bật</div>
+        <div class="hero-featured-title">Tier List Nhân Vật Mùa 2 — Xếp hạng toàn bộ sau Patch 2.3</div>
+        <div class="hero-featured-meta">Đánh giá · 10/03/2026 · 8 phút đọc</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY STRIP -->
+  <div class="cat-strip">
+    <div class="cat-item" onclick="showPage('articles')">
+      <div class="cat-icon" style="background:rgba(232,184,75,0.1)">⚔️</div>
+      <div>
+        <div class="cat-name">Hướng dẫn</div>
+        <div class="cat-count">8 bài viết</div>
+      </div>
+    </div>
+    <div class="cat-item" onclick="showPage('articles')">
+      <div class="cat-icon" style="background:rgba(78,205,196,0.1)">👤</div>
+      <div>
+        <div class="cat-name">Nhân vật</div>
+        <div class="cat-count">8 phân tích</div>
+      </div>
+    </div>
+    <div class="cat-item" onclick="showPage('videos')">
+      <div class="cat-icon" style="background:rgba(74,158,255,0.1)">🎬</div>
+      <div>
+        <div class="cat-name">Video</div>
+        <div class="cat-count">20 video TikTok</div>
+      </div>
+    </div>
+    <div class="cat-item" onclick="showPage('articles')">
+      <div class="cat-icon" style="background:rgba(224,82,82,0.1)">🎙️</div>
+      <div>
+        <div class="cat-name">Podcast</div>
+        <div class="cat-count">4 tập tin tức</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+
+    <!-- FEATURED ARTICLES -->
+    <div class="section-label">
+      <span class="section-label-text">Bài viết <span class="section-label-accent">nổi bật</span></span>
+      <div class="section-label-line"></div>
+      <button class="section-label-more" onclick="showPage('articles')">Xem tất cả →</button>
+    </div>
+
+    <div class="editorial-grid">
+      <!-- Big card -->
+      <div class="art-card art-card-big" onclick="showPage('article-detail')">
+        <div class="art-cat-badge badge-char">👤 Nhân vật</div>
+        <div class="art-title">Phân tích Doanh Doanh — Cơ chế, Lên đồ và Combo tối ưu</div>
+        <div class="art-desc">Doanh Doanh là nhân vật hỗ trợ linh hoạt nhất trong meta hiện tại. Bài viết phân tích sâu về bộ kỹ năng, cách lên đồ theo từng playstyle và các combo quan trọng khi đấu nhóm.</div>
+        <div class="art-meta">
+          <span>20/02/2026</span>
+          <div class="art-meta-dot"></div>
+          <span>12 phút đọc</span>
+          <div class="art-meta-dot"></div>
+          <span>1.853 lượt xem</span>
+        </div>
+      </div>
+      <!-- Right stack -->
+      <div class="editorial-grid-right">
+        <div class="art-card" onclick="showPage('articles')">
+          <div class="art-cat-badge badge-guide">⚔️ Hướng dẫn</div>
+          <div class="art-title art-title-sm">Quách Hân — Quỷ Thần Sầu: Hướng dẫn boss phần 5</div>
+          <div class="art-desc art-desc-sm">Chiến thuật solo boss Quỷ Thần Sầu với Quách Hân, bao gồm timing né skill và phase 2.</div>
+          <div class="art-meta">
+            <span>07/03/2026</span><div class="art-meta-dot"></div><span>6 phút đọc</span>
+          </div>
+        </div>
+        <div class="art-card" onclick="showPage('articles')">
+          <div class="art-cat-badge badge-podcast">🎙️ Podcast</div>
+          <div class="art-title art-title-sm">Tin tức ngày 13/03 — Tổng hợp update tuần này</div>
+          <div class="art-desc art-desc-sm">Tóm tắt toàn bộ thông báo chính thức, buff/nerf nhân vật và sự kiện sắp diễn ra.</div>
+          <div class="art-meta">
+            <span>13/03/2026</span><div class="art-meta-dot"></div><span>4 phút đọc</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LATEST VIDEOS -->
+    <div class="section-label">
+      <span class="section-label-text">Video <span class="section-label-accent">mới nhất</span></span>
+      <div class="section-label-line"></div>
+      <button class="section-label-more" onclick="showPage('videos')">Xem tất cả →</button>
+    </div>
+
+    <div class="video-row" id="home-video-row"></div>
+
+    <!-- COMMUNITY -->
+    <div class="community-strip">
+      <div class="community-text">
+        <h3>Tham gia cộng đồng</h3>
+        <p>Hỏi đáp, chia sẻ build, cập nhật meta nhanh nhất</p>
+      </div>
+      <div class="community-stats">
+        <div class="comm-stat">
+          <div class="comm-stat-num">8.6K</div>
+          <div class="comm-stat-label">TikTok</div>
+        </div>
+        <div class="comm-stat">
+          <div class="comm-stat-num">2K</div>
+          <div class="comm-stat-label">Discord</div>
+        </div>
+      </div>
+      <div class="community-actions">
+        <button class="btn-primary">💬 Vào Discord</button>
+        <button class="btn-ghost">🎵 TikTok</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ ARTICLES ══ -->
+<div id="page-articles" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <h1>Bài <span>Viết</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Hướng dẫn · Phân tích · Podcast · Tin tức</p>
+      </div>
+      <div class="page-hero-meta">20 bài · Cập nhật 13/03/2026</div>
+    </div>
+  </div>
+  <div class="filter-wrap" id="art-filter"></div>
+  <div class="articles-layout">
+    <div class="articles-main" id="art-main"></div>
+    <div class="articles-sidebar">
+      <div class="sidebar-section">
+        <div class="sidebar-title">Video liên quan</div>
+        <div id="sidebar-videos"></div>
+      </div>
+      <div class="sidebar-section">
+        <div class="sidebar-title">Bài đọc nhiều</div>
+        <div id="sidebar-popular"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ARTICLE DETAIL ══ -->
+<div id="page-article-detail" class="page">
+  <div class="article-detail">
+    <div class="article-detail-header">
+      <div class="article-detail-cat"><span class="art-cat-badge badge-char">👤 Nhân vật</span></div>
+      <h1 class="article-detail-title">Phân tích Doanh Doanh — Cơ chế, Lên đồ và Combo tối ưu</h1>
+      <p class="article-detail-lead">Doanh Doanh là nhân vật hỗ trợ linh hoạt nhất trong meta hiện tại. Bài viết phân tích sâu về bộ kỹ năng, cách lên đồ theo từng playstyle và các combo quan trọng khi đấu nhóm.</p>
+      <div class="article-detail-meta">
+        <span>20/02/2026</span>
+        <span>·</span>
+        <span>12 phút đọc</span>
+        <span>·</span>
+        <span>1.853 lượt xem</span>
+      </div>
+    </div>
+    <div class="article-body">
+      <h2>Tổng quan nhân vật</h2>
+      <p>Doanh Doanh thuộc hệ <strong>Mộc — Hỗ trợ</strong>, với khả năng hồi phục và buff đội nhóm liên tục. Điểm mạnh lớn nhất là tính linh hoạt — có thể chơi heal thuần, shield hay DPS hỗ trợ tùy theo nhu cầu đội hình.</p>
+      <p>Sau bản cập nhật 2.3, Doanh Doanh được điều chỉnh tăng 15% hiệu quả kỹ năng thụ động, đưa nhân vật này lên vị trí S-tier trong hầu hết nội dung PvE.</p>
+
+      <div class="video-embed-block">
+        <div class="video-embed-preview">▶</div>
+        <div class="video-embed-info">
+          <h4>Phân tích Doanh Doanh — Video chi tiết</h4>
+          <p>Xem video phân tích đầy đủ trên TikTok với các ví dụ thực chiến</p>
+          <button class="video-embed-btn" onclick="openModal('7608841751616359700','Phân tích Doanh Doanh','Nhân vật')">▶ Xem video</button>
+        </div>
+      </div>
+
+      <h2>Bộ kỹ năng</h2>
+      <p><strong>Kỹ năng thường:</strong> 5 đòn cơ bản, đòn thứ 3 và 5 kích hoạt hiệu ứng Mộc khí tích lũy buff cho đồng đội gần đó.</p>
+      <p><strong>Kỹ năng chiến đấu (E):</strong> Triệu hồi vùng hồi phục 6 giây, áp dụng debuff giảm giáp lên mục tiêu. Cooldown 12 giây.</p>
+      <p><strong>Chiêu cuối (R):</strong> Hồi máu toàn đội + barrier 8 giây. Đây là lý do chính Doanh Doanh được ưu tiên trong boss khó.</p>
+
+      <h2>Cách lên đồ</h2>
+      <p>Ưu tiên chỉ số theo thứ tự: <strong>Healing Bonus → HP% → Energy Recharge</strong>. Với bộ trang bị, ưu tiên set 4 món hệ Mộc để tối ưu thụ động nhân vật.</p>
+    </div>
+    <div style="margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border2)">
+      <button class="btn-ghost" onclick="showPage('articles')" style="font-size:0.75rem">← Quay lại bài viết</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ VIDEOS ══ -->
+<div id="page-videos" class="page">
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div>
+        <h1>Video <span>Hướng Dẫn</span></h1>
+        <p style="color:var(--text2);font-size:0.85rem;margin-top:0.4rem">Nhúng trực tiếp từ TikTok · 20 video</p>
+      </div>
+      <div class="page-hero-meta">Cập nhật 13/03/2026</div>
+    </div>
+  </div>
+  <div class="filter-wrap" id="vid-filter"></div>
+  <div class="videos-layout">
+    <div class="videos-grid" id="vid-grid"></div>
+  </div>
+</div>
+
+<!-- ══ LINKS ══ -->
+<div id="page-links" class="page">
+  <div class="links-page">
+    <div class="links-profile">
+      <div class="links-avatar">⚔</div>
+      <div class="links-name">Yến Vân Guide</div>
+      <div class="links-bio">Kênh hướng dẫn Where Winds Meet tiếng Việt<br>Gameplay · Phân tích nhân vật · Tin tức game</div>
+    </div>
+    <div id="links-list"></div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <div class="modal-head">
+      <span class="modal-head-title" id="modal-title">Video</span>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body-embed">
+      <div class="embed-icon">▶</div>
+      <span>TikTok video sẽ nhúng ở đây</span>
+      <span style="font-size:0.68rem;opacity:0.5">Prototype — embed thật khi deploy</span>
+    </div>
+    <div class="modal-footer" id="modal-tags"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──
+const videos = [
+  { id:"7616618393407393045", title:"[Podcast] Tin tức ngày 13-03-2026", tags:["Tổng hợp"], date:"2026-03-13", t:"t1" },
+  { id:"7616254329678269716", title:"[Podcast] Tin tức ngày 11-03-2026", tags:["Tổng hợp"], date:"2026-03-12", t:"t2" },
+  { id:"7614385877569195284", title:"[Hướng dẫn] Phần 05 — Quách Hân: Quỷ Thần Sầu", tags:["Hướng dẫn"], date:"2026-03-07", t:"t3" },
+  { id:"7614139728098577684", title:"[Hướng dẫn] Phần 04 — Vô Tướng Hoàng: Quỷ Thần Sầu", tags:["Hướng dẫn"], date:"2026-03-06", t:"t4" },
+  { id:"7613815704386538773", title:"[Podcast] Tin tức ngày 05-03-2026", tags:["Tổng hợp"], date:"2026-03-05", t:"t5" },
+  { id:"7613559823847524629", title:"[Hướng dẫn] Phần 03 — Trương Lý: Quỷ Thần Sầu", tags:["Hướng dẫn"], date:"2026-03-04", t:"t1" },
+  { id:"7612826745231827221", title:"[Phân tích] Vân Lôi — Nhân vật sấm sét", tags:["Nhân vật"], date:"2026-03-02", t:"t2" },
+  { id:"7611990844231827221", title:"[Hướng dẫn] Phần 02 — Khai thác địa hình boss", tags:["Hướng dẫn"], date:"2026-03-01", t:"t3" },
+  { id:"7610827341231456789", title:"[Phân tích] Bạch Lộ — Guide đầy đủ", tags:["Nhân vật"], date:"2026-02-27", t:"t4" },
+  { id:"7608841751616359700", title:"[Phân tích] Doanh Doanh — Combo & build", tags:["Nhân vật"], date:"2026-02-20", t:"t5" },
+];
+
+const articles = [
+  { id:"art-001", title:"Phân tích Doanh Doanh — Cơ chế, Lên đồ và Combo", cat:"Nhân vật", badge:"badge-char", icon:"👤", desc:"Phân tích sâu về bộ kỹ năng, cách lên đồ và combo tối ưu cho Doanh Doanh trong meta 2.3.", date:"20/02/2026", readtime:"12 phút", views:"1.853" },
+  { id:"art-002", title:"Hướng dẫn Boss Quỷ Thần Sầu — Toàn bộ Phase", cat:"Hướng dẫn", badge:"badge-guide", icon:"⚔️", desc:"Tổng hợp 5 phần hướng dẫn boss Quỷ Thần Sầu, từ cơ chế đến chiến thuật solo từng nhân vật.", date:"07/03/2026", readtime:"18 phút", views:"2.241" },
+  { id:"art-003", title:"Podcast Tin tức 13/03 — Tổng hợp tuần", cat:"Podcast", badge:"badge-podcast", icon:"🎙️", desc:"Tóm tắt toàn bộ thông báo chính thức từ nhà phát triển, buff nerf và sự kiện sắp tới.", date:"13/03/2026", readtime:"4 phút", views:"324" },
+  { id:"art-004", title:"Phân tích Vân Lôi — Sức mạnh thực sự sau Patch 2.3", cat:"Nhân vật", badge:"badge-char", icon:"👤", desc:"Vân Lôi được buff đáng kể, liệu đây có phải lúc pull nhân vật này? Đánh giá chi tiết.", date:"02/03/2026", readtime:"9 phút", views:"987" },
+  { id:"art-005", title:"Tier List Đội Hình PvE — Mùa 2 Update", cat:"Meta", badge:"badge-meta", icon:"🏆", desc:"Xếp hạng đội hình mạnh nhất cho nội dung PvE sau bản cập nhật mùa 2.", date:"15/03/2026", readtime:"7 phút", views:"1.120" },
+];
+
+const links = [
+  { name:"TikTok", desc:"8.600+ followers · Video mới mỗi ngày", icon:"🎵", color:"#010101", bg:"rgba(255,255,255,0.06)" },
+  { name:"Discord", desc:"2.000+ thành viên · Hỏi đáp thực chiến", icon:"💬", color:"#5865F2", bg:"rgba(88,101,242,0.12)" },
+  { name:"Facebook", desc:"Group cộng đồng game thủ Việt", icon:"👥", color:"#1877F2", bg:"rgba(24,119,242,0.1)" },
+  { name:"YouTube", desc:"Video dài, phân tích chi tiết", icon:"▶", color:"#FF0000", bg:"rgba(255,0,0,0.1)" },
+];
+
+// ── RENDER ──
+function renderVideoCard(v, showInGrid) {
+  return `<div class="vid-card" onclick="openModal('${v.id}','${v.title}','${v.tags.join(',')}')">
+    <div class="vid-thumb">
+      <div class="vid-thumb-bg ${v.t}" style="width:100%;height:100%"></div>
+      <div class="vid-tag-pill">${v.tags[0]}</div>
+      <div class="vid-play">▶</div>
+    </div>
+    <div class="vid-title">${v.title}</div>
+    <div class="vid-date">${v.date}</div>
+  </div>`;
+}
+
+function renderArticleListItem(a) {
+  return `<div class="art-list-item" onclick="showPage('article-detail')">
+    <div>
+      <div class="art-list-cat"><span class="art-cat-badge ${a.badge}">${a.icon} ${a.cat}</span></div>
+      <div class="art-list-title">${a.title}</div>
+      <div class="art-list-desc">${a.desc}</div>
+      <div class="art-list-meta"><span>${a.date}</span><span>·</span><span>${a.readtime} đọc</span><span>·</span><span>${a.views} lượt xem</span></div>
+    </div>
+    <div class="art-list-thumb">${a.icon}</div>
+  </div>`;
+}
+
+// Init
+document.getElementById('home-video-row').innerHTML = videos.slice(0,5).map(v=>renderVideoCard(v)).join('');
+
+// Articles page
+const artCats = ['Tất cả','Hướng dẫn','Nhân vật','Podcast','Meta'];
+document.getElementById('art-filter').innerHTML = artCats.map((c,i)=>
+  `<button class="f-btn ${i===0?'active':''}" onclick="filterArts('${c}',this)">${c}</button>`).join('');
+document.getElementById('art-main').innerHTML = articles.map(a=>renderArticleListItem(a)).join('');
+
+document.getElementById('sidebar-videos').innerHTML = videos.slice(0,3).map((v,i)=>`
+  <div class="sidebar-item" onclick="openModal('${v.id}','${v.title}','${v.tags[0]}')">
+    <div class="sidebar-item-num">0${i+1}</div>
+    <div><div class="sidebar-item-title">${v.title}</div><div class="sidebar-item-date">${v.date}</div></div>
+  </div>`).join('');
+
+document.getElementById('sidebar-popular').innerHTML = articles.slice(0,4).map((a,i)=>`
+  <div class="sidebar-item" onclick="showPage('article-detail')">
+    <div class="sidebar-item-num">0${i+1}</div>
+    <div><div class="sidebar-item-title">${a.title}</div><div class="sidebar-item-date">${a.views} lượt xem</div></div>
+  </div>`).join('');
+
+// Videos page
+const vidTags = ['Tất cả','Hướng dẫn','Nhân vật','Tổng hợp'];
+document.getElementById('vid-filter').innerHTML = vidTags.map((t,i)=>
+  `<button class="f-btn ${i===0?'active':''}" onclick="filterVids('${t}',this)">${t}</button>`).join('');
+document.getElementById('vid-grid').innerHTML = videos.map(v=>renderVideoCard(v)).join('');
+
+// Links
+document.getElementById('links-list').innerHTML = links.map(l=>`
+  <div class="link-card">
+    <div class="link-card-icon" style="background:${l.bg}">${l.icon}</div>
+    <div class="link-card-text">
+      <div class="link-card-name">${l.name}</div>
+      <div class="link-card-desc">${l.desc}</div>
+    </div>
+    <div class="link-card-arrow">→</div>
+  </div>`).join('');
+
+// Filter functions
+function filterArts(cat, btn) {
+  document.querySelectorAll('#art-filter .f-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = cat==='Tất cả' ? articles : articles.filter(a=>a.cat===cat);
+  document.getElementById('art-main').innerHTML = filtered.map(a=>renderArticleListItem(a)).join('');
+}
+
+function filterVids(tag, btn) {
+  document.querySelectorAll('#vid-filter .f-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const filtered = tag==='Tất cả' ? videos : videos.filter(v=>v.tags.includes(tag));
+  document.getElementById('vid-grid').innerHTML = filtered.map(v=>renderVideoCard(v)).join('');
+}
+
+// Navigation
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  const navBtn = document.getElementById('nav-'+name);
+  if(navBtn) navBtn.classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// Modal
+function openModal(id, title, tags) {
+  document.getElementById('modal-title').textContent = title;
+  document.getElementById('modal-tags').innerHTML = tags.split(',').map(t=>
+    `<span class="modal-tag-pill">${t}</span>`).join('');
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(e) { if(e.target===document.getElementById('modal')) closeModalDirect(); }
+function closeModalDirect() { document.getElementById('modal').classList.remove('open'); }
+</script>
+</body>
+</html>
