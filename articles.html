@@ -122,14 +122,14 @@
     </div>`
   ).join('');
 
-  // Sidebar: 4 bài đọc nhiều nhất
-  const popular = [...articles].sort((a, b) => Number(b.views) - Number(a.views));
+  // Sidebar: 4 bài mới nhất
+  const popular = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date));
   document.getElementById('sidebar-popular').innerHTML = popular.slice(0, 4).map((a, i) =>
     `<div class="sidebar-item" onclick="location.href='article.html?id=${a.id}'">
       <div class="sidebar-item-num">0${i + 1}</div>
       <div>
         <div class="sidebar-item-title">${escHtml(a.title)}</div>
-        <div class="sidebar-item-date">${formatViews(a.views)} lượt xem</div>
+        <div class="sidebar-item-date">${formatDate(a.date)}</div>
       </div>
     </div>`
   ).join('');

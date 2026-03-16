@@ -174,7 +174,7 @@
     document.getElementById('hero-featured').href = `article.html?id=${featured.id}`;
     document.getElementById('hero-featured-title').textContent = featured.title;
     document.getElementById('hero-featured-meta').textContent =
-      `${getCategoryBadge(featured.category).icon} ${featured.category} · ${formatDate(featured.date)} · ${featured.readtime} đọc`;
+      `${getCategoryBadge(featured.category).icon} ${featured.category} · ${formatDate(featured.date)}`;
   }
 
   // Category counts
@@ -202,10 +202,6 @@
       <div class="art-desc">${escHtml(a.description)}</div>
       <div class="art-meta">
         <span>${formatDate(a.date)}</span>
-        <div class="art-meta-dot"></div>
-        <span>${escHtml(a.readtime)} đọc</span>
-        <div class="art-meta-dot"></div>
-        <span>${formatViews(a.views)} lượt xem</span>
       </div>
     </a>`;
   }
@@ -223,8 +219,6 @@
       <div class="art-desc art-desc-sm">${escHtml(a.description)}</div>
       <div class="art-meta">
         <span>${formatDate(a.date)}</span>
-        <div class="art-meta-dot"></div>
-        <span>${escHtml(a.readtime)} đọc</span>
       </div>
     </a>`;
   }

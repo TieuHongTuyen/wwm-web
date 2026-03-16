@@ -137,11 +137,7 @@
   document.getElementById('art-title').textContent = article.title;
   document.getElementById('art-lead').textContent = article.description;
   document.getElementById('art-meta').innerHTML = `
-    <span>${formatDate(article.date)}</span>
-    <span>·</span>
-    <span>${escHtml(article.readtime)} đọc</span>
-    <span>·</span>
-    <span>${formatViews(article.views)} lượt xem</span>`;
+    <span>${formatDate(article.date)}</span>`;
 
   // Render body
   document.getElementById('art-body').innerHTML = marked.parse(bodyText);

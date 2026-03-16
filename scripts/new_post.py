@@ -95,8 +95,6 @@ def main():
         "file": f"posts/{slug}.md",
         "icon": icon_map.get(category, '📄'),
         "date": datetime.now().strftime("%Y-%m-%d"),
-        "readtime": "5 phút",
-        "views": "0",
         "pinned": False,
         "related_video_id": ""
     }

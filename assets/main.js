@@ -79,10 +79,6 @@ function renderArtListItem(a) {
       <div class="art-list-desc">${escHtml(a.description)}</div>
       <div class="art-list-meta">
         <span>${formatDate(a.date)}</span>
-        <span>·</span>
-        <span>${escHtml(a.readtime)} đọc</span>
-        <span>·</span>
-        <span>${formatViews(a.views)} lượt xem</span>
       </div>
     </div>
     <div class="art-list-thumb" style="background: url('${thumbUrl}') center/cover no-repeat;color:transparent;font-size:0;">${a.icon}</div>
