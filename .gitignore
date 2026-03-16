@@ -2,8 +2,7 @@
 danh-sach-video.txt
 export-tiktok-videos.csv
 
-# Ảnh media (lưu ngoài CDN, không vào repo theo CONTEXT.md quy tắc #8)
-assets/hero_bg.png
+# Ảnh thumbnails tải về cục bộ (không cần vào repo)
 assets/thumbnails/
 
 # Python cache
