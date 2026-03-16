@@ -33,7 +33,9 @@
 5. Thêm bài viết = tạo file .md trong posts/ + thêm 1 dòng vào data/articles.json.
 6. Mỗi trang HTML độc lập. Hỏng 1 trang không ảnh hưởng trang khác.
 7. KHÔNG dùng localStorage, sessionStorage, hay bất kỳ browser storage nào.
-8. Ảnh media lớn (banner, cover art) lưu trong assets/. Thumbnail video lấy URL từ CDN TikTok.
+8. Ảnh bài viết lưu trong assets/images/[slug]/ — mỗi bài một thư mục riêng tên trùng slug.
+   Thumbnail video lấy URL từ CDN TikTok qua Oembed API (không lưu local).
+   KHÔNG upload ảnh lên CDN ngoài — lưu thẳng vào repo GitHub.
 9. Markdown (.md) là định dạng bài viết. KHÔNG dùng .docx hay .txt.
 ```
 
@@ -66,7 +68,12 @@ wwm-guide/
 └── assets/
     ├── style.css           ← CSS chung (variables, nav, footer)
     ├── main.js             ← JS chung (render helpers, modal)
-    └── hero_bg.png         ← Ảnh nền khu vực hero trang chủ (AI-generated)
+    ├── hero_bg.png         ← Ảnh nền hero trang chủ (AI-generated)
+    └── images/             ← Ảnh bài viết, mỗi bài 1 thư mục tên = slug
+        └── [slug]/
+            ├── 01-cover.jpg
+            ├── 02-[mo-ta].jpg
+            └── 03-[mo-ta].jpg
 ```
 
 ### File chỉ dùng local, KHÔNG commit lên GitHub
@@ -314,9 +321,120 @@ Tiếp tục nội dung...
 - `##` — mục lớn (render với border-left 3px vàng)
 - KHÔNG dùng HTML trong file .md
 
+### Chèn ảnh trong Markdown
+
+Đường dẫn ảnh dùng đường dẫn tương đối từ gốc repo:
+```markdown
+![Mô tả ảnh](assets/images/phan-tich-doanh-doanh/01-cover.jpg)
+```
+
+Ảnh đầu tiên của bài luôn đặt tên `01-cover.jpg`.
+
 ---
 
-## 9. Quy trình deploy
+## 9. Quy ước đặt tên slug và ảnh
+
+### Slug là gì?
+
+Slug là chuỗi định danh duy nhất của mỗi bài viết.
+Quy tắc: chữ thường, dấu gạch ngang, không dấu tiếng Việt.
+
+**Quy tắc vàng: 1 bài = 1 slug = 1 thư mục ảnh**
+
+```
+posts/[slug].md                    ← file bài viết
+assets/images/[slug]/              ← thư mục ảnh của bài
+data/articles.json → "file": "posts/[slug].md"
+```
+
+Chỉ cần nhớ slug, suy ra được vị trí mọi file liên quan.
+
+---
+
+### Bảng slug theo loại bài
+
+| Loại bài | Công thức | Ví dụ |
+|---|---|---|
+| Phân tích nhân vật | `phan-tich-[ten]` | `phan-tich-doanh-doanh` |
+| Hướng dẫn boss | `huong-dan-boss-[ten]` | `huong-dan-boss-quy-than-sau` |
+| Hướng dẫn chuỗi | `huong-dan-[chu-de]-phan-[so]` | `huong-dan-quy-than-sau-phan-1` |
+| Podcast tin tức | `podcast-[ngay]-[thang]-[nam]` | `podcast-13-03-2026` |
+| Tier list / meta | `tier-list-[chu-de]-mua-[so]` | `tier-list-nhan-vat-mua-2` |
+
+---
+
+### Quy tắc đặt tên ảnh
+
+```
+[số thứ tự 2 chữ số]-[mô tả ngắn].jpg
+
+01-cover.jpg          ← ảnh đầu tiên luôn là cover
+02-ky-nang-e.jpg
+03-combo-pvp.jpg
+04-len-do.jpg
+```
+
+- Số thứ tự 2 chữ số để GitHub sort đúng thứ tự
+- Mô tả: chữ thường, gạch ngang, không dấu
+- Định dạng: `.jpg` — nén tốt nhất cho ảnh game
+- Kích thước: dưới 500KB mỗi ảnh
+
+---
+
+### Ví dụ đầy đủ
+
+Slug: `phan-tich-doanh-doanh`
+
+```
+posts/phan-tich-doanh-doanh.md
+
+assets/images/phan-tich-doanh-doanh/
+├── 01-cover.jpg
+├── 02-tong-quan.jpg
+├── 03-ky-nang-e.jpg
+└── 04-len-do.jpg
+```
+
+Trong `articles.json`:
+```json
+"file": "posts/phan-tich-doanh-doanh.md"
+```
+
+Trong file `.md`:
+```markdown
+![Doanh Doanh](assets/images/phan-tich-doanh-doanh/01-cover.jpg)
+
+## Tổng quan nhân vật
+
+![Tổng quan](assets/images/phan-tich-doanh-doanh/02-tong-quan.jpg)
+```
+
+---
+
+### Workflow thêm bài mới
+
+```
+1. Đặt slug
+   ví dụ: phan-tich-van-loi
+
+2. Tạo thư mục ảnh
+   assets/images/phan-tich-van-loi/
+   Upload ảnh: 01-cover.jpg, 02-...
+
+3. Viết bài Markdown
+   Lưu: posts/phan-tich-van-loi.md
+   Chèn ảnh bằng đường dẫn chuẩn
+
+4. Cập nhật articles.json
+   Thêm entry mới với "file": "posts/phan-tich-van-loi.md"
+
+5. git add -A && git commit && git push
+   → Cloudflare tự deploy
+```
+
+---
+
+## 10. Quy trình deploy
 
 ```
 1. Chỉnh sửa file (HTML / CSS / JS / JSON / MD)
@@ -330,7 +448,7 @@ Tiếp tục nội dung...
 
 ---
 
-## 10. Tham chiếu thiết kế
+## 11. Tham chiếu thiết kế
 
 File `wwm-guide-v2.html` là **prototype đã được duyệt về thiết kế**.
 - Giữ nguyên toàn bộ CSS variables, font, màu sắc

@@ -190,8 +190,13 @@
   const small2 = sortedArts[2];
 
   function bigCardHtml(a) {
+    if(!a) return '';
     const badge = getCategoryBadge(a.category);
+    const slug = a.file.replace('posts/', '').replace('.md', '');
+    const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+
     return `<a class="art-card art-card-big" href="article.html?id=${a.id}">
+      <div style="background: url('${thumbUrl}') center/cover no-repeat; height: 200px; margin: -2rem -2rem 1.5rem -2rem; border-bottom: 1px solid var(--border2);"></div>
       <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
       <div class="art-title">${escHtml(a.title)}</div>
       <div class="art-desc">${escHtml(a.description)}</div>
@@ -206,8 +211,13 @@
   }
 
   function smallCardHtml(a) {
+    if(!a) return '';
     const badge = getCategoryBadge(a.category);
+    const slug = a.file.replace('posts/', '').replace('.md', '');
+    const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+
     return `<a class="art-card" href="article.html?id=${a.id}">
+      <div style="background: url('${thumbUrl}') center/cover no-repeat; height: 120px; margin: -1.5rem -1.5rem 1rem -1.5rem; border-bottom: 1px solid var(--border2);"></div>
       <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
       <div class="art-title art-title-sm">${escHtml(a.title)}</div>
       <div class="art-desc art-desc-sm">${escHtml(a.description)}</div>

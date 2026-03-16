@@ -1,5 +1,7 @@
 # Phân tích Doanh Doanh — Cơ chế, Lên đồ và Combo tối ưu
 
+![Doanh Doanh](assets/images/phan-tich-doanh-doanh/01-cover.jpg)
+
 Doanh Doanh là nhân vật hỗ trợ linh hoạt nhất trong meta hiện tại. Bài viết phân tích sâu về bộ kỹ năng, cách lên đồ theo từng playstyle và các combo quan trọng khi đấu nhóm.
 
 ## Tổng quan nhân vật

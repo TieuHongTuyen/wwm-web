@@ -68,6 +68,10 @@ function renderVideoCard(v, idx = 0) {
  */
 function renderArtListItem(a) {
   const badge = getCategoryBadge(a.category);
+  // Lấy slug từ a.file (vd: "posts/phan-tich-doanh-doanh.md" -> "phan-tich-doanh-doanh")
+  const slug = a.file.replace('posts/', '').replace('.md', '');
+  const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+
   return `<div class="art-list-item" onclick="location.href='article.html?id=${a.id}'">
     <div>
       <div class="art-list-cat"><span class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</span></div>
@@ -81,7 +85,7 @@ function renderArtListItem(a) {
         <span>${formatViews(a.views)} lượt xem</span>
       </div>
     </div>
-    <div class="art-list-thumb">${a.icon}</div>
+    <div class="art-list-thumb" style="background: url('${thumbUrl}') center/cover no-repeat;color:transparent;font-size:0;">${a.icon}</div>
   </div>`;
 }
 

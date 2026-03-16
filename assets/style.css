@@ -678,6 +678,14 @@ nav {
   color: var(--text); margin: 1.5rem 0 0.75rem;
 }
 .article-body p { margin-bottom: 1.25rem; }
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+}
 .article-body strong { color: var(--text); font-weight: 600; }
 .article-body ul, .article-body ol {
   margin: 0 0 1.25rem 1.5rem;
