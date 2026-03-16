@@ -9,9 +9,9 @@
     "order": 1
   },
   {
-    "name": "Discord",
-    "description": "2.000+ thành viên · Hỏi đáp thực chiến",
-    "url": "https://discord.gg/INVITE_CODE",
+    "name": "Discord — SangTacViet",
+    "description": "Server Discord của team SangTacViet · 2.000+ thành viên · Nơi hỏi đáp, chia sẻ thực chiến và cập nhật tin tức game",
+    "url": "https://discord.com/invite/CzfJeDdvtt",
     "icon": "💬",
     "color": "#5865F2",
     "bg": "rgba(88,101,242,0.12)",
@@ -28,11 +28,20 @@
   },
   {
     "name": "YouTube",
-    "description": "Video dài · Phân tích chi tiết",
-    "url": "https://youtube.com/@TEN_KENH",
+    "description": "Video dài · Phân tích chi tiết · Subscribe để không bỏ lỡ nội dung mới",
+    "url": "https://www.youtube.com/@TieuHongTuyen",
     "icon": "▶",
     "color": "#FF0000",
     "bg": "rgba(255,0,0,0.1)",
     "order": 4
+  },
+  {
+    "name": "WWM Map",
+    "description": "Bộ công cụ tương tác hàng đầu cho Where Winds Meet · Bản đồ WebGL 12,000+ điểm đánh dấu, hướng dẫn nhiệm vụ, bản Việt hóa, tra đáp án câu đố — hoàn toàn miễn phí",
+    "url": "https://wwmmap.pages.dev/",
+    "icon": "🗺️",
+    "color": "#4ecdc4",
+    "bg": "rgba(78,205,196,0.1)",
+    "order": 5
   }
 ]
