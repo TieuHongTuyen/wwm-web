@@ -192,7 +192,7 @@ function buildNav(activePage) {
     { id: 'videos',   href: 'videos.html',   label: 'Video' },
     { id: 'links',    href: 'links.html',    label: 'Liên kết' },
   ];
-  return `<nav>
+  return `<nav id="main-nav">
     <a class="nav-logo" href="index.html">
       <div class="nav-logo-icon">⚔</div>
       <div class="nav-logo-text">Yến Vân <span>Guide</span></div>
@@ -200,6 +200,11 @@ function buildNav(activePage) {
     <div class="nav-links">
       ${pages.map(p => `<a class="nav-btn ${p.id === activePage ? 'active' : ''}" href="${p.href}">${p.label}</a>`).join('')}
       <a class="nav-btn nav-discord" href="links.html">💬 Discord</a>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('main-nav').classList.toggle('open')" aria-label="Menu">☰</button>
+    <div class="nav-mobile-menu">
+      ${pages.map(p => `<a class="nav-mobile-item ${p.id === activePage ? 'active' : ''}" href="${p.href}" onclick="document.getElementById('main-nav').classList.remove('open')">${p.label}</a>`).join('')}
+      <a class="nav-mobile-item" href="links.html" onclick="document.getElementById('main-nav').classList.remove('open')">💬 Discord</a>
     </div>
   </nav>`;
 }

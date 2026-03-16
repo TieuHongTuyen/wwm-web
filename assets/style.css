@@ -70,6 +70,7 @@ nav {
 .nav-logo-text span { color: var(--accent); }
 
 .nav-links { display: flex; gap: 0.25rem; align-items: center; }
+.nav-hamburger, .nav-mobile-menu { display: none; }
 .nav-btn {
   background: none; border: none;
   font-family: 'Be Vietnam Pro', sans-serif;
@@ -860,4 +861,73 @@ footer a:hover { color: var(--accent2); }
   .content-wrap { padding: 2rem 1rem; }
   .video-row, .videos-grid { grid-template-columns: repeat(2, 1fr); }
   .cat-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ════════════════════════
+   MOBILE ≤ 768px
+════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Nav: ẩn links desktop, hiện hamburger ── */
+  .nav-links { display: none; }
+
+  .nav-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--text);
+    padding: 0.4rem;
+    margin-left: auto;
+  }
+
+  /* Dropdown menu — ẩn mặc định */
+  .nav-mobile-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border2);
+    z-index: 999;
+    flex-direction: column;
+  }
+
+  /* Khi nav có class .open → hiện dropdown */
+  #main-nav.open .nav-mobile-menu {
+    display: flex;
+  }
+
+  .nav-mobile-item {
+    display: block;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: var(--text2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border2);
+    transition: color 0.2s, background 0.2s;
+  }
+  .nav-mobile-item:last-child { border-bottom: none; }
+  .nav-mobile-item:hover,
+  .nav-mobile-item.active { color: var(--accent); background: rgba(232,184,75,0.05); }
+
+  /* ── Hero: 1 cột, ẩn cột phải ── */
+  .hero {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+  .hero-right { display: none; }
+  .hero-left {
+    padding: 2.5rem 1.5rem;
+  }
+  .hero-title {
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+  }
+  .hero-stats {
+    margin-bottom: 1.5rem;
+  }
 }
