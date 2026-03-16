@@ -411,26 +411,26 @@ Trong file `.md`:
 
 ---
 
-### Workflow thêm bài mới
+### Workflow thêm bài mới (Tự động hóa)
 
+Chỉ cần chạy lệnh Python, không cần tạo file hay thư mục bằng tay:
+
+```bash
+# Cú pháp: python scripts/new_post.py "Tiêu đề" "Danh mục"
+python scripts/new_post.py "Phân tích kĩ năng Doanh Doanh" "Nhân vật"
 ```
-1. Đặt slug
-   ví dụ: phan-tich-van-loi
 
-2. Tạo thư mục ảnh
-   assets/images/phan-tich-van-loi/
-   Upload ảnh: 01-cover.jpg, 02-...
+**Script tự động làm 4 việc trong 1 giây:**
+1. Tạo slug chuẩn: `phan-tich-ki-nang-doanh-doanh`
+2. Tạo thư mục ảnh: `assets/images/phan-tich-ki-nang-doanh-doanh/`
+3. Tạo phôi Markdown: `posts/phan-tich-ki-nang-doanh-doanh.md` (có sẵn `![Cover]`)
+4. Khởi tạo thẻ bài viết mới tại `data/articles.json` (Ngày tháng hiện tại, ID tự động)
 
-3. Viết bài Markdown
-   Lưu: posts/phan-tich-van-loi.md
-   Chèn ảnh bằng đường dẫn chuẩn
-
-4. Cập nhật articles.json
-   Thêm entry mới với "file": "posts/phan-tich-van-loi.md"
-
-5. git add -A && git commit && git push
-   → Cloudflare tự deploy
-```
+**Việc của bạn:**
+1. Thả ảnh vào thư mục vừa sinh (đổi tên ảnh bìa thành `01-cover.jpg`)
+2. Mở file `.md` viết nội dung chuẩn
+3. Vô `articles.json` sửa lại dòng `"description"` và `"related_video_id"` (nếu có)
+4. `git add -A && git commit -m "bai moi" && git push`
 
 ---
 
