@@ -11,9 +11,9 @@
 | **Tên web** | Yến Vân Guide |
 | **Game** | Where Winds Meet (Yến Vân Thập Lục Thanh) |
 | **Ngôn ngữ** | Tiếng Việt hoàn toàn |
-| **Mục đích** | Web hướng dẫn game chuyên nghiệp — bài viết dạng trang tin tức + video nhúng TikTok/YouTube |
+| **Mục đích** | Web hướng dẫn game chuyên nghiệp — bài viết dạng trang tin tức + video nhúng TikTok |
 | **Hosting** | Cloudflare Pages (miễn phí, tự động deploy từ GitHub) |
-| **Repo** | GitHub — file tĩnh, không backend |
+| **Repo** | https://github.com/TieuHongTuyen/wwm-web |
 
 ### Kênh & cộng đồng
 - TikTok: ~8.600 followers, username `@tiu.hng.tuyn`
@@ -33,7 +33,7 @@
 5. Thêm bài viết = tạo file .md trong posts/ + thêm 1 dòng vào data/articles.json.
 6. Mỗi trang HTML độc lập. Hỏng 1 trang không ảnh hưởng trang khác.
 7. KHÔNG dùng localStorage, sessionStorage, hay bất kỳ browser storage nào.
-8. Ảnh/icon dùng emoji hoặc CDN. KHÔNG upload file media vào repo.
+8. Ảnh media lớn (banner, cover art) lưu trong assets/. Thumbnail video lấy URL từ CDN TikTok.
 9. Markdown (.md) là định dạng bài viết. KHÔNG dùng .docx hay .txt.
 ```
 
@@ -46,40 +46,72 @@ wwm-guide/
 │
 ├── index.html              ← Trang chủ
 ├── articles.html           ← Danh sách bài viết
-├── article.html            ← Trang đọc bài (dùng chung cho mọi bài, nhận ?id=)
-├── videos.html             ← Danh sách video
+├── article.html            ← Trang đọc bài (dùng chung, nhận ?id=)
+├── videos.html             ← Danh sách video (Load More pagination)
 ├── links.html              ← Trang liên kết
+├── .gitignore              ← Loại bỏ file tạm và CSV local
+│
+├── scripts/                ← Script Python cập nhật dữ liệu
+│   ├── csv_to_videos_json.py  ← Import từ file CSV analytics TikTok (tối đa 20 video)
+│   └── txt_to_videos_json.py  ← Import từ file danh-sach-video.txt (không giới hạn)
 │
 ├── posts/                  ← Bài viết dạng Markdown
 │   └── [ten-bai].md
 │
 ├── data/
-│   ├── videos.json         ← Metadata video TikTok
+│   ├── videos.json         ← Metadata video TikTok (228+ video)
 │   ├── articles.json       ← Metadata bài viết
 │   └── links.json          ← Liên kết mạng xã hội
 │
 └── assets/
     ├── style.css           ← CSS chung (variables, nav, footer)
-    └── main.js             ← JS chung (render helpers)
+    ├── main.js             ← JS chung (render helpers, modal)
+    └── hero_bg.png         ← Ảnh nền khu vực hero trang chủ (AI-generated)
 ```
 
-### Nguyên tắc độc lập
-
-| File | Chỉ đọc từ | Không đụng vào |
-|---|---|---|
-| `videos.json` | — | — |
-| `articles.json` | — | — |
-| `posts/*.md` | — | — |
-| `videos.html` | `videos.json` | articles, posts |
-| `articles.html` | `articles.json` | videos, posts |
-| `article.html` | `articles.json` + `posts/*.md` | videos |
-| `index.html` | Tất cả JSON (chỉ đọc) | Không ghi gì |
+### File chỉ dùng local, KHÔNG commit lên GitHub
+```
+danh-sach-video.txt         ← Danh sách URL video lấy từ DevTools console TikTok
+export-tiktok-videos.csv    ← Export từ TikTok Analytics (tối đa 20 video)
+```
 
 ---
 
-## 4. Thiết kế & giao diện
+## 4. Quy trình cập nhật video
 
-### 4.1 Tông màu — Dark Game Editorial
+### Quy trình chuẩn (không giới hạn số lượng):
+1. Vào trang profile TikTok trên trình duyệt, cuộn để load hết video
+2. Nhấn F12 → Tab Console → gõ `allow pasting` → Enter
+3. Dán đoạn JS sau và Enter:
+```javascript
+let links = [];
+document.querySelectorAll('div[data-e2e="user-post-item"] a').forEach(a => {
+  if (a.href.includes('/video/')) links.push(a.href);
+});
+console.log([...new Set(links)].join('\n'));
+```
+4. Copy kết quả → lưu vào `danh-sach-video.txt` (thư mục gốc)
+5. Chạy: `python scripts/txt_to_videos_json.py`
+6. `data/videos.json` tự động cập nhật với đầy đủ Tiêu đề, Tag, Thumbnail
+
+### Script txt_to_videos_json.py sẽ:
+- Đọc từng URL trong `danh-sach-video.txt`
+- Gọi TikTok Oembed API lấy **title** và **thumbnail_url**
+- Tự động phân loại tag dựa theo tiêu đề
+- **Bảo toàn data cũ**: video đã có trong JSON sẽ không bị ghi đè
+- Chỉ gọi API cho video mới (chưa có trong JSON)
+
+### Quy trình cập nhật thumbnail (khi link ảnh TikTok hết hạn):
+```
+python scripts/txt_to_videos_json.py
+```
+Chạy lại script là đủ — nó sẽ làm mới toàn bộ thumbnail URL từ API.
+
+---
+
+## 5. Thiết kế & giao diện
+
+### 5.1 Tông màu — Dark Game Editorial
 
 ```css
 :root {
@@ -108,16 +140,14 @@ wwm-guide/
 }
 ```
 
-### 4.2 Typography
+### 5.2 Typography
 
 ```
 Tiêu đề, logo, heading lớn : 'Bebas Neue'    (Google Fonts)
 Nội dung, UI, body text    : 'Be Vietnam Pro' (Google Fonts)
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 ```
 
-### 4.3 Phong cách
+### 5.3 Phong cách
 - Dark game editorial — tối, vàng gold nổi bật
 - Nav: fixed top, blur backdrop, height 60px
 - Card hover: `translateY(-4px)` + border accent sáng
@@ -125,81 +155,74 @@ Nội dung, UI, body text    : 'Be Vietnam Pro' (Google Fonts)
 - Border radius: 8–12px card, 6px badge/button
 - Scrollbar: 4px width, màu accent
 
-### 4.4 Layout từng trang
+### 5.4 Layout từng trang
 
 **index.html**
 1. Nav (fixed, dùng chung tất cả trang)
-2. Hero: grid 2 cột — trái (tiêu đề Bebas Neue lớn + stats + 2 CTA button), phải (decorative dark grid + featured card nổi bật)
-3. Category strip: 4 ô ngang — Hướng dẫn / Nhân vật / Video / Podcast
-4. Section "Bài viết nổi bật": editorial grid — 1 card to trái + 2 card nhỏ phải xếp dọc
-5. Section "Video mới nhất": 5 card dọc tỷ lệ 9:16
+2. Hero: grid 2 cột — trái (tiêu đề + stats + CTA), phải (`hero_bg.png` làm nền + overlay gradient + featured card)
+3. Category strip: 4 ô — Hướng dẫn / Nhân vật / Video / Podcast
+4. Section "Bài viết nổi bật": editorial grid 1 to + 2 nhỏ
+5. Section "Video mới nhất": 5 card 9:16 (top 5 mới nhất từ videos.json)
 6. Community strip: stats + CTA Discord/TikTok
-7. Footer đơn giản
+7. Footer
 
 **articles.html**
-1. Nav
-2. Page hero: tiêu đề + đếm số bài
-3. Filter bar: pill buttons (Tất cả / Hướng dẫn / Nhân vật / Podcast / Meta)
-4. Layout 2 cột: main (danh sách bài dạng list-item) + sidebar (video liên quan + bài đọc nhiều)
-5. Mỗi list-item: thumbnail emoji + badge category + tiêu đề lớn + mô tả 2 dòng + meta (ngày, thời gian đọc, lượt xem)
-6. Click bài → điều hướng sang `article.html?id=art-xxx`
+1. Nav, Page hero, Filter bar (Tất cả / Hướng dẫn / Nhân vật / Podcast / Meta)
+2. Layout 2 cột: danh sách bài + sidebar (video gần nhất + bài đọc nhiều)
+3. Click → `article.html?id=art-xxx`
 
 **article.html**
-1. Nav
-2. Nội dung căn giữa, max-width 740px, padding rộng
-3. Header bài: badge + tiêu đề Bebas Neue cỡ lớn + lead paragraph + metadata
-4. Divider
-5. Body: render từ Markdown — `##` có border-left 3px accent vàng
-6. Nếu `related_video_id` tồn tại: render video embed block (preview + nút mở modal)
-7. Back button về articles.html
+1. Fetch `articles.json` → tìm bài theo `?id=`
+2. Fetch file `.md` → render bằng `marked.js` (CDN)
+3. `##` headings có border-left 3px vàng
+4. Nếu có `related_video_id`: render video embed block + nút mở modal
 
 **videos.html**
-1. Nav
-2. Page hero
-3. Filter bar: tags
-4. Grid 5 cột, card tỷ lệ 9:16, click → modal TikTok embed
+1. Page hero, Filter bar (từ tags trong JSON)
+2. Grid 5 cột, card 9:16, ảnh bìa từ `thumbnail` URL
+3. **Load More pagination**: mỗi lần hiển thị 20 video, nút "Tải thêm video ↓"
+4. Click card → Modal TikTok Player API
 
-**links.html**
-1. Nav
-2. Avatar hexagon gradient + tên + bio
-3. Danh sách link card (icon màu + tên + mô tả + mũi tên)
+**links.html**: Avatar hexagon + danh sách link card
 
 ---
 
-## 5. Cấu trúc dữ liệu JSON
+## 6. Cấu trúc dữ liệu JSON
 
-### 5.1 data/videos.json
+### 6.1 data/videos.json
 
 ```json
 [
   {
     "id": "7616618393407393045",
-    "title": "[Podcast] Tin tức ngày 13-03-2026",
+    "title": "[Podcast] TIN TỨC NGÀY 13-03-2026",
     "tags": ["Tổng hợp"],
     "date": "2026-03-13",
+    "thumbnail": "https://p16-sign-va.tiktokcdn.com/...",
     "pinned": false
   }
 ]
 ```
 
-- `id`: ID TikTok — số dài ở cuối URL video
+- `id`: ID TikTok — số ở cuối URL video
 - `title`: Giữ nguyên prefix `[Podcast]`, `[Hướng dẫn]`, `[Phân tích]`
-- `tags`: Mảng, chỉ dùng tag chuẩn ở mục 6
+- `tags`: Mảng, chỉ dùng tag chuẩn ở mục 7
 - `date`: `YYYY-MM-DD`
+- `thumbnail`: URL ảnh bìa trực tiếp từ CDN TikTok (lấy qua Oembed API). Có thể làm mới bằng cách chạy lại script.
 - `pinned`: `true` = lên đầu danh sách
 
-**Nhúng TikTok:**
+**Nhúng TikTok (Modal):**
 ```html
-<blockquote class="tiktok-embed"
-  cite="https://www.tiktok.com/@tiu.hng.tuyn/video/{id}"
-  data-video-id="{id}">
-</blockquote>
-<script async src="https://www.tiktok.com/embed.js"></script>
+<iframe
+  src="https://www.tiktok.com/player/v1/{id}?autoplay=1&loop=1&muted=0&volume=0.5"
+  sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-top-navigation allow-same-origin"
+  allowfullscreen>
+</iframe>
 ```
 
 ---
 
-### 5.2 data/articles.json
+### 6.2 data/articles.json
 
 ```json
 [
@@ -221,13 +244,11 @@ Nội dung, UI, body text    : 'Be Vietnam Pro' (Google Fonts)
 
 - `id`: Tăng dần `art-001`, `art-002`...
 - `file`: Đường dẫn đến file `.md` trong `posts/`
-- `icon`: Emoji làm thumbnail card
-- `related_video_id`: ID TikTok nhúng vào trong bài — để `""` nếu không có
-- Các field còn lại: tự giải thích
+- `related_video_id`: ID TikTok nhúng trong bài — để `""` nếu không có
 
 ---
 
-### 5.3 data/links.json
+### 6.3 data/links.json
 
 ```json
 [
@@ -239,48 +260,19 @@ Nội dung, UI, body text    : 'Be Vietnam Pro' (Google Fonts)
     "color": "#e8b84b",
     "bg": "rgba(232,184,75,0.1)",
     "order": 1
-  },
-  {
-    "name": "Discord",
-    "description": "2.000+ thành viên · Hỏi đáp thực chiến",
-    "url": "https://discord.gg/INVITE_CODE",
-    "icon": "💬",
-    "color": "#5865F2",
-    "bg": "rgba(88,101,242,0.12)",
-    "order": 2
-  },
-  {
-    "name": "Facebook",
-    "description": "Group cộng đồng game thủ Việt",
-    "url": "https://facebook.com/groups/TEN_GROUP",
-    "icon": "👥",
-    "color": "#1877F2",
-    "bg": "rgba(24,119,242,0.1)",
-    "order": 3
-  },
-  {
-    "name": "YouTube",
-    "description": "Video dài · Phân tích chi tiết",
-    "url": "https://youtube.com/@TEN_KENH",
-    "icon": "▶",
-    "color": "#FF0000",
-    "bg": "rgba(255,0,0,0.1)",
-    "order": 4
   }
 ]
 ```
 
-Thay `INVITE_CODE`, `TEN_GROUP`, `TEN_KENH` bằng link thật trước khi deploy.
-
 ---
 
-## 6. Tag & Category chuẩn
+## 7. Tag & Category chuẩn
 
 ### Tags video
 ```
 Hướng dẫn   — gameplay, boss, chiến thuật
 Nhân vật    — phân tích, review nhân vật
-Tổng hợp    — podcast, tin tức, tổng hợp
+Tổng hợp    — podcast, tin tức
 Meta        — tier list, đội hình, ranking
 Event       — sự kiện giới hạn thời gian
 ```
@@ -291,12 +283,11 @@ Hướng dẫn → .badge-guide   bg: rgba(232,184,75,0.15)  color: var(--accent
 Nhân vật   → .badge-char    bg: rgba(78,205,196,0.12)  color: var(--teal)
 Meta       → .badge-meta    bg: rgba(74,158,255,0.12)  color: var(--blue)
 Podcast    → .badge-podcast bg: rgba(224,82,82,0.12)   color: var(--red)
-Event      → .badge-guide
 ```
 
 ---
 
-## 7. Cấu trúc file Markdown (posts/)
+## 8. Cấu trúc file Markdown (posts/)
 
 Tên file: chữ thường, dấu gạch ngang, không dấu tiếng Việt.
 Ví dụ: `posts/phan-tich-doanh-doanh.md`
@@ -321,51 +312,28 @@ Tiếp tục nội dung...
 **Quy tắc:**
 - `#` — tiêu đề bài, chỉ dùng 1 lần ở đầu file
 - `##` — mục lớn (render với border-left 3px vàng)
-- `**text**` — in đậm
-- `- item` — danh sách
-- Dòng trống giữa các đoạn văn
 - KHÔNG dùng HTML trong file .md
 
 ---
 
-## 8. Cơ chế article.html đọc Markdown
+## 9. Quy trình deploy
 
-`article.html` nhận query string `?id=art-001` từ URL.
-
-```javascript
-// Bước 1: Lấy id từ URL
-const id = new URLSearchParams(location.search).get('id');
-
-// Bước 2: Fetch articles.json, tìm bài khớp id
-const res = await fetch('data/articles.json');
-const articles = await res.json();
-const article = articles.find(a => a.id === id);
-
-// Bước 3: Fetch file .md
-const mdRes = await fetch(article.file);
-const markdown = await mdRes.text();
-
-// Bước 4: Convert và inject
-// Dùng marked.js từ CDN:
-// <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
-document.getElementById('article-body').innerHTML = marked.parse(markdown);
-
-// Bước 5: Nếu có video liên quan
-if (article.related_video_id) {
-  // render video embed block bên dưới nội dung
-}
 ```
+1. Chỉnh sửa file (HTML / CSS / JS / JSON / MD)
+2. git add -A
+3. git commit -m "mô tả thay đổi"
+4. git push
+→ Cloudflare Pages tự động build & deploy trong ~30 giây
+```
+
+**Không cần build step. Cloudflare Pages deploy thẳng file tĩnh.**
 
 ---
 
-## 9. Tham chiếu thiết kế
+## 10. Tham chiếu thiết kế
 
 File `wwm-guide-v2.html` là **prototype đã được duyệt về thiết kế**.
-
-Khi build web thật từ file này:
 - Giữ nguyên toàn bộ CSS variables, font, màu sắc
-- Tách thành các file theo cấu trúc mục 3
-- Thay dữ liệu hardcode trong HTML bằng fetch JSON/Markdown thật
 - KHÔNG thay đổi giao diện — chỉ tách code và kết nối data
 
 ---
