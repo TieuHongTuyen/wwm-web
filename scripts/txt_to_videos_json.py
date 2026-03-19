@@ -1,10 +1,15 @@
 """
 txt_to_videos_json.py
 Đọc danh-sach-video.txt, gọi TikTok Oembed API để lấy chi tiết Title và Thumbnail
+
+Cách dùng:
+  python scripts/txt_to_videos_json.py                   # Chỉ thêm video mới
+  python scripts/txt_to_videos_json.py --refresh-thumbnails  # Làm mới thumbnail cho toàn bộ video
 """
 
 import json
 import re
+import sys
 import urllib.request
 import urllib.error
 from datetime import datetime, timedelta
@@ -14,6 +19,8 @@ ROOT = Path(__file__).parent.parent
 TXT_PATH  = ROOT / "danh-sach-video.txt"
 JSON_PATH = ROOT / "data" / "videos.json"
 
+REFRESH_THUMBNAILS = "--refresh-thumbnails" in sys.argv
+
 if not TXT_PATH.exists():
     print(f"Không tìm thấy file {TXT_PATH}")
     exit(1)
@@ -22,6 +29,8 @@ with open(TXT_PATH, "r", encoding="utf-8") as f:
     lines = [line.strip() for line in f if line.strip()]
 
 print(f"Tổng số URL tìm thấy: {len(lines)}")
+if REFRESH_THUMBNAILS:
+    print("⚡ Chế độ: Làm mới TOÀN BỘ thumbnail (--refresh-thumbnails)")
 
 def detect_tags(title: str) -> list:
     cap_lower = title.lower()
@@ -77,41 +86,55 @@ for idx, url in enumerate(lines):
         continue
     video_id = match.group(1)
     
-    # Nếu video ID này đã tồn tại trong file JSON cũ thì dùng data cũ (siêu nhanh)
-    if video_id in existing_videos:
+    # Nếu video ID này đã tồn tại trong file JSON cũ
+    if video_id in existing_videos and not REFRESH_THUMBNAILS:
+        # Chế độ thường: dùng data cũ (siêu nhanh)
         videos.append(existing_videos[video_id])
         continue
 
-    # Nếu là video mới -> Gọi Oembed. (Vì lấy nhiều video sẽ tốn thời gian gọi URL)
+    # Gọi Oembed API:
+    #   - Video mới (chưa có trong JSON)
+    #   - Hoặc đang chạy --refresh-thumbnails (làm mới thumbnail cho video cũ)
     oembed_url = f"https://www.tiktok.com/oembed?url={url}"
     try:
         req = urllib.request.Request(oembed_url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=10) as response:
             data = json.loads(response.read().decode())
             
-            raw_title = data.get("title", "")
             thumb_url = data.get("thumbnail_url", "")
-            
-            clean_t = clean_title(raw_title)
-            if not clean_t:
-                clean_t = f"Video Yến Vân Guide #{video_id[-5:]}"  # Fallback
 
-            # Tạo ngày lùi dần cho gọn
-            fake_date = (base_date - timedelta(days=idx)).strftime("%Y-%m-%d")
-            
-            v = {
-                "id": video_id,
-                "title": clean_t,
-                "tags": detect_tags(clean_t),
-                "date": fake_date,
-                "thumbnail": thumb_url,
-                "pinned": False,
-            }
-            videos.append(v)
-            print(f"  [+] Đã lấy info: {video_id} ({clean_t[:30]}...)")
+            if video_id in existing_videos:
+                # Chế độ refresh: chỉ cập nhật thumbnail, giữ nguyên mọi field khác
+                v = dict(existing_videos[video_id])
+                v["thumbnail"] = thumb_url
+                videos.append(v)
+                print(f"  [↻] Đã làm mới thumbnail: {video_id}")
+            else:
+                # Video mới hoàn toàn: lấy đầy đủ thông tin
+                raw_title = data.get("title", "")
+                clean_t = clean_title(raw_title)
+                if not clean_t:
+                    clean_t = f"Video Yến Vân Guide #{video_id[-5:]}"  # Fallback
+
+                # Tạo ngày lùi dần cho gọn
+                fake_date = (base_date - timedelta(days=idx)).strftime("%Y-%m-%d")
+                
+                v = {
+                    "id": video_id,
+                    "title": clean_t,
+                    "tags": detect_tags(clean_t),
+                    "date": fake_date,
+                    "thumbnail": thumb_url,
+                    "pinned": False,
+                }
+                videos.append(v)
+                print(f"  [+] Đã lấy info: {video_id} ({clean_t[:30]}...)")
             
     except Exception as e:
         print(f"  [-] Lỗi fetch {video_id}: {e}")
+        # Nếu lỗi khi refresh, giữ nguyên data cũ
+        if video_id in existing_videos:
+            videos.append(existing_videos[video_id])
 
 # Sắp xếp mới nhất trước
 videos.sort(key=lambda x: str(x.get("date", "")), reverse=True)
