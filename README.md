@@ -112,11 +112,16 @@ console.log([...new Set(links)].join('\n'));
 - **Bảo toàn data cũ**: video đã có trong JSON sẽ không bị ghi đè
 - Chỉ gọi API cho video mới (chưa có trong JSON)
 
-### Quy trình cập nhật thumbnail (khi link ảnh TikTok hết hạn):
+### Quy trình làm mới thumbnail (khi ảnh bìa hết hạn trên web):
+
+URL ảnh bìa TikTok CDN có thời hạn. Khi ảnh bìa không hiển thị, chạy:
 ```
-python scripts/txt_to_videos_json.py
+python scripts/txt_to_videos_json.py --refresh-thumbnails
 ```
-Chạy lại script là đủ — nó sẽ làm mới toàn bộ thumbnail URL từ API.
+- Gọi API cho **toàn bộ** 230+ video để lấy URL thumbnail mới
+- Chỉ cập nhật `thumbnail` — giữ nguyên `title`, `tags`, `date`, `pinned`
+- Nếu API lỗi cho một video, giữ nguyên URL cũ của video đó
+- Sau đó `git add data/videos.json; git commit -m "fix: lam moi thumbnail"; git push`
 
 ---
 
