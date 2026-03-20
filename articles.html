@@ -70,8 +70,8 @@
     return new Date(b.date) - new Date(a.date);
   });
 
-  // Page hero meta
-  const latest = sorted[0];
+  // Lấy bài viết mới nhất thực sự (bỏ qua pinned) để hiển thị ngày cập nhật chung
+  const latest = [...articles].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
   document.getElementById('art-hero-meta').textContent =
     `${articles.length} bài · Cập nhật ${latest ? formatDate(latest.date) : ''}`;
 

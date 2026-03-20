@@ -59,7 +59,8 @@
 
   // Page hero
   document.getElementById('vid-count').textContent = videos.length;
-  const latest = sorted[0];
+  // Lấy video mới nhất thực sự (bỏ qua pinned) để hiển thị ngày cập nhật
+  const latest = [...videos].sort((a, b) => new Date(b.date) - new Date(a.date))[0];
   document.getElementById('vid-hero-meta').textContent =
     latest ? `Cập nhật ${formatDate(latest.date)}` : '';
 
