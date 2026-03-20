@@ -451,7 +451,7 @@ nav {
 .vid-card:hover .vid-thumb-img { transform: scale(1.05); }
 
 .vid-tag-pill {
-  position: absolute; top: 8px; left: 8px;
+  position: absolute; top: 8px; right: 8px;
   background: rgba(10,12,15,0.85);
   border: 1px solid var(--border);
   color: var(--accent);
