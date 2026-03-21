@@ -1,0 +1,37 @@
+name: Refresh TikTok Thumbnails
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # Chạy mỗi 6 tiếng
+  workflow_dispatch:          # Cho phép chạy thủ công từ GitHub UI
+
+permissions:
+  contents: write             # Cần quyền push commit vào repo
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0      # Cần full history để push được
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run refresh thumbnails script
+        run: python scripts/txt_to_videos_json.py --refresh-thumbnails
+
+      - name: Commit and push if changed
+        run: |
+          git diff --quiet data/videos.json || (
+            git config user.name "github-actions[bot]" &&
+            git config user.email "github-actions[bot]@users.noreply.github.com" &&
+            git add data/videos.json &&
+            git commit -m "chore: refresh thumbnails [skip ci]" &&
+            git push
+          )

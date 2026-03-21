@@ -12,6 +12,10 @@ import re
 import sys
 import urllib.request
 import urllib.error
+import os
+import time
+
+os.environ.setdefault('PYTHONIOENCODING', 'utf-8')
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -21,15 +25,16 @@ JSON_PATH = ROOT / "data" / "videos.json"
 
 REFRESH_THUMBNAILS = "--refresh-thumbnails" in sys.argv
 
-if not TXT_PATH.exists():
+if not REFRESH_THUMBNAILS and not TXT_PATH.exists():
     print(f"Không tìm thấy file {TXT_PATH}")
     exit(1)
 
-with open(TXT_PATH, "r", encoding="utf-8") as f:
-    lines = [line.strip() for line in f if line.strip()]
-
-print(f"Tổng số URL tìm thấy: {len(lines)}")
-if REFRESH_THUMBNAILS:
+lines = []
+if not REFRESH_THUMBNAILS:
+    with open(TXT_PATH, "r", encoding="utf-8") as f:
+        lines = [line.strip() for line in f if line.strip()]
+    print(f"Tổng số URL tìm thấy: {len(lines)}")
+else:
     print("⚡ Chế độ: Làm mới TOÀN BỘ thumbnail (--refresh-thumbnails)")
 
 def detect_tags(title: str) -> list:
@@ -79,38 +84,71 @@ if JSON_PATH.exists():
     except:
         pass
 
-for idx, url in enumerate(lines):
-    # Lấy ID từ URL (VD: https://www.tiktok.com/@tiu.hng.tuyn/video/7616618393407393045)
-    match = re.search(r'/video/(\d+)', url)
-    if not match:
-        continue
-    video_id = match.group(1)
+if REFRESH_THUMBNAILS:
+    changed_count = 0
+    updated_videos = []
     
-    # Nếu video ID này đã tồn tại trong file JSON cũ
-    if video_id in existing_videos and not REFRESH_THUMBNAILS:
-        # Chế độ thường: dùng data cũ (siêu nhanh)
-        videos.append(existing_videos[video_id])
-        continue
+    old_data_list = []
+    if JSON_PATH.exists():
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            try:
+                old_data_list = json.load(f)
+            except:
+                pass
+                
+    for v in old_data_list:
+        video_id = v["id"]
+        url = f"https://www.tiktok.com/@tiu.hng.tuyn/video/{video_id}"
+        oembed_url = f"https://www.tiktok.com/oembed?url={url}"
+        
+        try:
+            req = urllib.request.Request(oembed_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=10) as response:
+                data = json.loads(response.read().decode())
+                thumb_url = data.get("thumbnail_url", "")
+                
+                if thumb_url and thumb_url != v.get("thumbnail"):
+                    v["thumbnail"] = thumb_url
+                    changed_count += 1
+                    print(f"  [↻] Đã làm mới thumbnail: {video_id}")
+        except Exception as e:
+            print(f"  [-] Lỗi fetch {video_id}: {e}")
+        
+        updated_videos.append(v)
+        time.sleep(0.5)
+        
+    if changed_count == 0:
+        print("No changes detected")
+        exit(0)
+    else:
+        JSON_PATH.parent.mkdir(exist_ok=True)
+        with open(JSON_PATH, "w", encoding="utf-8") as f:
+            json.dump(updated_videos, f, ensure_ascii=False, indent=2)
+        print(f"\n✅ Đã cập nhật layout/thumbnail cho {changed_count} video vào {JSON_PATH}")
+        exit(0)
+else:
+    for idx, url in enumerate(lines):
+        # Lấy ID từ URL (VD: https://www.tiktok.com/@tiu.hng.tuyn/video/7616618393407393045)
+        match = re.search(r'/video/(\d+)', url)
+        if not match:
+            continue
+        video_id = match.group(1)
+        
+        # Nếu video ID này đã tồn tại trong file JSON cũ
+        if video_id in existing_videos:
+            # Chế độ thường: dùng data cũ (siêu nhanh)
+            videos.append(existing_videos[video_id])
+            continue
 
-    # Gọi Oembed API:
-    #   - Video mới (chưa có trong JSON)
-    #   - Hoặc đang chạy --refresh-thumbnails (làm mới thumbnail cho video cũ)
-    oembed_url = f"https://www.tiktok.com/oembed?url={url}"
-    try:
-        req = urllib.request.Request(oembed_url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=10) as response:
-            data = json.loads(response.read().decode())
-            
-            thumb_url = data.get("thumbnail_url", "")
+        # Gọi Oembed API
+        oembed_url = f"https://www.tiktok.com/oembed?url={url}"
+        try:
+            req = urllib.request.Request(oembed_url, headers={'User-Agent': 'Mozilla/5.0'})
+            with urllib.request.urlopen(req, timeout=10) as response:
+                data = json.loads(response.read().decode())
+                
+                thumb_url = data.get("thumbnail_url", "")
 
-            if video_id in existing_videos:
-                # Chế độ refresh: chỉ cập nhật thumbnail, giữ nguyên mọi field khác
-                v = dict(existing_videos[video_id])
-                v["thumbnail"] = thumb_url
-                videos.append(v)
-                print(f"  [↻] Đã làm mới thumbnail: {video_id}")
-            else:
-                # Video mới hoàn toàn: lấy đầy đủ thông tin
                 raw_title = data.get("title", "")
                 clean_t = clean_title(raw_title)
                 if not clean_t:
@@ -129,18 +167,15 @@ for idx, url in enumerate(lines):
                 }
                 videos.append(v)
                 print(f"  [+] Đã lấy info: {video_id} ({clean_t[:30]}...)")
-            
-    except Exception as e:
-        print(f"  [-] Lỗi fetch {video_id}: {e}")
-        # Nếu lỗi khi refresh, giữ nguyên data cũ
-        if video_id in existing_videos:
-            videos.append(existing_videos[video_id])
+                
+        except Exception as e:
+            print(f"  [-] Lỗi fetch {video_id}: {e}")
 
-# Sắp xếp mới nhất trước
-videos.sort(key=lambda x: str(x.get("date", "")), reverse=True)
+    # Sắp xếp mới nhất trước
+    videos.sort(key=lambda x: str(x.get("date", "")), reverse=True)
 
-JSON_PATH.parent.mkdir(exist_ok=True)
-with open(JSON_PATH, "w", encoding="utf-8") as f:
-    json.dump(videos, f, ensure_ascii=False, indent=2)
+    JSON_PATH.parent.mkdir(exist_ok=True)
+    with open(JSON_PATH, "w", encoding="utf-8") as f:
+        json.dump(videos, f, ensure_ascii=False, indent=2)
 
-print(f"\n✅ Đã ghi {len(videos)} video vào {JSON_PATH}")
+    print(f"\n✅ Đã ghi {len(videos)} video vào {JSON_PATH}")
