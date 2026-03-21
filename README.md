@@ -114,14 +114,16 @@ console.log([...new Set(links)].join('\n'));
 
 ### Quy trình làm mới thumbnail (khi ảnh bìa hết hạn trên web):
 
-URL ảnh bìa TikTok CDN có thời hạn. Khi ảnh bìa không hiển thị, chạy:
-```
-python scripts/txt_to_videos_json.py --refresh-thumbnails
-```
-- Gọi API cho **toàn bộ** 230+ video để lấy URL thumbnail mới
-- Chỉ cập nhật `thumbnail` — giữ nguyên `title`, `tags`, `date`, `pinned`
-- Nếu API lỗi cho một video, giữ nguyên URL cũ của video đó
-- Sau đó `git add data/videos.json; git commit -m "fix: lam moi thumbnail"; git push`
+URL ảnh bìa TikTok CDN có thời hạn. Hệ thống đã được thiết lập tự động hóa qua **GitHub Actions**:
+- Workflow **Refresh TikTok Thumbnails** sẽ tự động chạy **mỗi 6 tiếng**.
+- Tự động gọi API lấy lại thumbnail cho các video hiện có trong `data/videos.json` mà không cần file `danh-sach-video.txt`.
+- Nếu có thumbnail nào thay đổi, workflow sẽ tự động commit và push cập nhật vào `data/videos.json`.
+
+**Để chạy thủ công lập tức (khi cần gấp):**
+1. Vào mục **Actions** trên GitHub repository.
+2. Chọn workflow **Refresh TikTok Thumbnails** ở cột bên trái.
+3. Bấm **Run workflow** -> nút màu xanh **Run workflow**. 
+(Hoặc có thể chạy script thủ công ở local bằng lệnh: `python scripts/txt_to_videos_json.py --refresh-thumbnails` rồi tự push)
 
 ---
 
