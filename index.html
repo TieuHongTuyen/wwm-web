@@ -189,15 +189,6 @@
   const small1 = sortedArts[1];
   const small2 = sortedArts[2];
 
-  // Lấy URL ảnh đầu tiên trong file Markdown
-  async function getFirstImageFromMd(file) {
-    try {
-      const text = await fetch(file + '?v=' + Date.now()).then(r => r.ok ? r.text() : '');
-      const match = text.match(/!\[.*?\]\((https?:\/\/[^)]+)\)/);
-      return match ? match[1] : null;
-    } catch { return null; }
-  }
-
   // Màu gradient placeholder fallback theo category
   function getCatGradient(category) {
     switch(category) {
@@ -209,9 +200,10 @@
     }
   }
 
-  function bigCardHtml(a, imgUrl) {
+  function bigCardHtml(a) {
     if(!a) return '';
     const badge = getCategoryBadge(a.category);
+    const imgUrl = a.image || null;
     const thumbStyle = imgUrl
       ? `background:url('${imgUrl}') center/cover no-repeat`
       : `background:${getCatGradient(a.category)}; display:flex; align-items:center; justify-content:center; font-size:3.5rem; opacity:0.7`;
@@ -226,9 +218,10 @@
     </a>`;
   }
 
-  function smallCardHtml(a, imgUrl) {
+  function smallCardHtml(a) {
     if(!a) return '';
     const badge = getCategoryBadge(a.category);
+    const imgUrl = a.image || null;
     const thumbStyle = imgUrl
       ? `background:url('${imgUrl}') center/cover no-repeat`
       : `background:${getCatGradient(a.category)}; display:flex; align-items:center; justify-content:center; font-size:2.5rem; opacity:0.7`;
@@ -243,22 +236,16 @@
     </a>`;
   }
 
-  // Fetch ảnh đầu tiên song song cho tối đa 3 bài
-  const [img0, img1, img2] = await Promise.all([
-    big    ? getFirstImageFromMd(big.file)    : Promise.resolve(null),
-    small1 ? getFirstImageFromMd(small1.file) : Promise.resolve(null),
-    small2 ? getFirstImageFromMd(small2.file) : Promise.resolve(null),
-  ]);
-
+  // Dùng trực tiếp a.image từ articles.json (không cần fetch lại .md)
   const grid = document.getElementById('featured-grid');
   if (big) {
     const rightHtml = (small1 || small2)
       ? `<div class="editorial-grid-right">
-          ${small1 ? smallCardHtml(small1, img1) : ''}
-          ${small2 ? smallCardHtml(small2, img2) : ''}
+          ${small1 ? smallCardHtml(small1) : ''}
+          ${small2 ? smallCardHtml(small2) : ''}
         </div>`
       : '';
-    grid.innerHTML = bigCardHtml(big, img0) + rightHtml;
+    grid.innerHTML = bigCardHtml(big) + rightHtml;
   }
 
   // Latest videos: top 5
