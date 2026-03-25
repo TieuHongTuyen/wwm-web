@@ -96,7 +96,9 @@ def main():
     for block in blocks:
         if block['type'] == 'image':
             src = block['src']
-            md_content += f"![Ảnh {img_idx}](https://wsrv.nl/?url={src})\n\n"
+            # Thêm &n=-1 cho ảnh GIF để giữ animation qua proxy wsrv.nl
+            gif_suffix = '&n=-1' if src.lower().endswith('.gif') else ''
+            md_content += f"![Ảnh {img_idx}](https://wsrv.nl/?url={src}{gif_suffix})\n\n"
             img_idx += 1
         elif block['type'] == 'text':
             # Phục hồi dấu xuống dòng markdown

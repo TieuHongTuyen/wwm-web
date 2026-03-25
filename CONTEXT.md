@@ -328,9 +328,22 @@ Tiếp tục nội dung...
 ### Chèn ảnh trong Markdown
 
 Ảnh bài viết luôn dùng Hotlink trực tiếp từ server gốc (CDN) bọc trong proxy `wsrv.nl` để chống chết link / lỗi 403:
+
 ```markdown
+# Ảnh tĩnh (JPG/PNG):
+
 ![Ảnh 1](https://wsrv.nl/?url=https://i0.hdslb.com/...)
+
+
+# Ảnh động (GIF) — BẮT BUỘC thêm &n=-1 để giữ animation:
+
+![Ảnh 2](https://wsrv.nl/?url=https://i0.hdslb.com/...gif&n=-1)
+
 ```
+
+> **Lưu ý:** Proxy `wsrv.nl` mặc định chỉ render frame đầu tiên của GIF (ảnh tĩnh).
+> Tham số `&n=-1` bắt buộc để hiển thị toàn bộ frames animation.
+> Script `import_bilibili.py` đã tự động xử lý việc này khi tạo bài mới.
 Quy trình nhập này diễn ra tự động 100% nhờ phương pháp lấy dữ liệu Console F12.
 
 ---

@@ -27,7 +27,7 @@ Lũ gà trên sàn đấu đều là hạng kiêu dũng thiện chiến. Trong l
 
 Tranh phong không chỉ ở trên đài, mà còn nằm ở sự tính toán kỹ lưỡng dưới đài. Khi đối thủ tấn công, nếu **kịp thời né tránh sẽ có thể tìm thấy sơ hở**. Nhưng nếu cứ mãi né tránh, cũng có thể **khiến bản thân rơi vào thế bị động**. Đạo công thủ, phép tiến thoái trong này, xin mời du hiệp lên đài tự mình thấu hiểu.
 
-![Ảnh 3](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/4a4dc8fb0f1b00e6cef293dd2c28ce7e1567141152.gif)
+![Ảnh 3](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/4a4dc8fb0f1b00e6cef293dd2c28ce7e1567141152.gif&n=-1)
 
 *\*Hình ảnh đang trong quá trình thử nghiệm, vui lòng tham khảo hiệu ứng thực tế trong game*
 
@@ -39,7 +39,7 @@ Nói ra cũng lạ, món Khai Phong này không chỉ dùng thùng để đựng
 
 Nghe đồn gần đây tại Khai Phong xuất hiện một chiếc Thùng Tụ Bảo, chỉ cần bỏ Thùng Bảo Cát Tường vào là có thể dùng tiền sinh tiền, ngồi chờ tài lộc cuồn cuộn đổ về.
 
-![Ảnh 4](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/77e0ad183f183a633ecd7b596750d3ee1567141152.gif)
+![Ảnh 4](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/77e0ad183f183a633ecd7b596750d3ee1567141152.gif&n=-1)
 
 *\*Hình ảnh đang trong quá trình thử nghiệm, vui lòng tham khảo hiệu ứng thực tế trong game*
 
