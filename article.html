@@ -114,12 +114,21 @@
     markdown = await mdRes.text();
   } catch(e) { showError('Không tải được nội dung bài viết.'); return; }
 
-  // Xóa dòng `# Tiêu đề` đầu tiên (bỏ qua dòng trống, comment HTML ở đầu file)
+  // Xóa dòng `# Tiêu đề` đầu tiên (bỏ qua dòng trống, comment HTML đơn/nhiều dòng)
   const mdLines = markdown.split('\n');
   let h1Index = -1;
+  let inComment = false;
   for (let i = 0; i < mdLines.length; i++) {
     const trimmed = mdLines[i].trim();
-    if (trimmed === '' || trimmed.startsWith('<!--') || trimmed.startsWith('-->') || trimmed.endsWith('-->')) continue;
+    if (inComment) {
+      if (trimmed.includes('-->')) inComment = false;
+      continue;
+    }
+    if (trimmed.startsWith('<!--')) {
+      if (!trimmed.includes('-->')) inComment = true;
+      continue;
+    }
+    if (trimmed === '') continue;
     if (trimmed.startsWith('# ')) { h1Index = i; }
     break;
   }
