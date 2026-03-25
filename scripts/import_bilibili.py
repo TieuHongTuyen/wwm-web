@@ -129,12 +129,22 @@ def main():
         'Meta':      '🏆',
         'Podcast':   '🎙️',
     }
-    
+
+    # Trích xuất URL ảnh đầu tiên từ bilibili-data.json để làm ảnh bìa
+    first_image_url = None
+    for block in blocks:
+        if block.get('type') == 'image':
+            raw_src = block.get('src', '')
+            if raw_src:
+                first_image_url = f"https://wsrv.nl/?url={raw_src}"
+            break
+
     new_article = {
         "id": new_id,
         "title": title,
         "category": category,
         "description": "TODO: Thêm mô tả ngắn gọn cho bài viết",
+        "image": first_image_url or "",
         "file": f"posts/{slug}.md",
         "icon": icon_map.get(category, '📄'),
         "date": datetime.now().strftime("%Y-%m-%d"),

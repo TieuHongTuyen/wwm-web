@@ -68,9 +68,12 @@ function renderVideoCard(v, idx = 0) {
  */
 function renderArtListItem(a) {
   const badge = getCategoryBadge(a.category);
-  // Lấy slug từ a.file (vd: "posts/phan-tich-doanh-doanh.md" -> "phan-tich-doanh-doanh")
-  const slug = a.file.replace('posts/', '').replace('.md', '');
-  const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+
+  // Dùng trường `image` từ articles.json nếu có, fallback về gradient theo category
+  const thumbStyle = a.image
+    ? `background: url('${a.image}') center/cover no-repeat; color:transparent; font-size:0;`
+    : `background: ${getCatGradientArt(a.category)}; display:flex; align-items:center; justify-content:center; font-size:2rem; opacity:0.7;`;
+  const thumbInner = a.image ? '' : a.icon;
 
   return `<div class="art-list-item" onclick="location.href='article.html?id=${a.id}'">
     <div>
@@ -81,8 +84,19 @@ function renderArtListItem(a) {
         <span>${formatDate(a.date)}</span>
       </div>
     </div>
-    <div class="art-list-thumb" style="background: url('${thumbUrl}') center/cover no-repeat;color:transparent;font-size:0;">${a.icon}</div>
+    <div class="art-list-thumb" style="${thumbStyle}">${thumbInner}</div>
   </div>`;
+}
+
+/* Gradient fallback theo category (dùng cho art-list-item) */
+function getCatGradientArt(category) {
+  switch(category) {
+    case 'Hướng dẫn': return 'linear-gradient(135deg, rgba(232,184,75,0.25) 0%, rgba(232,184,75,0.08) 100%)';
+    case 'Nhân vật':  return 'linear-gradient(135deg, rgba(78,205,196,0.25) 0%, rgba(78,205,196,0.08) 100%)';
+    case 'Meta':      return 'linear-gradient(135deg, rgba(74,158,255,0.25) 0%, rgba(74,158,255,0.08) 100%)';
+    case 'Podcast':   return 'linear-gradient(135deg, rgba(224,82,82,0.25) 0%, rgba(224,82,82,0.08) 100%)';
+    default:          return 'linear-gradient(135deg, rgba(232,184,75,0.15) 0%, rgba(30,35,48,0.08) 100%)';
+  }
 }
 
 /**
