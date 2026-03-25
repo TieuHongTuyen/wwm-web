@@ -269,9 +269,13 @@ nav {
 
 /* CATEGORY STRIP */
 .cat-strip {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   border-bottom: 1px solid var(--border2);
+}
+.cat-item {
+  flex: 1 1 0;
+  min-width: 0;
 }
 .cat-item {
   padding: 1.25rem 1.5rem;
@@ -837,7 +841,6 @@ footer a:hover { color: var(--accent2); }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; max-height: none; }
   .hero-right { height: 250px; }
-  .cat-strip { grid-template-columns: repeat(2, 1fr); }
   .editorial-grid { grid-template-columns: 1fr; }
   .editorial-grid-right { grid-template-rows: auto; }
   .video-row, .videos-grid { grid-template-columns: repeat(3, 1fr); }
@@ -850,7 +853,6 @@ footer a:hover { color: var(--accent2); }
   .hero-left { padding: 2.5rem 1.5rem; }
   .content-wrap { padding: 2rem 1rem; }
   .video-row, .videos-grid { grid-template-columns: repeat(2, 1fr); }
-  .cat-strip { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ════════════════════════
@@ -918,6 +920,77 @@ footer a:hover { color: var(--accent2); }
     font-size: clamp(2.5rem, 10vw, 3.5rem);
   }
   .hero-stats {
+    gap: 1.5rem;
     margin-bottom: 1.5rem;
   }
+  .hero-stat-num {
+    font-size: 1.4rem;
+  }
+  .hero-desc {
+    font-size: 0.82rem;
+  }
+
+  /* ── Category strip mobile ── */
+  .cat-strip {
+    flex-direction: column;
+  }
+  .cat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--border2);
+    padding: 1rem 1.25rem;
+  }
+  .cat-item:last-child { border-bottom: none; }
+
+  /* ── Editorial grid mobile ── */
+  .art-card-big { padding: 1.25rem; }
+  .art-card-big .art-title { font-size: 1.2rem; }
+  .art-card .art-title-sm { font-size: 0.9rem; }
+
+  /* ── Article detail title mobile ── */
+  .article-detail {
+    padding: 2rem 1rem 3rem;
+  }
+  .article-detail-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+  }
+  .article-detail-lead {
+    font-size: 0.88rem;
+  }
+  .article-body h2 {
+    font-size: 1.2rem;
+    padding-left: 0.75rem;
+  }
+  .article-body {
+    font-size: 0.85rem;
+  }
+
+  /* ── Community strip mobile ── */
+  .community-strip {
+    padding: 1.5rem 1.25rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  .community-text h3 {
+    font-size: 1.1rem;
+  }
+
+  /* ── Video row mobile ── */
+  .video-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* ── Video embed block mobile ── */
+  .video-embed-block {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  /* ── Page hero mobile ── */
+  .page-hero { padding: 2rem 1rem; }
+  .page-hero h1 { font-size: 1.8rem; }
+  .page-hero-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
 }

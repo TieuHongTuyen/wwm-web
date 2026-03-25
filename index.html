@@ -57,8 +57,8 @@
     </div>
   </div>
 
-  <!-- CATEGORY STRIP -->
-  <div class="cat-strip">
+  <!-- CATEGORY STRIP (ẩn để giao diện gọn gàng) -->
+  <div class="cat-strip" style="display:none">
     <a class="cat-item" href="articles.html?filter=Hướng dẫn">
       <div class="cat-icon" style="background:rgba(232,184,75,0.1)">⚔️</div>
       <div>
@@ -184,13 +184,27 @@
       `${getCategoryBadge(featured.category).icon} ${featured.category} · ${formatDate(featured.date)}`;
   }
 
-  // Category counts
+  // Category counts — ẩn category rỗng (trừ Video luôn hiện)
   const countBy = cat => articles.filter(a => a.category === cat).length;
-  document.getElementById('cat-count-guide').textContent   = countBy('Hướng dẫn') + ' bài viết';
-  document.getElementById('cat-count-char').textContent    = countBy('Nhân vật') + ' phân tích';
-  document.getElementById('cat-count-video').textContent   = videos.length + ' video TikTok';
-  document.getElementById('cat-count-podcast').textContent = countBy('Podcast') + ' tập tin tức';
-  document.getElementById('cat-count-news').textContent    = countBy('Tin tức') + ' bài viết';
+
+  const catConfig = [
+    { id: 'cat-count-guide',   cat: 'Hướng dẫn', suffix: ' bài viết' },
+    { id: 'cat-count-char',    cat: 'Nhân vật',  suffix: ' phân tích' },
+    { id: 'cat-count-podcast', cat: 'Podcast',   suffix: ' tập tin tức' },
+    { id: 'cat-count-news',    cat: 'Tin tức',   suffix: ' bài viết' },
+  ];
+  for (const { id, cat, suffix } of catConfig) {
+    const count = countBy(cat);
+    const el = document.getElementById(id);
+    if (!el) continue;
+    if (count === 0) {
+      el.closest('.cat-item').style.display = 'none';
+    } else {
+      el.textContent = count + suffix;
+    }
+  }
+  // Video luôn hiện
+  document.getElementById('cat-count-video').textContent = videos.length + ' video TikTok';
 
   // Featured articles grid: 1 big + 2 small
   const big   = sortedArts[0];
