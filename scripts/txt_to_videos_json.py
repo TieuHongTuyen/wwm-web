@@ -3,8 +3,8 @@ txt_to_videos_json.py
 Đọc danh-sach-video.txt, gọi TikTok Oembed API để lấy chi tiết Title và Thumbnail
 
 Cách dùng:
-  python scripts/txt_to_videos_json.py                   # Chỉ thêm video mới
-  python scripts/txt_to_videos_json.py --refresh-thumbnails  # Làm mới thumbnail cho toàn bộ video
+  python scripts/txt_to_videos_json.py                   # Thêm video mới từ danh-sach-video.txt, tải thumbnail mới về local
+  python scripts/txt_to_videos_json.py --refresh-thumbnails  # Tải thumbnail còn thiếu cho toàn bộ video trong videos.json
 """
 
 import json
@@ -22,6 +22,8 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 TXT_PATH  = ROOT / "danh-sach-video.txt"
 JSON_PATH = ROOT / "data" / "videos.json"
+THUMBNAILS_DIR = ROOT / "assets" / "thumbnails"
+THUMBNAILS_DIR.mkdir(parents=True, exist_ok=True)
 
 REFRESH_THUMBNAILS = "--refresh-thumbnails" in sys.argv
 
@@ -70,6 +72,32 @@ def clean_title(title: str) -> str:
     title = re.sub(r'《[^》]*》', '', title)
     return title.strip()
 
+def download_thumbnail(video_id: str, url: str) -> str:
+    """
+    Tải thumbnail về lưu local tại assets/thumbnails/[video_id].jpg
+    Trả về đường dẫn local nếu thành công, chuỗi rỗng nếu lỗi.
+    Bỏ qua nếu file đã tồn tại (không tải lại).
+    """
+    local_path = THUMBNAILS_DIR / f"{video_id}.jpg"
+    
+    # Đã có rồi, không tải lại
+    if local_path.exists():
+        return f"assets/thumbnails/{video_id}.jpg"
+    
+    if not url:
+        return ""
+    
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=15) as response:
+            with open(local_path, 'wb') as f:
+                f.write(response.read())
+        print(f"  [img] Đã tải thumbnail: {video_id}.jpg")
+        return f"assets/thumbnails/{video_id}.jpg"
+    except Exception as e:
+        print(f"  [img-err] Lỗi tải thumbnail {video_id}: {e}")
+        return url  # fallback về URL gốc nếu tải lỗi
+
 videos = []
 base_date = datetime.now()
 
@@ -86,6 +114,8 @@ if JSON_PATH.exists():
 
 if REFRESH_THUMBNAILS:
     changed_count = 0
+    downloaded_count = 0
+    skipped_count = 0
     updated_videos = []
     
     old_data_list = []
@@ -98,6 +128,17 @@ if REFRESH_THUMBNAILS:
                 
     for v in old_data_list:
         video_id = v["id"]
+        local_img = THUMBNAILS_DIR / f"{video_id}.jpg"
+        local_path_str = f"assets/thumbnails/{video_id}.jpg"
+        
+        if local_img.exists():
+            skipped_count += 1
+            if v.get("thumbnail") != local_path_str:
+                v["thumbnail"] = local_path_str
+                changed_count += 1
+            updated_videos.append(v)
+            continue
+            
         url = f"https://www.tiktok.com/@tiu.hng.tuyn/video/{video_id}"
         oembed_url = f"https://www.tiktok.com/oembed?url={url}"
         
@@ -107,24 +148,27 @@ if REFRESH_THUMBNAILS:
                 data = json.loads(response.read().decode())
                 thumb_url = data.get("thumbnail_url", "")
                 
-                if thumb_url and thumb_url != v.get("thumbnail"):
-                    v["thumbnail"] = thumb_url
+                local_thumb = download_thumbnail(video_id, thumb_url)
+                if local_thumb and local_thumb != v.get("thumbnail"):
+                    v["thumbnail"] = local_thumb
                     changed_count += 1
+                    downloaded_count += 1
                     print(f"  [↻] Đã làm mới thumbnail: {video_id}")
         except Exception as e:
             print(f"  [-] Lỗi fetch {video_id}: {e}")
         
         updated_videos.append(v)
-        time.sleep(0.5)
+        time.sleep(0.3)
         
     if changed_count == 0:
-        print("No changes detected")
+        print(f"Không có thay đổi. Đã tải {downloaded_count} ảnh, có sẵn {skipped_count} ảnh.")
         exit(0)
     else:
         JSON_PATH.parent.mkdir(exist_ok=True)
         with open(JSON_PATH, "w", encoding="utf-8") as f:
             json.dump(updated_videos, f, ensure_ascii=False, indent=2)
         print(f"\n✅ Đã cập nhật layout/thumbnail cho {changed_count} video vào {JSON_PATH}")
+        print(f"Tổng kết: tải mới {downloaded_count}, có sẵn {skipped_count}")
         exit(0)
 else:
     for idx, url in enumerate(lines):
@@ -148,6 +192,7 @@ else:
                 data = json.loads(response.read().decode())
                 
                 thumb_url = data.get("thumbnail_url", "")
+                local_thumb = download_thumbnail(video_id, thumb_url)
 
                 raw_title = data.get("title", "")
                 clean_t = clean_title(raw_title)
@@ -162,11 +207,12 @@ else:
                     "title": clean_t,
                     "tags": detect_tags(clean_t),
                     "date": fake_date,
-                    "thumbnail": thumb_url,
+                    "thumbnail": local_thumb,
                     "pinned": False,
                 }
                 videos.append(v)
                 print(f"  [+] Đã lấy info: {video_id} ({clean_t[:30]}...)")
+                time.sleep(0.3)
                 
         except Exception as e:
             print(f"  [-] Lỗi fetch {video_id}: {e}")
