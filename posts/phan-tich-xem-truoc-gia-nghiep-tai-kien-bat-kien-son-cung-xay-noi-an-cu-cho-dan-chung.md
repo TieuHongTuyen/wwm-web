@@ -1,13 +1,3 @@
-<!-- 
-🤖 LỆNH CHO AI CHUYÊN NGÀNH DỊCH THUẬT (COPY PHẦN NÀY DÁN VÀO CHATGPT/CLAUDE):
----------------------------------------------------------
-Bạn là chuyên gia dịch thuật game kiếm hiệp 'Yến Vân Thập Lục Thanh' (Where Winds Meet). Hãy dịch toàn bộ văn bản tiếng Trung trong bài Markdown dưới đây sang tiếng Việt. Yêu cầu bắt buộc:
-1. Tuyệt đối giữ nguyên 100% cấu trúc Markdown và KHÔNG ĐƯỢC làm hỏng/tự sửa các đường link ảnh ![Ảnh](https://...).
-2. Dịch mượt mà, dùng văn phong game MMORPG cổ trang.
-3. Đầu ra (Output) chỉ trả lời bằng ĐOẠN CODE MARKDOWN CHUẨN đã được dịch toàn bộ, không cần giải thích thêm.
----------------------------------------------------------
--->
-
 # Xem trước Gia Nghiệp | Tái kiến Bất Kiến Sơn, cùng xây nơi an cư cho dân chúng
 
 > Nguồn bài viết (tham khảo): [Bilibili](https://www.bilibili.com/opus/1182060903507427347?spm_id_from=333.1365.0.0)
