@@ -189,47 +189,76 @@
   const small1 = sortedArts[1];
   const small2 = sortedArts[2];
 
-  function bigCardHtml(a) {
+  // Lấy URL ảnh đầu tiên trong file Markdown
+  async function getFirstImageFromMd(file) {
+    try {
+      const text = await fetch(file + '?v=' + Date.now()).then(r => r.ok ? r.text() : '');
+      const match = text.match(/!\[.*?\]\((https?:\/\/[^)]+)\)/);
+      return match ? match[1] : null;
+    } catch { return null; }
+  }
+
+  // Màu gradient placeholder fallback theo category
+  function getCatGradient(category) {
+    switch(category) {
+      case 'Hướng dẫn': return 'linear-gradient(135deg, rgba(232,184,75,0.18) 0%, rgba(232,184,75,0.04) 100%)';
+      case 'Nhân vật':  return 'linear-gradient(135deg, rgba(78,205,196,0.18) 0%, rgba(78,205,196,0.04) 100%)';
+      case 'Meta':      return 'linear-gradient(135deg, rgba(74,158,255,0.18) 0%, rgba(74,158,255,0.04) 100%)';
+      case 'Podcast':   return 'linear-gradient(135deg, rgba(224,82,82,0.18) 0%, rgba(224,82,82,0.04) 100%)';
+      default:          return 'linear-gradient(135deg, rgba(232,184,75,0.12) 0%, rgba(30,35,48,0.04) 100%)';
+    }
+  }
+
+  function bigCardHtml(a, imgUrl) {
     if(!a) return '';
     const badge = getCategoryBadge(a.category);
-    const slug = a.file.replace('posts/', '').replace('.md', '');
-    const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+    const thumbStyle = imgUrl
+      ? `background:url('${imgUrl}') center/cover no-repeat`
+      : `background:${getCatGradient(a.category)}; display:flex; align-items:center; justify-content:center; font-size:3.5rem; opacity:0.7`;
+    const thumbInner = imgUrl ? '' : badge.icon;
 
     return `<a class="art-card art-card-big" href="article.html?id=${a.id}">
-      <div style="background: url('${thumbUrl}') center/cover no-repeat; height: 200px; margin: -2rem -2rem 1.5rem -2rem; border-bottom: 1px solid var(--border2);"></div>
+      <div style="${thumbStyle}; height:200px; margin:-2rem -2rem 1.5rem -2rem; border-bottom:1px solid var(--border2);">${thumbInner}</div>
       <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
       <div class="art-title">${escHtml(a.title)}</div>
       <div class="art-desc">${escHtml(a.description)}</div>
-      <div class="art-meta">
-        <span>${formatDate(a.date)}</span>
-      </div>
+      <div class="art-meta"><span>${formatDate(a.date)}</span></div>
     </a>`;
   }
 
-  function smallCardHtml(a) {
+  function smallCardHtml(a, imgUrl) {
     if(!a) return '';
     const badge = getCategoryBadge(a.category);
-    const slug = a.file.replace('posts/', '').replace('.md', '');
-    const thumbUrl = `assets/images/${slug}/01-cover.jpg`;
+    const thumbStyle = imgUrl
+      ? `background:url('${imgUrl}') center/cover no-repeat`
+      : `background:${getCatGradient(a.category)}; display:flex; align-items:center; justify-content:center; font-size:2.5rem; opacity:0.7`;
+    const thumbInner = imgUrl ? '' : badge.icon;
 
     return `<a class="art-card" href="article.html?id=${a.id}">
-      <div style="background: url('${thumbUrl}') center/cover no-repeat; height: 120px; margin: -1.5rem -1.5rem 1rem -1.5rem; border-bottom: 1px solid var(--border2);"></div>
+      <div style="${thumbStyle}; height:120px; margin:-1.5rem -1.5rem 1rem -1.5rem; border-bottom:1px solid var(--border2);">${thumbInner}</div>
       <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
       <div class="art-title art-title-sm">${escHtml(a.title)}</div>
       <div class="art-desc art-desc-sm">${escHtml(a.description)}</div>
-      <div class="art-meta">
-        <span>${formatDate(a.date)}</span>
-      </div>
+      <div class="art-meta"><span>${formatDate(a.date)}</span></div>
     </a>`;
   }
 
+  // Fetch ảnh đầu tiên song song cho tối đa 3 bài
+  const [img0, img1, img2] = await Promise.all([
+    big    ? getFirstImageFromMd(big.file)    : Promise.resolve(null),
+    small1 ? getFirstImageFromMd(small1.file) : Promise.resolve(null),
+    small2 ? getFirstImageFromMd(small2.file) : Promise.resolve(null),
+  ]);
+
   const grid = document.getElementById('featured-grid');
   if (big) {
-    grid.innerHTML = bigCardHtml(big) +
-      `<div class="editorial-grid-right">
-        ${small1 ? smallCardHtml(small1) : ''}
-        ${small2 ? smallCardHtml(small2) : ''}
-      </div>`;
+    const rightHtml = (small1 || small2)
+      ? `<div class="editorial-grid-right">
+          ${small1 ? smallCardHtml(small1, img1) : ''}
+          ${small2 ? smallCardHtml(small2, img2) : ''}
+        </div>`
+      : '';
+    grid.innerHTML = bigCardHtml(big, img0) + rightHtml;
   }
 
   // Latest videos: top 5

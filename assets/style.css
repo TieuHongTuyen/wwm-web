@@ -655,7 +655,7 @@ nav {
   font-size: 0.75rem; color: var(--text3);
 }
 
-.article-body { font-size: 0.92rem; line-height: 1.8; color: var(--text2); }
+.article-body { font-size: 0.92rem; line-height: 1.8; color: var(--text2); text-align: justify; }
 .article-body h2 {
   font-family: 'Oswald', sans-serif;
   font-size: 1.6rem; letter-spacing: 0.06em;

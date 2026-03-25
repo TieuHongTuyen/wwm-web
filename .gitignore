@@ -2,6 +2,9 @@
 danh-sach-video.txt
 export-tiktok-videos.csv
 PROMPT-obsidian.md
+PROMPT-cursor-workflow-doc.md
+PROMPT-cursor-github-actions.md
+PROMPT-cursor-local-thumbnails.md
 
 
 # Obsidian
@@ -15,3 +18,4 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+bilibili-data.json

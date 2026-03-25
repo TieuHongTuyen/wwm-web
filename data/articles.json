@@ -1,35 +1,13 @@
 [
   {
-    "id": "art-003",
-    "title": "Bài Viết Mẫu Số 3",
-    "category": "Meta",
-    "description": "",
-    "file": "posts/bai-viet-mau-so-3.md",
-    "icon": "🏆",
-    "date": "2026-03-16",
+    "id": "art-001",
+    "title": "Đốt củi tế trời, lửa rừng lan rộng | Ba Thủ lĩnh dã ngoại mới chính thức ra mắt tuần này!",
+    "category": "Nhân vật",
+    "description": "Tuần này, ba vị Thủ lĩnh dã ngoại mới sắp sửa lộ diện. Câu chuyện của họ liên quan mật thiết đến những biến cố máu lửa năm ấy. Đang chờ đợi bước chân du hiệp tìm đến, quyết chiến một phen để thấu tỏ tiền duyên.",
+    "file": "posts/phan-tich-dot-cui-te-troi-lua-rung-lan-rong-ba-thu-linh-da-ngoai-moi-chinh-thuc-ra-mat-tuan-nay.md",
+    "icon": "👤",
+    "date": "2026-03-25",
     "pinned": false,
     "related_video_id": ""
-  },
-  {
-    "id": "art-002",
-    "title": "Bài hướng dẫn mẫu",
-    "category": "Hướng dẫn",
-    "description": "Đây là bài viết mẫu 2",
-    "file": "posts/bai-huong-dan-mau.md",
-    "icon": "⚔️",
-    "date": "2026-03-16",
-    "pinned": true,
-    "related_video_id": "7570720856855399698"
-  },
-  {
-    "id": "art-001",
-    "title": "Hướng dẫn toàn tập: Bài viết mẫu chuẩn SEO — Trải nghiệm Web Yến Vân",
-    "category": "Hướng dẫn",
-    "description": "Đây là bài viết mẫu nhằm trình diễn tính năng đọc Markdown và hiển thị ảnh responsive siêu đẹp theo đúng quy tắc Slug mới. Tích hợp cover ảnh và meta đầy đủ.",
-    "file": "posts/bai-viet-mau.md",
-    "icon": "📄",
-    "date": "2026-03-16",
-    "pinned": true,
-    "related_video_id": "7616618393407393045"
   }
 ]
