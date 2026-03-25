@@ -14,6 +14,7 @@ const BADGE_MAP = {
   'Meta':      { cls: 'badge-meta',    icon: '🏆' },
   'Podcast':   { cls: 'badge-podcast', icon: '🎙️' },
   'Event':     { cls: 'badge-guide',   icon: '🎪' },
+  'Tin tức':   { cls: 'badge-news',    icon: '📰' },
 };
 
 function getCategoryBadge(category) {
@@ -95,6 +96,7 @@ function getCatGradientArt(category) {
     case 'Nhân vật':  return 'linear-gradient(135deg, rgba(78,205,196,0.25) 0%, rgba(78,205,196,0.08) 100%)';
     case 'Meta':      return 'linear-gradient(135deg, rgba(74,158,255,0.25) 0%, rgba(74,158,255,0.08) 100%)';
     case 'Podcast':   return 'linear-gradient(135deg, rgba(224,82,82,0.25) 0%, rgba(224,82,82,0.08) 100%)';
+    case 'Tin tức':   return 'linear-gradient(135deg, rgba(255,152,0,0.25) 0%, rgba(255,152,0,0.08) 100%)';
     default:          return 'linear-gradient(135deg, rgba(232,184,75,0.15) 0%, rgba(30,35,48,0.08) 100%)';
   }
 }

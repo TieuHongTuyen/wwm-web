@@ -87,6 +87,13 @@
         <div class="cat-count" id="cat-count-podcast">— tập tin tức</div>
       </div>
     </a>
+    <a class="cat-item" href="articles.html?filter=Tin tức">
+      <div class="cat-icon" style="background:rgba(255,152,0,0.1)">📰</div>
+      <div>
+        <div class="cat-name">Tin tức</div>
+        <div class="cat-count" id="cat-count-news">— bài viết</div>
+      </div>
+    </a>
   </div>
 
   <div class="content-wrap">
@@ -183,6 +190,7 @@
   document.getElementById('cat-count-char').textContent    = countBy('Nhân vật') + ' phân tích';
   document.getElementById('cat-count-video').textContent   = videos.length + ' video TikTok';
   document.getElementById('cat-count-podcast').textContent = countBy('Podcast') + ' tập tin tức';
+  document.getElementById('cat-count-news').textContent    = countBy('Tin tức') + ' bài viết';
 
   // Featured articles grid: 1 big + 2 small
   const big   = sortedArts[0];
@@ -196,6 +204,7 @@
       case 'Nhân vật':  return 'linear-gradient(135deg, rgba(78,205,196,0.18) 0%, rgba(78,205,196,0.04) 100%)';
       case 'Meta':      return 'linear-gradient(135deg, rgba(74,158,255,0.18) 0%, rgba(74,158,255,0.04) 100%)';
       case 'Podcast':   return 'linear-gradient(135deg, rgba(224,82,82,0.18) 0%, rgba(224,82,82,0.04) 100%)';
+      case 'Tin tức':   return 'linear-gradient(135deg, rgba(255,152,0,0.18) 0%, rgba(255,152,0,0.04) 100%)';
       default:          return 'linear-gradient(135deg, rgba(232,184,75,0.12) 0%, rgba(30,35,48,0.04) 100%)';
     }
   }

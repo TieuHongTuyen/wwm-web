@@ -270,7 +270,7 @@ nav {
 /* CATEGORY STRIP */
 .cat-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-bottom: 1px solid var(--border2);
 }
 .cat-item {
@@ -372,6 +372,7 @@ nav {
 .badge-char    { background: rgba(78,205,196,0.12);  color: var(--teal); }
 .badge-meta    { background: rgba(74,158,255,0.12);  color: var(--blue); }
 .badge-podcast { background: rgba(224,82,82,0.12);   color: var(--red); }
+.badge-news    { background: rgba(255,152,0,0.12);   color: #ff9800; }
 
 .art-title {
   font-family: 'Oswald', sans-serif;

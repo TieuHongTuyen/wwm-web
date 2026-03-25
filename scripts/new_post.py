@@ -26,6 +26,7 @@ TEMPLATE_MAP = {
     "Hướng dẫn": "huong-dan-boss.md",
     "Meta":      "meta-tier-list.md",
     "Podcast":   "podcast.md",
+    "Tin tức":   "tin-tuc.md",
 }
 
 VALID_CATEGORIES = list(TEMPLATE_MAP.keys())
@@ -159,6 +160,7 @@ def main():
         'Nhân vật':  '👤',
         'Meta':      '🏆',
         'Podcast':   '🎙️',
+        'Tin tức':   '📰',
     }
 
     new_article = {

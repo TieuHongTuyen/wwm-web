@@ -17,7 +17,7 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 POSTS_DIR = os.path.join(ROOT_DIR, "posts")
 JSON_PATH = os.path.join(ROOT_DIR, "data", "articles.json")
 
-VALID_CATEGORIES = ["Nhân vật", "Hướng dẫn", "Meta", "Podcast"]
+VALID_CATEGORIES = ["Nhân vật", "Hướng dẫn", "Meta", "Podcast", "Tin tức"]
 
 def remove_accents(input_str):
     s = re.sub(r'[đĐ]', 'd', input_str)
@@ -33,6 +33,7 @@ def create_slug(title, category):
     if category == "Hướng dẫn": return f"huong-dan-{slug_base}"
     if category == "Meta": return f"tier-list-{slug_base}"
     if category == "Podcast": return f"podcast-{slug_base}"
+    if category == "Tin tức": return f"tin-tuc-{slug_base}"
     return slug_base
 
 def main():
@@ -128,6 +129,7 @@ def main():
         'Nhân vật':  '👤',
         'Meta':      '🏆',
         'Podcast':   '🎙️',
+        'Tin tức':   '📰',
     }
 
     # Trích xuất URL ảnh đầu tiên từ bilibili-data.json để làm ảnh bìa
