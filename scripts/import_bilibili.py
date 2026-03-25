@@ -76,7 +76,6 @@ def main():
     # 1. Xây dựng nội dung file .md dựa trên dữ liệu F12
     # Thêm Header Lệnh AI cho người dùng copy dán thẳng lên GPT
     md_content = "<!-- \n"
-    md_content += "🤖 LỆNH CHO AI CHUYÊN NGÀNH DỊCH THUẬT (COPY PHẦN NÀY DÁN VÀO CHATGPT/CLAUDE):\n"
     md_content += "---------------------------------------------------------\n"
     md_content += "Bạn là chuyên gia dịch thuật game kiếm hiệp 'Yến Vân Thập Lục Thanh' (Where Winds Meet). "
     md_content += "Hãy dịch toàn bộ văn bản tiếng Trung trong bài Markdown dưới đây sang tiếng Việt. "
