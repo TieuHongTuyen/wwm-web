@@ -3,8 +3,9 @@ txt_to_videos_json.py
 Đọc danh-sach-video.txt, gọi TikTok Oembed API để lấy chi tiết Title và Thumbnail
 
 Cách dùng:
-  python scripts/txt_to_videos_json.py                   # Thêm video mới từ danh-sach-video.txt, tải thumbnail mới về local
-  python scripts/txt_to_videos_json.py --refresh-thumbnails  # Tải thumbnail còn thiếu cho toàn bộ video trong videos.json
+  python scripts/txt_to_videos_json.py                        # Thêm video mới từ danh-sach-video.txt, tải thumbnail mới về local
+  python scripts/txt_to_videos_json.py --refresh-thumbnails   # Tải thumbnail còn thiếu cho toàn bộ video trong videos.json
+  python scripts/txt_to_videos_json.py --add-id 7621604925725805832  # Thêm 1 video đơn lẻ bằng ID TikTok
 """
 
 import json
@@ -27,16 +28,26 @@ THUMBNAILS_DIR.mkdir(parents=True, exist_ok=True)
 
 REFRESH_THUMBNAILS = "--refresh-thumbnails" in sys.argv
 
-if not REFRESH_THUMBNAILS and not TXT_PATH.exists():
+# Mode --add-id: thêm 1 video đơn lẻ bằng ID
+ADD_ID = None
+if "--add-id" in sys.argv:
+    idx = sys.argv.index("--add-id")
+    if idx + 1 < len(sys.argv):
+        ADD_ID = sys.argv[idx + 1].strip()
+    else:
+        print("Thiếu ID. Cách dùng: python scripts/txt_to_videos_json.py --add-id {VIDEO_ID}")
+        exit(1)
+
+if not REFRESH_THUMBNAILS and not ADD_ID and not TXT_PATH.exists():
     print(f"Không tìm thấy file {TXT_PATH}")
     exit(1)
 
 lines = []
-if not REFRESH_THUMBNAILS:
+if not REFRESH_THUMBNAILS and not ADD_ID:
     with open(TXT_PATH, "r", encoding="utf-8") as f:
         lines = [line.strip() for line in f if line.strip()]
     print(f"Tổng số URL tìm thấy: {len(lines)}")
-else:
+elif REFRESH_THUMBNAILS:
     print("⚡ Chế độ: Làm mới TOÀN BỘ thumbnail (--refresh-thumbnails)")
 
 def detect_tags(title: str) -> list:
@@ -97,6 +108,67 @@ def download_thumbnail(video_id: str, url: str) -> str:
     except Exception as e:
         print(f"  [img-err] Lỗi tải thumbnail {video_id}: {e}")
         return url  # fallback về URL gốc nếu tải lỗi
+
+# ─── MODE: --add-id ───────────────────────────────────────────────────────────
+if ADD_ID:
+    video_id = ADD_ID
+    # Đọc JSON hiện tại
+    existing_videos = {}
+    existing_list = []
+    if JSON_PATH.exists():
+        with open(JSON_PATH, "r", encoding="utf-8") as f:
+            existing_list = json.load(f)
+            for v in existing_list:
+                existing_videos[v["id"]] = v
+
+    if video_id in existing_videos:
+        print(f"⚠️  Video {video_id} đã tồn tại trong videos.json. Bỏ qua.")
+        exit(0)
+
+    tiktok_url = f"https://www.tiktok.com/@tiu.hng.tuyn/video/{video_id}"
+    oembed_url = f"https://www.tiktok.com/oembed?url={tiktok_url}"
+
+    try:
+        req = urllib.request.Request(oembed_url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode())
+
+        thumb_url = data.get("thumbnail_url", "")
+        local_thumb = download_thumbnail(video_id, thumb_url)
+
+        raw_title = data.get("title", "")
+        clean_t = clean_title(raw_title)
+        if not clean_t:
+            clean_t = f"Video Yến Vân Guide #{video_id[-5:]}"
+
+        today = datetime.now().strftime("%Y-%m-%d")
+        new_entry = {
+            "id": video_id,
+            "title": clean_t,
+            "tags": detect_tags(clean_t),
+            "date": today,
+            "thumbnail": local_thumb,
+            "pinned": False,
+        }
+
+        # Chèn vào đầu danh sách
+        updated_list = [new_entry] + existing_list
+        JSON_PATH.parent.mkdir(exist_ok=True)
+        with open(JSON_PATH, "w", encoding="utf-8") as f:
+            json.dump(updated_list, f, ensure_ascii=False, indent=2)
+
+        print(f"✅ Đã thêm video: {video_id}")
+        print(f"   Tiêu đề : {clean_t}")
+        print(f"   Tags    : {detect_tags(clean_t)}")
+        print(f"   Ngày    : {today}")
+        print(f"   Thumbnail: {local_thumb}")
+
+    except Exception as e:
+        print(f"❌ Lỗi khi lấy thông tin video {video_id}: {e}")
+        exit(1)
+
+    exit(0)
+# ───────────────────────────────────────────────────────────────────────────────
 
 videos = []
 base_date = datetime.now()

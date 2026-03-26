@@ -86,6 +86,21 @@ bilibili-data.json          ← Data trung gian copy từ Console Bilibili (Dùn
 
 ## 4. Quy trình cập nhật video
 
+### Thêm 1 video đơn lẻ bằng ID (nhanh nhất):
+
+```
+python scripts/txt_to_videos_json.py --add-id {VIDEO_ID}
+```
+
+Script tự động: gọi TikTok oEmbed API, lấy tiêu đề, nhận diện tag, tải thumbnail, chèn vào đầu `data/videos.json`.
+
+Sau đó deploy:
+```
+git add -A; git commit -m "add video {VIDEO_ID}"; git push
+```
+
+---
+
 ### Quy trình chuẩn (không giới hạn số lượng):
 1. Vào trang profile TikTok trên trình duyệt, cuộn để load hết video
 2. Nhấn F12 → Tab Console → gõ `allow pasting` → Enter
