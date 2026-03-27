@@ -1,97 +1,101 @@
-# Đốt củi tế trời, lửa rừng lan rộng | Ba Thủ lĩnh dã ngoại mới chính thức ra mắt tuần này!
+# Yến Vân Thập Lục Thanh: Ba Thủ Lĩnh Dã Ngoại Mới Và Tuyệt Cảnh Sắp Lộ Diện
 
 > Nguồn bài viết (tham khảo): [Bilibili](https://www.bilibili.com/opus/1183381618878840850?spm_id_from=333.1365.0.0)
 
-Trong hành trình trước đây, các Du Hiệp từng ngoảnh lại nhìn dấu chân hiệp khách, chứng kiến trận huyết chiến Hô Đà, xương trắng vùi sông; cũng từng tiến sâu vào Đào Nguyên, trải qua loạn Khai Sơn, vách tường Mặc Môn tương tàn. Giờ đây chuyện cũ dần xa, nhưng nhân quả vẫn còn đó.  
-
-Câu chuyện của họ cũng liên quan mật thiết đến máu và lửa thuở ấy. Vẫn chờ Du Hiệp đặt chân đến vùng đất đó, một trận chiến mới thấu rõ tiền duyên.
+Trong hành trình trước đây, các du hiệp từng ngoái nhìn dấu chân hiệp khách, chứng kiến trận huyết chiến Hô Đà, xương trắng vùi dòng sông; cũng từng dấn thân vào Đào Nguyên, trải qua loạn mở núi, Mặc Môn tương tàn. Nay chuyện cũ dần xa, nhưng nhân quả vẫn còn đó.  
+  
+Tuần này, **ba Thủ lĩnh dã ngoại mới** chuẩn bị xuất hiện. Câu chuyện của họ cũng liên quan mật thiết đến khói lửa năm ấy. Đang chờ các du hiệp đặt chân đến vùng đất đó, một trận tử chiến để thấu tỏ tiền duyên.  
+  
+### Thủ lĩnh dã ngoại mới - 「Yết Luật A Bất Lý」
 
 ![Ảnh 1](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/c7c78b428691d621d041160e310e04ea1567141152.jpg)
 
-A Bất Lý đứng trước ngọn lửa ngùn ngụt, tóc trắng như sương, làn da gần như trong suốt — người ta nói rằng, cô là bạch mã chuyển thế dưới chân tổ tiên, đó chính là minh chứng cho thần tích.  
-
-Câu đầu tiên cô học được chính là lời cầu nguyện, cô đã dâng hiến tất cả cho thần linh.  
-
-Điềm báo trong giấc mơ đã đưa cô đến đây, tổ chức một buổi đại tế.  
-
-Trên thảo nguyên, sinh mạng của kẻ yếu luôn là để hoàn thiện kẻ mạnh, sói vương già yếu phải ngã xuống, để sói đầu đàn mới xé nát cổ họng nó. Chất củi thành đàn, đốt củi tế trời — Khiết Đan sẽ trở thành sói đầu đàn của vùng đất này. Cô muốn dâng lên thần linh của mình vật tế, rượu ngon và sự bái lạy. Cô muốn để máu tươi nhuộm đỏ vùng đất này.  
-
-Những hiệp khách từ phương Nam đến này, trong lòng có thứ còn cao cả hơn cả thần linh. Con sói đầu đàn Khiết Đan này muốn tiến vào Trung Nguyên, còn phải hỏi qua thanh trường kiếm trong tay các hiệp khách.
+"Quỳ gối giữa bụi trần, một lòng thành kính..."  
+  
+A Bất Lý đứng trước ngọn lửa ngút trời, tóc trắng như sương, làn da gần như trong suốt — người ta nói rằng, nàng là bạch mã dưới tòa tiên tổ chuyển thế, đó chính là minh chứng cho thần tích. Nàng vừa là vương tộc Khiết Đan, vừa là Shaman phụng sự thần linh. Câu nói đầu tiên nàng học được là lời cầu nguyện, nàng đã dâng hiến tất cả cho thần minh.  
+  
+"Thỉnh cầu chư thần, giáng lâm hưởng tế..."  
+  
+Điềm báo trong mộng dẫn lối nàng đến đây, tổ chức một buổi đại tế hoành tráng. Trên thảo nguyên, sinh mạng kẻ yếu sinh ra vốn để hoàn thiện kẻ mạnh, sói vương già cỗi phải gục ngã để sói đầu đàn mới xé nát cổ họng nó. Chất củi làm đàn, đốt lửa cáo trời — Khiết Đan sẽ trở thành sói đầu đàn của vùng đất này. Nàng muốn dâng lên thần linh tế phẩm, mỹ tửu và sự bái lạy. Nàng muốn dùng máu tươi nhuộm đỏ mảnh đất này.  
+  
+Thế nhưng, kẻ có tâm hướng về thương sinh, chẳng cần kính sợ quỷ thần. Những hiệp khách từ phương Nam tới, trong lòng họ có thứ cao thượng hơn cả thần minh. Con sói đầu đàn Khiết Đan này muốn làm chủ Trung Nguyên, còn phải hỏi qua trường kiếm trong tay các hiệp khách.
 
 ![Ảnh 2](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/ec687ee7118d198cb9bb2b32a36c4f1f1567141152.gif&n=-1)
 
+*Hình động*
+
 ![Ảnh 3](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/89f80ecc3868a8fbb676a2e36b463ce61567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* ### Thủ lĩnh dã ngoại mới - 「Thương」
 
 ![Ảnh 4](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/18999df9d080599464a63e49697b7cf21567141152.jpg)
 
-Hắn vốn không có tên, sư phụ đã từ trong "Mặc Kinh" đặt tên cho hắn: Thương.  
-
-Từ đó, hắn tên là Thương.  
-
-Loạn thế sẽ xóa nhòa niềm vui của con người, xóa nhòa lòng thù hận, biến con người thành loài dã thú chỉ mong sống sót. Trước khi gặp vị "nàng" ấy, hắn tin rằng cá lớn nuốt cá bé là đạo lý chân thực nhất thiên hạ. Nhưng khi con dao găm trong tay bị nàng nhẹ nhàng tước mất, thân tâm như bị ánh sáng nơi đáy mắt nàng xuyên thấu, thú non nhe nanh bỗng chốc mất đi phương hướng —  
-
-Nhiều năm sau, hắn leo qua vách đá dựng đứng, dõi theo bóng dáng sư phụ đến trong núi, để tham dự trận quyết đấu chưa dứt điểm, cũng vì một màn thiết hoa chưa kịp cho nàng xem. Gió trợ hỏa thế, lửa nổi lên!
+Hắn vốn không có tên, sư phụ dựa vào cuốn "Mặc Kinh" mà đặt tên cho hắn: **Nhuộm sắc xanh (Thương) thì hóa xanh, nhuộm sắc vàng thì hóa vàng**. Từ đó, hắn tên là Thương.  
+  
+Loạn thế sẽ xóa nhòa niềm vui, xóa nhòa lòng căm ghét, biến con người thành dã thú chỉ cầu được sống sót. Trước khi gặp vị "sư phụ" ấy, hắn tin rằng cá lớn nuốt cá bé là chân lý nguyên bản nhất của thiên hạ. Nhưng khi đoản kiếm trong tay bị nàng nhẹ nhàng tước mất, thân tâm như bị ánh sáng nơi đáy mắt nàng xuyên thấu, con thú non đang nhe nanh bỗng chốc mất phương hướng — nàng không tin vào yếu nhục cường thực, vậy cớ sao nàng lại mạnh mẽ đến thế?  
+  
+Nhiều năm sau, hắn leo qua vách đá dựng đứng, dõi theo bóng dáng sư phụ vào tận trong núi, để hoàn thành ước hẹn tỷ thí chưa dứt, cũng để trình diễn một màn thiết hoa (pháo hoa sắt) chưa kịp cho nàng xem. Gió trợ hỏa thế, lửa nổi lên!
 
 ![Ảnh 5](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/4332873064d0a88be619dde260f9203b1567141152.gif&n=-1)
 
+*Hình động*
+
 ![Ảnh 6](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/98df6321c467a3c0898684d71600d4331567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* ### Thủ lĩnh dã ngoại mới - 「Thiên Nhai Khách Bính Thân」
 
 ![Ảnh 7](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/82d665b15fca81f2ec40e8be692a892c1567141152.jpg)
 
-Năm bị đưa về Thư viện Phong Long, hắn mới mười tuổi. Hắn tin vào định mệnh.  
-
-Lúc chia tay, hắn đi cực nhanh, chỉ để lại một tiếng sảng khoái: Vĩnh biệt! Từ đó, hắn gia nhập Thiên Nhai Khách, người khác bắt đầu gọi hắn là Bính Thân.  
-
-Nhưng sự đời không như ý, sau này hắn rốt cuộc đã không thể đến được bờ sông Hô Đà ấy. Hắn nhớ lại tiếng vĩnh biệt vang dội năm xưa, ngay lúc này, tại Tàng Nguyệt Cương sơn vũ dục lai, gió gào dù gắt, tiếng lòng khó che giấu, hắn đã không còn đường lui.  
-
-Cho đến một ngày nọ, lại một người nữa tìm đến.  
-
-Tiếng vĩnh biệt khiến hắn hối hận không kịp ấy, nay lại vang lên lần nữa.
+Năm được đưa về Phong Long Thư Viện, hắn mới mười tuổi. Hắn tin rằng đất trời bao la, nơi nào cũng tốt hơn là bị vây hãm tại chỗ. Lúc biệt ly, hắn bước đi cực nhanh, chỉ để lại một tiếng sảng khoái: **"Vĩnh biệt!"**. Từ đó, hắn gia nhập Thiên Nhai Khách, người đời bắt đầu gọi hắn là Bính Thân.  
+  
+Nhưng sự đời không như ý, hắn về sau chung quy vẫn không thể kịp đến bên bờ sông Hô Đà. Hắn nhớ lại tiếng vĩnh biệt vang dội năm ấy, ngay lúc này đây, trong Tàng Nguyệt Cương sơn vũ sắp tới, gió gào dù dữ dội cũng không át được tiếng lòng, hắn đã không còn đường lui.  
+  
+Cho đến một ngày, lại có thêm một người tìm đến.  
+  
+"Thiên Nhai Khách từng đo lường trời đất, nay lại cô độc thủ tại chốn rừng rậm tấc vuông này. Là để trú mưa, hay là sợ thua?"  
+  
+Tiếng vĩnh biệt từng khiến hắn hối hận khôn nguôi, nay lại có duyên gặp lại trên con đường hiệp lộ này.
 
 ![Ảnh 8](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/380103c1f806d12c6997f070ab65de1d1567141152.gif&n=-1)
 
+*Hình động*
+
 ![Ảnh 9](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/c5cf8e3b2c8c7be3f596ce17a3f813351567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi  
-
-Ba vị thủ lĩnh mỗi người một chấp niệm, nhưng sóng gió giang hồ chưa bao giờ dừng lại, nhiều thử thách hơn cũng đã sẵn sàng. Nhân dịp cập nhật mùa giải tuần này, một Hiệp Cảnh mới cũng chính thức mở cửa (Hồng Trần Ảo Cảnh), cần triệu tập đồng bào, cùng dấn thân vào trận chiến gian khổ. Tại đây, cũng xin mang đến cho các Du Hiệp cái nhìn trước về Hiệp Cảnh mới —
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* Ba đại thủ lĩnh mỗi người một chấp niệm, nhưng sóng gió giang hồ chưa từng dừng lại, nhiều thử thách hơn cũng đã sẵn sàng. Nhân dịp cập nhật mùa giải tuần này, **Hiệp Cảnh** và **Thử Kiếm** cũng sẽ khai mở, cần triệu tập đồng bào, cùng tiến vào trận chiến gian nguy. Tại đây, xin mang đến cho các du hiệp thông tin xem trước về Hiệp Cảnh mới —  
+  
+### Hiệp Cảnh mới - 「Bạch Y Một Thiên Lang」  
+  
+*Thanh vân y hề bạch nghê thường, cử trường thỉ hề xạ Thiên Lang* (Áo mây xanh hề xiêm y trắng, giương tên dài hề bắn Thiên Lang)
 
 ![Ảnh 10](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/35efd4b89f3fdc650b411e72a025156a1567141152.png)
 
-Lần này lại gặp lại Ly Tư Phú, giữa ống tay áo và quạt đã ngưng tụ băng tinh huỳnh hỏa, giữa lúc huỳnh hỏa băng nở, ánh nến chập chờn.  
-
-Phía bắc U Cảnh, có bức bình phong treo cao, nến cháy tắt xen lẫn với những mảnh thơ tàn. Chỉ có làm theo chỉ dẫn trên bình phong, dẫn dắt băng tinh huỳnh hỏa lưu động trong cảnh hiểm nguy mới có thể trọng thương Ly Tư u oán này.
+Lần này tái ngộ Ly Tư Phú, giữa ống tay áo và quạt đã ngưng tụ băng tinh huỳnh hỏa, giữa lúc huỳnh hỏa băng nở, nến lửa chập chờn.  
+  
+Phía bắc U Cảnh, có họa bình treo cao, nến đài cháy tắt cùng những tàn chương thi văn đan xen. Chỉ có dựa theo chỉ dẫn trong bình phong, dẫn lối băng tinh huỳnh hỏa chảy trôi trong hiểm cảnh, hoặc khống chế nến đài sáng tắt, hoặc ghép nối các câu thơ tàn khuyết hoàn chỉnh, mới có thể trọng thương nỗi oán hận ly tư này.
 
 ![Ảnh 11](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/6aa5419e936dcb775ea24341bc2a59821567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi  
-
-Trong lúc tay áo múa quạt xòe, huỳnh hỏa và băng tinh tuôn trào quanh giá nến, giữa lúc sáng tối hung hiểm lộ rõ. Bỗng nhiên lại có ống tay áo ngưng tụ thành khiên quấn lấy nến, còn cần hiệp lực mới có thể phá vỡ rào cản, tái hiện ánh sáng.
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* Giữa điệu múa tay áo và quạt xòe, huỳnh hỏa cùng băng tinh tuôn trào đến nến đài, giữa lúc sáng tắt lộ rõ hung hiểm. Bất chợt lại có thủy tụ (tay áo lụa) ngưng thành khiên quấn lấy nến, cần phải tập hợp sức mạnh của mọi người mới có thể phá vỡ rào chắn, tái hiện ánh sáng.
 
 ![Ảnh 12](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/b64c61c6a41b91827d4fee52a861884e1567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi  
-
-U oán thấm cốt, sầu muộn khó nguôi, Ly Tư Phú cuối cùng rơi vào cuồng nộ. Một trận băng tinh bất ngờ cuốn tới, ánh nến tắt lịm. Nếu không thể thắp sáng lại hy vọng, bóng tối lạnh lẽo này sẽ là hồi kết của trận chiến.  
-
-Ngự cấm u oán sắp bình, lại nghe tiếng vó ngựa dồn dập bên bờ sông. Ngày đó giao chiến lần đầu tại bờ bắc Hô Đà, đã lĩnh giáo qua sự bạo ngược hung tàn của Tiêu Hàn. Lần này gặp lại, nợ máu phải được thanh toán một thể.  
-
-Biến số lớn nhất của trận chiến này nằm ở chỗ chiến trường không còn bị giới hạn ở một góc, ba địa điểm trên con đường khói lửa, nơi đâu cũng là hiểm đạo. May mắn có đồng đội hỗ trợ, mới có thể phá tan ngàn trùng hiểm cục.  
-
-Cát cuồng bất ngờ nổi lên, phải lấy tĩnh chế động; ngọn lửa lan rộng, thì lấy thủy khắc hỏa. Bỗng nhiên, Tiêu Hàn cưỡi ngựa chạy trốn, trên đường truy kích biển lửa và gió lạnh giăng lối, bẫy rập và cung tên cùng lúc ập đến. Cần phân công với đồng bào, hoặc phân tán tránh bẫy, hoặc dùng "Ngự" chặn tên, mới có thể bảo toàn chu toàn trong cảnh hiểm nguy.
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* Oán hận thấu xương, sầu muộn khó nguôi, Ly Tư Phú cuối cùng rơi vào cuồng nộ. Một trận băng tinh chợt cuốn tới, nến lửa đều tắt ngấm. Nếu không thể trước khi tiếng rít gào vang lên, dùng huỳnh hỏa thắp sáng lại nến đài, thì bóng tối lạnh lẽo này sẽ là hồi kết của trận chiến.  
+  
+Oán hận trong cung cấm sắp bình định, lại nghe bên bờ sông tiếng vó ngựa dồn dập. Ngày ấy tại bờ bắc Hô Đà sơ chiến, đã lĩnh giáo qua sự bạo ngược hung tàn của **Tiêu Hàn**. Lần này gặp lại, nợ máu phải được thanh toán một thể.  
+  
+Biến số lớn nhất của trận này nằm ở chỗ chiến trường không còn bị vây hãm một góc, ba địa điểm trên đường khói lửa, nơi nơi đều là hiểm lộ. May có hai thuật **"Ngự"** và **"Tật"**, một tĩnh một động, luân phiên làm kiếm, mới có thể phá tan ngàn trùng hiểm cục.  
+  
+Cát bụi cuồng loạn nổi lên, phải dùng "Ngự" để đứng vững căn cơ; ngọn lửa lan tràn, thì dùng "Tật" để phá mở hiểm lộ. Bất chợt, Tiêu Hàn cưỡi ngựa tẩu thoát, trên đường truy kích biển lửa cùng gió lạnh chắn ngang, cạm bẫy và cung tên cùng ập tới. Cần phân công với đồng bào, hoặc phân tán né tránh cạm bẫy, hoặc dùng "Ngự" thân mình chắn tên, mới có thể bảo toàn chu toàn trong hiểm cảnh.
 
 ![Ảnh 13](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/e0a2bc3b486a125fd8aeb6a9b12507561567141152.gif&n=-1)
 
+*Hình động*
+
 ![Ảnh 14](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/29f4997a8af51585abc05ea469547f651567141152.gif&n=-1)
 
-*Hình ảnh trong quá trình phát triển, vui lòng tham khảo hiệu ứng thực tế trong trò chơi  
-
-Đã đến đường cùng, Tiêu Hàn nhặt lấy chiến phủ, thế công càng thêm tàn khốc. Đá lăn ầm ầm, mưa tên đầy trời, sát cơ không chỉ dừng lại ở đó — xích sắt bất ngờ tung ra, hai người bị trói chặt vào nhau; nếu bị khóa mục tiêu, sát chiêu sẽ ập đến. Chỉ có đồng bào hiệp lực, mới có thể thấu phá sát kiếp, thoát khỏi cục diện nguy hiểm.  
-
-Giang hồ đường xa, bóng địch chập chờn, lần này là đơn độc luyện kiếm, hay cùng đồng bào dấn thân vào hiểm cục, tất cả tùy thuộc vào sự lựa chọn của Du Hiệp.  
-
-Tuần này còn có các nội dung lối chơi mới được cập nhật, chúng tôi sẽ mang đến giới thiệu chi tiết cho các Du Hiệp sau, kính mời quý vị chú ý đón xem!
+*Hình động* *\*Hình ảnh đang trong quá trình phát triển, vui lòng tham khảo hiệu quả thực tế trong trò chơi.* Đã đến đường cùng, Tiêu Hàn nhặt lấy chiến rìu, thế tấn công càng thêm tàn khốc. Đá lăn ầm ầm, mưa tên rợp trời, sát cơ không chỉ dừng lại ở đó — xích sắt chợt xuất hiện, hai người bị trói chặt vào nhau; nếu bị khóa mục tiêu, sát chiêu sẽ giáng xuống. Chỉ có đồng bào hiệp lực, hoặc chạy ngược hướng bằng "Tật", hoặc cùng dùng "Ngự" để gánh chịu, mới có thể thấu hiểu sát kiếp, phá cục mà ra.  
+  
+Giang hồ đường xa, bóng địch trập trùng, lần này là độc hành rèn kiếm, hay cùng đồng bào tiến vào hiểm cục, tất cả tùy du hiệp quyết định.  
+  
+Tuần này còn có nội dung lối chơi mới được cập nhật, chúng tôi sẽ mang đến giới thiệu xem trước cho du hiệp trong thời gian tới, kính mời các vị chú ý theo dõi!

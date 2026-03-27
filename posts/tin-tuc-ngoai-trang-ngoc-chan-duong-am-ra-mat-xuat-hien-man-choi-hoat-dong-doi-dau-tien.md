@@ -1,106 +1,118 @@
-# Ngoại trang Ngọc Chấn Dương Âm ra mắt, xuất hiện màn chơi hoạt động đôi đầu tiên!
+# Yến Vân Thập Lục Thanh - Thông tin cập nhật mới nhất
 
-> Nguồn bài viết (tham khảo): [Bilibili](https://www.bilibili.com/opus/1184103804715401217?spm_id_from=333.1007.top_right_bar_window_dynamic.content.click)
+> Nguồn bài viết (tham khảo): [Bilibili](https://www.bilibili.com/opus/1184103804715401217?spm_id_from=333.1365.0.0)
 
-Gần đây, trên đường phố Quỷ Thị bỗng xuất hiện vị khách bí ẩn. Tương truyền, người này nắm giữ bí pháp Tây Vực, có thể giúp người ta nhập mộng tìm kiếm tuyệt thế bảo tàng. Nhưng cũng có kẻ nói rằng, người này hành tung kỳ quái, bí pháp ẩn chứa huyền cơ, nếu dấn thân vào e rằng có nguy hiểm rình rập...
+Gần đây, tại các con phố trong **Quỷ Thị** bỗng xuất hiện một vị khách bí ẩn. Tương truyền, người này nắm giữ mật pháp Tây Vực, có thể giúp người ta đi vào giấc mộng để tìm kiếm kho báu tuyệt thế. Nhưng cũng có lời đồn rằng, người này tính tình kỳ quái, mật pháp ẩn chứa huyền cơ, nếu dấn thân vào e rằng có nguy hiểm rình rập...
 
-**Du hiệp sẽ cùng một người vô cùng đặc biệt kề vai nhập mộng**, tìm kiếm chí bảo ẩn sâu trong giấc mộng.
+Phụ bản đôi đầu tiên **【Bộ Phong Tầm Ảnh】** sẽ chính thức ra mắt trong tuần này. Du hiệp sẽ cùng một người đồng hành đặc biệt sát cánh nhập mộng, tìm kiếm chí bảo ẩn sâu trong tầng tầng lớp lớp giấc mơ.
 
-Thế giới trước mắt xoay chuyển dữ dội, rồi bỗng chốc lặng thinh — Thiên địa trong mộng đã mở ra. Trùng trùng mộng cảnh mỗi nơi mỗi khác, mỗi đoạn đường đều ẩn chứa những bất ngờ không hẹn mà gặp.
+**Lối chơi mới**
 
-**Chí bảo trong mộng, có lẽ chính là những mảnh ký ức thuở ban sơ**. Loại cỏ lạ "sợ nhột", những cây nấm khổng lồ phát sáng, hoa bay lơ lửng... những cảnh tượng này từng xuất hiện trong trí tưởng tượng thuở nhỏ, con đường trong núi sâu lại mang cảm giác quen thuộc như trong ký ức.
+**【Bộ Phong Tầm Ảnh】**
+
+Thế giới trước mắt xoay chuyển, rồi bỗng chốc lặng im —— Thiên địa trong mộng đã rộng mở. Mỗi tầng mộng cảnh đều khác biệt, mỗi đoạn đường đều ẩn chứa những bất ngờ không hẹn mà gặp.
+
+Chí bảo trong mộng, có lẽ ẩn giấu trong những kỳ quan nơi sơn dã. Những đóa "quái thảo" sợ nhột, những cây nấm phát quang khổng lồ, hay những cánh hoa bay lững lờ... Những cảnh tượng này từng xuất hiện trong trí tưởng tượng thuở nhỏ, và con đường mòn trong núi ấy dường như cũng thật quen thuộc trong ký ức xa xăm.
 
 ![Ảnh 1](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/66192b9ed77ff2de606b66a53928aa231567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Cảnh sắc hoang sơ dù đẹp nhưng vẫn không ít trở ngại. Mà trước khi nhập mộng, tín vật mà bạn và người đồng hành đã chọn lúc này sẽ phát huy tác dụng.
+Kỳ cảnh sơn dã tuy đẹp nhưng vẫn có không ít trở ngại. Trước khi nhập mộng, các **Tín Vật** mà bạn và người đồng hành đã chọn lúc này sẽ phát huy tác dụng.
 
-**Một loại tín vật có thể điều khiển thực vật sinh trưởng**, thậm chí còn có thể cưỡi hoa ngự phong mà bay; **mà tín vật còn lại có thể khiến vạn vật hóa nhỏ**, xuyên qua những bí cảnh mà ngày thường khó lòng chạm tới.
+Một tiếng sáo vang lên, hoa cỏ trong rừng sẽ nằm dưới sự điều khiển của bạn, thậm chí bạn còn có thể cưỡi hoa để ngự phong phi hành; trong khi đó, tín vật còn lại có thể giúp bạn thi triển thuật **Thu nhỏ**, luồn lách qua những bí cảnh mà bình thường khó lòng chạm tới.
 
-Khi song hiệp kề vai, giải cứu chú hươu nhỏ lạc đường, băng qua biển hoa vô tận, bơi qua dòng sông lấp lánh ánh huỳnh quang xanh... nơi cuối cùng của núi rừng, **một rương báu đầy ắp bất ngờ** đang chờ đợi các vị trên đỉnh núi dưới gốc cây già.
+Khi song hiệp sát cánh, giải cứu chú hươu lạc lối, xuyên qua biển hoa vô tận, bơi qua dòng sông lấp lánh ánh huỳnh quang xanh... Ở cuối con đường sơn dã, bên ngoài chí bảo, luôn có một cố nhân đang đợi các bạn dưới gốc cây trên đỉnh núi.
 
 ![Ảnh 2](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/c4d52f6e6172a23de1b6bb782f7943d11567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Một giấc mộng chưa tan, lại lạc vào mộng khác. Khi mở mắt ra lần nữa, **trước mắt là một bữa gia yến náo nhiệt** — Đèn lồng đỏ treo cao, bàn tiệc đầy cao lương mỹ vị, thực khách khắp sảnh đang nâng chén vui vầy.
+Giấc mộng này chưa tỉnh, giấc mộng khác đã tìm đến. Khi mở mắt ra lần nữa, kỳ cảnh sơn dã đã biến thành một quán trọ trong ký ức —— lồng đèn đỏ treo cao, bàn tiệc đầy cao lương mỹ vị, quan khách khắp nhà đang nâng chén rượu nồng.
 
-Trong bầu không khí huyên náo ấy, hai kẻ nhập mộng tìm bảo vật lại rơi vào những tình huống lúng túng khác nhau. May thay nhờ tương phùng trong mộng, suốt dọc đường kề vai sát cánh, sự ăn ý đã lặng lẽ nảy mầm.
+Trong bầu không khí náo nhiệt ấy, hai kẻ tìm bảo vật lại rơi vào những tình huống dở khóc dở cười khác nhau. May thay gặp gỡ trong mộng, cùng nhau xông pha suốt chặng đường, sự ăn ý đã âm thầm nảy nở.
 
 ![Ảnh 3](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/7f4cd45f11e49795ca8166f90b0f214f1567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Ánh đèn, hương rượu, tiếng cười đùa, sự rượt đuổi... trong giấc mộng này không có mưa gió giang hồ, chỉ có niềm vui thuần khiết khi cùng nhau chạy nhảy. Lúc tìm thấy chí bảo, có lẽ sẽ nhớ về đêm nồng nhiệt từng rong đuổi ấy. Về sau, **một ngọn đèn rực rỡ đột ngột thắp sáng**, soi rõ bóng hình của người ấy.
+Ánh đèn, hương rượu, náo nhiệt, rượt đuổi... Trong giấc mộng này, không có phong ba giang hồ, chỉ có niềm vui thuần khiết khi cùng nhau chạy nhảy. Khi tìm được chí bảo, có lẽ bạn sẽ nhớ về một đêm nào đó cũng từng chạy nhảy như vậy. Sau đó, bạn và người ấy ngồi cạnh nhau trên mái nhà, pháo hoa rực rỡ phương xa thắp sáng bóng hình của người ấy.
 
-Khói lửa nhân gian còn hơi ấm trong lòng, ngước mắt nhìn lên, trước mắt đã là đèn hoa như ban ngày, hàng quán san sát. Chỉ là "du khách" đi lại giữa chốn này trông thật phi thường... ngay cả hai kẻ tìm bảo vật cũng hóa thân thành **những trái cây nhỏ bé** giữa sạp hoa quả.
+Hơi ấm pháo hoa vẫn còn đọng lại trong tim, ngẩng đầu nhìn lên, trước mắt đã là đèn hoa rực rỡ như ban ngày, hàng quán san sát. Chỉ là những "du khách" đi lại giữa phố phường trông thật lạ thường... Ngay cả hai kẻ tìm bảo vật cũng hóa thân thành những hình hài tròn ủng giữa sạp trái cây!
 
 ![Ảnh 4](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/2815d8d33777fc7ffc5772cedea66df51567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Trong khu chợ mộng ảo lung linh ánh đèn này, cuộc phiêu lưu cũng trở nên nhẹ nhàng và thú vị. Các vị chỉ cần mang theo sự tâm đầu ý hợp mà dạo bước chốn này.
+Trong khu chợ mộng ảo lung linh ánh đèn này, cuộc phiêu lưu cũng trở nên nhẹ nhàng và thú vị hơn. Các bạn chỉ cần mang theo sự ăn ý để dạo bước giữa chốn này.
 
 ![Ảnh 5](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/fab898c06b02cca28680df1d111b32301567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Và khi cuối cùng nắm chặt món chí bảo kia, xuyên qua ánh sáng rực rỡ xoay vần, lại nhìn thấy cảnh tượng ngày ấy — Bầu trời được nhuộm sắc son, có một con cá lớn như cây cổ thụ! Bạn hào hứng nói mãi không thôi, còn **người đồng hành bên cạnh mỉm cười lắng nghe**.
+Khi cuối cùng đã nắm được món chí bảo ấy, xuyên qua ánh sáng rực rỡ đang xoay chuyển, bạn lại thấy cảnh tượng ngày hôm đó —— bầu trời nhuộm sắc son, có một con cá lớn như cái cây! Bạn thao thao bất tuyệt kể lại, còn người bên cạnh mỉm cười, lặng lẽ nhìn bạn.
 
-Nơi sâu thẳm của giấc mộng, bạn còn phải cùng đối thủ khó nhằn năm xưa mở ra một trận chiến định mệnh! Lần này, có người cùng sát cánh, mỗi lần hợp lực xuất kích chính là một lần đánh lui sự nhút nhát trong ký ức.
+Sâu trong giấc mộng, bạn còn phải đối đầu với một đối thủ khó nhằn năm xưa trong một trận chiến định mệnh! Lần này, đã có người sát cánh chiến đấu, mỗi đòn phối hợp tấn công đều đẩy lùi sự sợ hãi trong ký ức từng chút một.
 
-Sa mạc, lò nung, tuyết lạnh... đều vụt qua bên tai. Con đường đã qua chính là tiền lộ trong mộng. **Cánh cửa bí mật của mộng cảnh cuối cùng đã hé mở**. Chí bảo tìm kiếm rốt cuộc là vật gì, người đồng hành là ai, muôn vàn kỳ quái và bí mật trong mộng, đang đợi song hiệp cùng chung giấc mộng, cùng nhau khám phá. Du hiệp cũng **có thể mời hảo hữu tham gia mộng cảnh**.
+Biển cát, lò luyện, gió tuyết... đều vút qua bên tai. Con đường đã qua, nay trở thành con đường phía trước trong mộng. Những vui buồn ly hợp của quá khứ, trong lúc giao thoa, đã hội tụ nơi sâu thẳm tâm hồn. Chí bảo tìm kiếm rốt cuộc là vật gì, người đồng hành là ai, mọi điều kỳ bí trong giấc mộng, xin đợi song hiệp cùng chung giấc mộng, cùng nhau khám phá. Du hiệp cũng có thể mở chế độ **Trợ chiến thông minh** để bắt đầu chuyến hành trình kỳ thú này.
 
-Sau bản cập nhật ngày mai, **mùa giải mới chính thức khai mở**. Khi đó, sẽ có các giới hạn tu vi mới như **Cấp độ nhân vật, Cấp bậc võ học, Cấp sao võ học** được mở rộng. Chúc các vị du hiệp tiến bước không ngừng, vang danh thiên hạ!
+Sau khi cập nhật ngày mai, mùa giải mới **「Giáp Chung Tấu Nhã · Thượng」** sẽ chính thức khai mở. Lúc đó, sẽ có **【Cấp độ Chế độ Đơn】** mới cùng giới hạn bồi dưỡng Trang bị, Võ học, Kỳ thuật, Doanh sinh được mở rộng. Chúc các vị du hiệp tiến bộ không ngừng, khởi đầu âm thanh mới!
 
-Mùa giải mới cũng có thử thách Tát Kiếm mới sắp ra mắt, đợi các vị cùng đồng bào đồng lòng hiệp lực, cùng phá hiểm nguy —
+Mùa giải mới cũng có thử thách **Thí Kiếm** hoàn toàn mới sắp ra mắt, đợi các bạn cùng đồng đội đồng tâm hiệp lực, vượt qua hiểm quan ——
+
+**Thí Kiếm mới**
+
+**【Đốc Sơn Hàm Thiền】**
 
 ![Ảnh 6](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/b120aaac922c86493ce8187511e78a9a1567141152.png)
 
-Trong mê trận, cơ quan Đốc Mặc Bọ Cạp càng thêm tinh xảo, uy thế kinh người. Khi trọng giáp bao thân, chân khí khóa chặt, đao kiếm khó lòng xâm phạm. Từng luồng quang diễm phun trào, trong sự rực cháy hiển hiện hung uy. Nếu **có thể lợi dụng dây xích sắt trong trận để kìm hãm hành động của nó**, đợi khi đọ sức giành chiến thắng mới có thể đánh nứt lớp giáp, tìm sơ hở để phản công.
+Trong mê trận, cơ quan **Đốc Mặc Bọ Cạp** càng thêm tinh xảo, uy thế càng mạnh. Khi lớp trọng giáp phủ thân, chân khí bị khóa chặt, đao kiếm khó lòng xâm phạm. Từng luồng hỏa diễm phun trào, thể hiện hung uy rực lửa. Nếu dùng **Vô Tướng Kim Thân** mượn lực phản đòn, đợi khi thắng thế trong cuộc đọ sức, mới có thể làm rạn nứt giáp trụ để tìm khe hở phản công.
 
 ![Ảnh 7](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/01e82e1b6377a648ca11fdaede51aab91567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-**Đốc Mặc Bọ Cạp khi cuồng bạo**, chiêu thức biến hóa khôn lường, dồn dập như mưa rào. Đuôi bọ cạp giơ cao, mang theo sức mạnh vạn quân đâm xuống, đòi hỏi phải có **nhãn lực nhạy bén và thân pháp linh hoạt**, chỉ một chút chần chừ sẽ vạn kiếp bất phục. Thiết giáp có thể vỡ nhờ mượn lực, cuồng bọ cạp có thể chế ngự nhờ đồng tâm.
+Khi trọng giáp rụng hết, Đốc Mặc Bọ Cạp sẽ lộ ra hung tướng, chiêu thức biến hóa khôn lường như mưa rào. Đuôi bọ cạp vểnh cao, mang theo thế vạn quân đâm xuống, cần có một người đứng ra chống đỡ; đồng đội phải dốc sức phá khiên chi viện, chỉ một chút chần chừ sẽ dẫn đến thảm bại. Thiết giáp có thể vỡ nhờ mượn lực, bọ cạp điên có thể chế ngự nhờ đồng tâm.
 
 ![Ảnh 8](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/577316f75fe3b532df22dfdf5bec9b661567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Phá xong Mặc Bọ Cạp, lại tiến vào cấm cung nghênh chiến Ngự Miêu Đại Vương. Ngự Miêu triệu tập các "mãnh tướng" dưới trướng vây quanh, nếu không cẩn thận bị mèo nhỏ "trêu chọc" **sẽ rơi vào trạng thái hỗn loạn**.
+Sau khi phá được Mặc Bọ Cạp, tiếp tục tiến vào cấm cung nghênh chiến **Ngự Miêu Đại Vương**. Ngự Miêu triệu tập các "mãnh tướng" dưới trướng vây quanh, nếu không cẩn thận bị mèo nhỏ "trêu chọc" dẫn đến nghiện mèo, tích tụ đủ tầng sẽ hóa thân thành hình mèo.
 
-Ngự Miêu có hai chiêu đặc biệt thể hiện oai phong. Một chiêu ném Cẩm Lý vào giữa sân, đàn mèo ùa tới, tự bao phủ bằng lớp khiên kiên cố tích lực. Cần cùng đồng đội phối hợp khéo léo, **đánh bại đàn mèo bảo vệ để cướp lấy Cẩm Lý**. Khi chiếm được Cẩm Lý, có thể **nhận được buff tăng ích cực mạnh**, xoay chuyển tình thế phản công.
+Ngự Miêu có hai chiêu thức thể hiện rõ uy phong của mèo. Một chiêu ném cá chép vào giữa sân, đàn mèo ùa tới, tự bao phủ bởi lớp khiên kiên cố để tích lực. Cần phối hợp nhịp nhàng với đồng đội, một người hóa mèo nhanh chóng cướp cá, các du hiệp còn lại ngăn chặn đàn mèo. Sau khi cướp được cá chép, có thể tạo ra cuồng phong làm suy yếu thế tấn công của mèo để phản công tuyệt địa.
 
 ![Ảnh 9](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/ebff7571f88a35259d76de8afd4b2b611567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Một chiêu ném ra nhiều cầu mây, giơ cao Cẩm Lý tích nước chờ phun. Lúc này, cần **nhanh chóng đá cầu mây vào miệng Ngự Miêu để ngắt quãng chiêu thức**, mới có thể hóa nguy thành an.
+Một chiêu khác là ném ra nhiều quả cầu mây, giơ cao cá chép tích nước chờ phun. Lúc này, cần dẫn dụ lũ mèo đang bám đuôi lao vào cầu mây, sau đó nhảy lên cao để né tránh dòng nước dữ dội mới có thể hóa giải nguy hiểm.
 
 ![Ảnh 10](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/3247cc0b47590a2222f88662df0f1da21567141152.gif&n=-1)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Đêm dài tĩnh mịch, có mộng đẹp nảy mầm, cũng có người ngước nhìn tinh không.
+Đêm dài tĩnh mịch, có những giấc mộng đẹp nảy mầm, cũng có người ngước nhìn tinh không.
 
-Thế nhân ngẩng đầu quan sát thiên tượng, thấy ngân hà cuồn cuộn, vạn tượng sâm la. Có quan tinh nhân lấy sao làm chữ, lấy đêm làm sách, dưới vòm trời tìm tòi huyền cơ thiên địa. Trong lúc nhắm mắt suy diễn, vũ trụ không bụi trần,璇玑 (tuyền cơ) tự chuyển động, thảy đều hóa thành từng sợi tinh quang trên tà áo lụa mỏng.
+Thế nhân ngẩng đầu ngắm trời, thấy ngân hà mênh mông, vạn tượng sâm la. Có người quan tinh lấy sao làm chữ, lấy đêm làm sách, dưới vòm trời tìm tòi huyền cơ của thiên địa. Trong lúc nhắm mắt suy luận, vũ trụ không bụi trần, máy trời tự xoay chuyển, tất cả hóa thành những tia sáng tinh tú trên dải lụa mỏng.
 
-**Ngoại trang mới [Ngọc Chấn Dương Âm]**, phác họa chính là hình ảnh vị quan tinh nhân ngắm trọn ngân hà. Ngoài ra, còn có **ngoại trang vũ khí [Thiên Xu Tinh Quỹ]** đồng thời lên kệ —
+**「Hòa Minh · Ngọc Chấn Dương Âm」** sẽ khai mở mùa giải 「Giáp Chung Tấu Nhã」, trong đó bộ trang phục **【Ngọc Vũ Toàn Cơ】** chính là phác họa hình ảnh người quan tinh nhìn thấu ngân hà. Ngoài ra, còn có bộ trang phục Chiến Lệnh mới **【Ức Xuân Sơn】**, ngoại trang vũ khí Thủ Giáp **【Đan Tiêu Thanh Minh】**, ngoại trang vũ khí Thằng Biểu **【Vạn Lại · Sơn Quân Xuất】** cùng lúc lên kệ ——
 
-**Y phục lấy tông màu trắng làm chủ đạo**, nơi thâm sâu như đêm tĩnh xanh thẳm, nơi nhạt nhòa ngưng tụ thanh huy tuôn rơi, tựa như mang **ánh sáng của vạn dặm tinh hà** khoác lên thân mình.
+**Bộ trang phục 「Hòa Minh · Ngọc Chấn Dương Âm」 mới**
+
+**【Ngọc Vũ Toàn Cơ】**
+
+Y phục này là sự giao thoa giữa sắc xanh và trắng, chỗ đậm như bầu trời đêm tĩnh mịch, chỗ nhạt ngưng tụ thanh huy tỏa rạng, tựa như khoác lên mình cả một bầu trời sao đang luân chuyển.
 
 ![Ảnh 11](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/e99dca0bda8ccda713c89c42ed90511c1567141152.png)
 
 ![Ảnh 12](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/d4080122f82fae73660bf7eb467ea87e1567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
-Dữ liệu nặn mặt nam đến từ người chơi: Giang*Ký
-Dữ liệu nặn mặt nữ đến từ người chơi: Xuân*
+Dữ liệu nặn mặt nam từ người chơi: Giang*Ký
+Dữ liệu nặn mặt nữ từ người chơi: Xuân*
 
-**Vải lụa mỏng nhẹ như sương**, trong trẻo có thể thấy ánh trăng tuôn tràn. Vàng vụn bạc mịn dệt vào trong lụa, hoa văn tinh tượng sắc vàng rải rác bên trên, **tựa như ngân hà lưu chuyển, lộng lẫy phi phàm**.
+Lớp lụa mỏng xếp tầng rủ xuống, thấp thoáng thấy ánh trăng tuôn trào. Những sợi bạc vụn và vàng ròng được dệt vào trong lụa, hoa văn tinh tượng màu vàng rải rác bên trên, phù hợp với kinh vĩ của tinh đồ.
 
 ![Ảnh 13](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/d9e6a7519e48778859d0fe44338039241567141152.png)
 
@@ -111,14 +123,18 @@ Dữ liệu nặn mặt nữ đến từ người chơi: Xuân*
 ![Ảnh 16](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/f3260aef8b96c438942e33f63ca209a01567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
-Dữ liệu nặn mặt nam đến từ người chơi: Giang*Ký
-Dữ liệu nặn mặt nữ đến từ người chơi: Xuân*
+Dữ liệu nặn mặt nam từ người chơi: Giang*Ký
+Dữ liệu nặn mặt nữ từ người chơi: Xuân*
 
-Vạt áo rủ xuống mà không rườm rà, cắt may giản đơn gọn gàng, không chút trang trí thừa thãi. Kẻ tìm cầu tri thức ngước nhìn thương khung, tự có tâm thế minh triết và trí tuệ.
+Tà áo lụa rủ xuống nhưng không rườm rà, đường cắt đơn giản sắc sảo. Người cầu đạo ngước nhìn trời xanh, tự có sự minh triết và tuệ tâm.
 
 ![Ảnh 17](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/ef3cd18023838809ad001827b77f17591567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
+
+**Kiểu tóc 「Hòa Minh · Ngọc Chấn Dương Âm」 mới**
+
+**【Trường Mộng Thiên Tinh】**
 
 ![Ảnh 18](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/98cd459e93a690f228eca13a852a85171567141152.png)
 
@@ -129,20 +145,24 @@ Vạt áo rủ xuống mà không rườm rà, cắt may giản đơn gọn gàn
 ![Ảnh 21](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/32055d986221c4730ef5aed043a77eeb1567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
-Dữ liệu nặn mặt nam đến từ người chơi: Giang*Ký
-Dữ liệu nặn mặt nữ đến từ người chơi: Xuân*
+Dữ liệu nặn mặt nam từ người chơi: Giang*Ký
+Dữ liệu nặn mặt nữ từ người chơi: Xuân*
 
-Ngân hà thăm thẳm, thiên tinh lấp lánh. Sắc đêm trong vắt, cổ kim cùng soi chiếu.
+Ngân hà thăm thẳm, thiên tinh rạng ngời. Đêm tối trong vắt, cổ kim cùng soi bóng.
 
-**Sự kiện [Hòa Minh] kỳ mới sắp bắt đầu**, từ sau cập nhật ngày 27/3 ~ 04:59:59 ngày 26/6, sử dụng Trường Minh Ngọc đổi [Nhiễu Lương Chi Âm] để tiến hành hòa minh, có xác suất nhận được **ngoại trang giới hạn [Ngọc Chấn Dương Âm] và ngoại trang vũ khí [Thiên Xu Tinh Quỹ]**, còn có số lượng giới hạn [Vũ Y Tàn Lũ Đồ], [Mộng Nhiễm Hạp] và [Niểu Niểu Chi Âm - Khóa].
+「Hòa Minh · Ngọc Chấn Dương Âm」 sẽ mở mùa giải 「Giáp Chung Tấu Nhã」, từ sau khi cập nhật phiên bản ngày 27/03 đến 04:59:59 ngày 26/06, sử dụng **Trường Minh Ngọc** để đổi **【Nhiễu Lương Chi Âm】** tiến hành Hòa Minh, có xác suất nhận được bộ ngoại trang **【Ngọc Vũ Toàn Cơ】**, kiểu tóc **【Tinh Thùy Bình Dã】** và kiểu tóc phần thưởng tuyệt thế **【Trường Mộng Thiên Tinh】**, ngoài ra còn có số lượng giới hạn **【Vũ Y Tàn Lũ Đồ】**, **【Mộng Nhiễm Háp】** và **【Niểu Niểu Chi Âm · Khóa】**. Bộ trang phục 【Ngọc Vũ Toàn Cơ】 sẽ đồng thời mở tính năng "Nhuộm màu" và "Cắt may".
 
 ![Ảnh 22](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/d2c991559f24e92dc7c4e224d2b74bd41567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Thái vi y nhiễm thúy, tĩnh khế vân mãn thân. Xuân sơn nguyên tự hạo, khiết hoa hậu quy nhân.
+**Bộ trang phục Chiến Lệnh mới**
 
-Mẫu nam đan xen trắng xanh, lấy ý từ núi xuân sau cơn mưa mới. Bên hông **đeo tẩu thuốc và túi thơm**, gọn gàng mà không mất đi vẻ tao nhã. **Ống tay áo rộng rãi**, khi di chuyển tựa như gió lướt qua ngọn cây; **chất vải lụa mỏng**, khi ngồi tĩnh lặng có ánh nắng xuyên qua. **Dây đeo bằng ngọc thúy**, từng lớp biếc xanh, vẫn còn mang theo sương sớm và thanh khí của núi rừng.
+**【Ức Xuân Sơn】**
+
+Hái vi áo nhuộm sắc biếc, nghỉ ngơi mây phủ đầy thân. Xuân sơn vốn dĩ tốt đẹp, hái hoa chờ người trở về.
+
+Mẫu nam là sự kết hợp giữa trắng và xanh, lấy ý tưởng từ núi xuân sau cơn mưa mới. Vòng eo được thắt chặt bằng dải lụa xanh biếc, trang sức bạc khẽ đung đưa, gọn gàng mà không mất đi vẻ thanh nhã. Tơ lụa nhẹ nhàng, khi di chuyển như gió thổi qua ngọn cây; lụa mỏng xếp tầng, khi ngồi tĩnh lặng có ánh nắng xuyên thấu. Trên vai lá non đâm chồi, từng lớp xanh mướt, mang theo sương sớm và khí lành của núi rừng.
 
 ![Ảnh 23](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/7518c13a5786e4ce12b69109f9aa57cb1567141152.jpg)
 
@@ -151,18 +171,22 @@ Mẫu nam đan xen trắng xanh, lấy ý từ núi xuân sau cơn mưa mới. B
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 Dữ liệu nặn mặt từ người chơi: *Thanh
 
-Mẫu nữ váy vàng nhạt khẽ bay, lấy ý từ ánh nắng ban mai ngày xuân xuyên qua kẽ lá non. **Yếm hoa bao phủ vai**, nhỏ nhắn tinh xảo. Trên tóc và thắt lưng đính những đóa hoa nhỏ, tà váy gợn sóng theo gió, mang theo hương hoa đầy tay áo. Cả nam và nữ đều đeo **gùi hoa [Thái Vi]**, đựng cả mùa xuân vừa mang về từ trong núi.
+Mẫu nữ với tà váy vàng chanh nhẹ nhàng, lấy ý tưởng từ ánh nắng ban mai xuyên qua kẽ lá non. Hoa và lá nương tựa nhau trên vai, những chuỗi ngọc trai tạo thành luồng sáng trên tay áo. Những bông hoa nhỏ xinh cài trên tóc và thắt lưng, gấu váy khẽ gợn theo gió, mang theo hương hoa ngào ngạt. Cả hai mẫu nam và nữ đều đeo giỏ hoa mây, đựng đầy sắc xuân vừa mang về từ núi rừng.
 
 ![Ảnh 25](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/6a755b91570272ed5749c20e110f9b0a1567141152.jpg)
 
 ![Ảnh 26](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/166218946918b730709c70529c6b1f9b1567141152.png)
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
-Dữ liệu nặn mặt từ người chơi: Ngã Bất**Mai Sự
+Dữ liệu nặn mặt từ người chơi: Tôi không**xui xẻo
 
-Từ sau bản cập nhật ngày 27/3/2026, Chiến Lệnh "Giáp Chung Tấu Nhã - Thượng" sắp mở. Mua Chiến Lệnh Tinh Anh sẽ nhận được **ngoại trang [Thái Vi Khứ]** cùng các phần thưởng bổ sung, và nhận quyền lợi tinh anh. Mua Chiến Lệnh Điển Tạng có thể trực tiếp tăng 10 cấp, còn nhận thêm **phụ kiện lưng [Quất Ảnh Tuyên]**, đồng thời cũng sẽ mở khóa toàn bộ thưởng Chiến Lệnh Tinh Anh và nhận thêm nhiều quyền lợi điển tạng siêu giá trị.
+Từ sau bản cập nhật ngày 27/03/2026, Chiến Lệnh **「Giáp Chung Tấu Nhã · Thượng」** chính thức khai mở. Mua Chiến Lệnh Tinh Anh có thể mở khóa bộ trang phục **【Ức Xuân Sơn】**, đồ gia viên **【Kim Bàn Lộ】**, tư thế chờ **【Trầm Ngâm】**, đề bạt **【Thúy Ngọc Nhân】**, Niểu Niểu Chi Âm, Trường Minh Ngọc và các phần thưởng bổ sung khác, đồng thời nhận đặc quyền tinh anh. Mua Chiến Lệnh Điển Tàng có thể thăng ngay 10 cấp, nhận thêm đồ gia viên **【Nguyệt Minh Tuyết】**, danh thiếp **【Hoa Tự Cẩm】** và Niểu Niểu Chi Âm, đồng thời mở khóa toàn bộ phần thưởng Chiến Lệnh Tinh Anh cùng nhiều đặc quyền điển tàng giá trị khác.
 
 ![Ảnh 27](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/b80b38df06c3647c1ed2c0da65488cd81567141152.png)
+
+**Ngoại trang vũ khí mới · Thủ Giáp**
+
+**【Tàng Âm · Đan Tiêu Thanh Minh】**
 
 ![Ảnh 28](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/a359d43a7ee0776338283ac948e595471567141152.jpg)
 
@@ -170,9 +194,8 @@ Từ sau bản cập nhật ngày 27/3/2026, Chiến Lệnh "Giáp Chung Tấu N
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Phượng hoàng minh hĩ, ư bỉ cao cương. Ngô đồng sinh hĩ, ư bỉ triều dương. Bổng bổng thê thê, ung ung giai giai.
-
-Thần điểu đậu trên mu bàn tay, theo chiêu thức lưu chuyển tỏa sáng, tựa như sắp cưỡi gió mà bay.
+Phượng hoàng hót vang, ở gò cao kia. Ngô đồng sinh trưởng, dưới ánh nắng ban mai. Xum xuê rậm rạp, hòa hợp vui tươi.
+Thần điểu đậu trên mu bàn tay, tỏa sáng theo từng chiêu thức, tựa như sắp cưỡi gió bay lên.
 
 ![Ảnh 30](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/50f6759188893c3fe2107aa224f85a8c1567141152.gif&n=-1)
 
@@ -180,9 +203,13 @@ Thần điểu đậu trên mu bàn tay, theo chiêu thức lưu chuyển tỏa 
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Ngoại trang vũ khí - Thủ giáp [Tàng Âm - Đan Tiêu Thanh Minh] sẽ **mở khóa bộ sưu tập mới vào ngày 27/3**, hình thái mặc định có thể đến "Tiệm Hòa Minh", dùng **Vũ Y Tàn Lũ Đồ** để đổi.
+Ngoại trang vũ khí · Thủ Giáp **【Tàng Âm · Đan Tiêu Thanh Minh】** sẽ lên kệ giới hạn 360 ngày sau bản cập nhật 27/03, hình thái mặc định có thể nhận được tại 「Cửa hàng Hòa Minh」 bằng cách đổi 1 **【Bát Âm Khiếu】**.
 
-[Tàng Âm - Đan Tiêu Thanh Minh] có thể tiêu hao [Thái Nhất Huyền Thạch] để tiến hành rèn lại vũ khí, bao gồm **[Cửu Thiên], [Trạm Lộ], [Thanh Ngân], [Xích Tụ], [Vưu Kim]**, tổng cộng năm loại phong cách bộ trang bị. Ngoài ra còn có một số màu sắc tùy chỉnh, có thể thông qua "Công xưởng - Rèn vũ khí" để tạo ra sự kết hợp ngoại trang vũ khí đa hình thái độc nhất vô nhị, cũng có thể đến "Vạn Tướng Tập - Tàng Âm Vạn Tướng" để chia sẻ hoặc cùng chiêm ngưỡng hiệu quả phối đồ.
+【Tàng Âm · Đan Tiêu Thanh Minh】 có thể tiêu hao **【Thái Nhất Huyền Thạch】** để đúc lại vũ khí, bao gồm: Tễ Thanh 「Bộ · Tranh Tòng」, Tử Thụ 「Bộ · U Hưởng」 và 「Bộ · Vân Thiều」, Lệ Kim 「Bộ · Phần Ca」 và 「Bộ · Huyền Lại」, tổng cộng có năm phong cách bộ trang phục. Ngoài ra còn có một số màu sắc tùy chỉnh, có thể thông qua 「Công xưởng - Đúc lại vũ khí」 để tạo ra sự kết hợp ngoại trang vũ khí đa hình thái độc nhất vô nhị, hoặc có thể đến 「Vạn Tướng Tập - Tàng Âm Vạn Tướng」 để chia sẻ hoặc cùng chiêm ngưỡng hiệu quả kết hợp ngoại trang Tàng Âm.
+
+**Ngoại trang vũ khí mới · Thằng Biểu**
+
+**【Vạn Lại · Sơn Quân Xuất】**
 
 ![Ảnh 32](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/df04ee42bec25d1a85d10f0c5bf94e811567141152.jpg)
 
@@ -190,38 +217,50 @@ Ngoại trang vũ khí - Thủ giáp [Tàng Âm - Đan Tiêu Thanh Minh] sẽ **
 
 *Hình ảnh đang trong quá trình thử nghiệm, vui lòng lấy hiệu quả thực tế trong game làm chuẩn.
 
-Ngoài ra, dòng ngoại trang vũ khí [Vạn Lại] lên kệ sản phẩm mới, diễn giải tiếng vang của đồ đằng Bạch Hổ thượng cổ. Phược nhạc tỏa uyên, sơn tiêu trấn hoàng. Tự hưởng ký thành, ngự bỉ bát hoang.
+Ngoài ra, dòng ngoại trang vũ khí **【Vạn Lại】** ra mắt sản phẩm mới, giải mã âm thanh đồ đằng Bạch Hổ thượng cổ. Trói núi khóa vực sâu, sơn tiêu trấn giữ nỗi kinh hoàng. Lễ tế đã thành, điều khiển bát hoang.
 
-Phàm thiên địa giả, vạn lại chi thanh dã. Vạn vật có thể đúc thành binh giáp, trong binh giáp tái hiện hình hài vạn vật, ngưng vạn tượng chi thanh thành ánh sáng. Vật có lúc tiêu tan, mà đạo tồn tại vĩnh hằng. Sau cập nhật ngày 27/3 du hiệp đến cửa hàng, có thể dùng **ưu đãi giá gốc 180 (Linh Ngọc)** mua ngoại trang vũ khí mới - **[Vạn Lại - Phược Nhạc]**.
+Trời đất chính là âm thanh của vạn vật vậy. Vạn vật có thể đúc thành binh giáp, trong binh giáp tái hiện hình dáng vạn vật, ngưng tụ âm thanh vạn tượng thành ánh sáng. Vật có lúc tiêu tan, nhưng Đạo tồn tại vĩnh hằng. Sau khi cập nhật ngày 27/03, du hiệp đến cửa hàng có thể dùng 1280 **【Trường Minh Châu】** để mua ngoại trang vũ khí Thằng Biểu mới **【Vạn Lại · Sơn Quân Xuất】**.
+
+**Tối ưu hóa mùa giải mới 「Chúng Chí Lăng Tiêu」**
 
 ![Ảnh 34](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/81f5e97af04d99fc7a6a5dc41ec34e741567141152.png)
 
-Trong bản cập nhật trước, hoạt động Bách Nghiệp "Chúng Chí Lăng Tiêu" đã mở thử nghiệm Tiên Trạc, đông đảo du hiệp đã hăng hái tham gia và đóng góp rất nhiều ý kiến tối ưu. Nhắm vào các vấn đề xuất hiện trong thử nghiệm, mùa giải mới sẽ tiến hành điều chỉnh tối ưu như sau —
+Trong bản cập nhật trước, hoạt động Bách Nghiệp 「Chúng Chí Lăng Tiêu」 đã mở thử nghiệm Tiên Trác, đông đảo du hiệp đã nhiệt tình tham gia và đóng góp rất nhiều ý kiến tối ưu. Nhắm vào các vấn đề xuất hiện trong đợt thử nghiệm, mùa giải mới sẽ tiến hành các điều chỉnh tối ưu sau:
 
-• Tối ưu hóa phân chia độ khó ải, chia thành **[Bình Thường] và [Khó]**, trong mùa giải sẽ mở dần theo thời gian, đồng thời sẽ thêm mới các Thủ lĩnh và cơ chế khiêu chiến khác.
-• **Mở rộng cơ chế ngoại viện**, các du hiệp có thể mời **Hảo hữu hoặc Thành viên trong bang hội** của mình cùng khiêu chiến, tối đa cho phép 3 thân hữu làm ngoại viện.
-• **Thiết lập quy tắc bảng xếp hạng mới**. Tất cả thành viên trong đội là du hiệp đã gia nhập Bách Nghiệp trên 7 ngày sẽ có thể ghi nhận thành tích và xếp hạng bình thường. Nếu du hiệp tham gia khiêu chiến với tư cách Bách Nghiệp Sơ Yến hoặc ngoại viện, **thành tích sẽ không được xếp hạng**, mỗi tuần có một lần bổ sung phiếu bầu lên bảng. Ngoài ra, bảng xếp hạng thêm hạn chế lưu phái, **mỗi đội tối đa chỉ có 2 du hiệp cùng lưu phái**. Các yêu cầu trên chỉ ảnh hưởng đến việc lên bảng xếp hạng, du hiệp vẫn có thể hoàn thành Bách Nghiệp thủ thông, cá nhân thủ thông, thống kê thông quan cao nhất tuần của Bách Nghiệp bình thường, không ảnh hưởng đến thưởng thêm "Bách Nghiệp Hiệp Cảnh". Độ khó Bình thường sẽ không mở bảng xếp hạng.
+• Tối ưu hóa phân chia độ khó quan ải, chia thành ba mức: **Sơ cấp, Trung cấp (Khó), Quỷ Thần Sầu**. Các mức độ sẽ mở dần theo thời gian trong mùa giải, đồng thời bổ sung thêm các Boss và cơ chế thử thách khác. Vượt qua độ khó Sơ cấp có thể kích hoạt phần thưởng bổ sung cao nhất của 「Bách Nghiệp Hiệp Cảnh」.
 
-Sau thông báo tiền chiêm cập nhật thử nghiệm Tiên Trạc, chúng tôi đã nhận được nhiều góp ý của du hiệp về Bách Nghiệp và sẽ triển khai tối ưu. Trong mùa giải mới, chỉ cần **tích lũy thông quan Bách Nghiệp 10 lần**, là có thể hoàn thành mục tiêu kết toán mùa giải; tất cả thành viên trong Bách Nghiệp còn nhận được **danh hiệu vinh dự mùa giải**.
-Đồng thời chúng tôi cũng chú ý đến sự theo đuổi vinh dự Bách Nghiệp của mọi người, trong các phiên bản sau, chúng tôi sẽ **thêm mới phần thưởng ngoại trang độc quyền Bách Nghiệp**, hỗ trợ nhận được thông qua **Điểm Bách Nghiệp hoặc Đạo cụ đổi**. Các du hiệp có thể theo đuổi phần thưởng yêu thích theo sở thích, làm phong phú tính đa dạng của Bách Nghiệp. Chúc các vị đồng tâm hiệp lực, cùng tạo nên vinh dự Bách Nghiệp và ký ức đẹp đẽ!
+• Bổ sung cơ chế **Viện trợ**, du hiệp có thể mời Hiệp duyên, Kết nghĩa, Sư đồ của mình cùng tham gia thử thách, cho phép tối đa 3 thân hữu làm viện trợ.
 
-Sau ngày 27/3, sự kiện liên kết Yến Vân Thập Lục Thanh × KFC sẽ chính thức bắt đầu. Ngoài các hoạt động liên kết online offline, phúc lợi, bộ trang bị chủ đề đã công bố trước đó, cũng có **ngoại trang hiệu ứng Kỳ thuật mới [Dĩ Kê Chi Minh]** sắp lên kệ —
+• Tối ưu hóa điều kiện lên **Bảng xếp hạng**. Tất cả thành viên trong đội phải là du hiệp đã gia nhập Bách Nghiệp trên 7 ngày mới được ghi nhận thành tích và xếp hạng. Nếu du hiệp tham gia với tư cách là Bách Nghiệp Sơ Yến hoặc viện trợ, khi đủ điều kiện lên bảng có thể gửi yêu cầu bỏ phiếu, mỗi tuần có một lượt bỏ phiếu bổ sung. Ngoài ra, bảng xếp hạng bổ sung giới hạn lưu phái, nếu số người sử dụng cùng một võ học trong đội vượt quá 3 người sẽ không thể lên bảng. Các yêu cầu trên chỉ ảnh hưởng đến việc lên bảng xếp hạng, du hiệp vẫn có thể hoàn thành lần thông quan đầu của Bách Nghiệp, thông quan cá nhân và thống kê thông quan cao nhất hàng tuần bình thường, không ảnh hưởng đến phần thưởng bổ sung 「Bách Nghiệp Hiệp Cảnh」. Độ khó Sơ cấp sẽ không mở bảng xếp hạng.
+
+Sau thông báo thử nghiệm Tiên Trác, chúng tôi đã nhận được nhiều góp ý về Bách Nghiệp và sẽ triển khai tối ưu. Trong mùa giải mới, chỉ cần 20 du hiệp trong Bách Nghiệp thông quan số tầng quy định của 「Chúng Chí Lăng Tiêu」 là có thể hoàn thành mục tiêu kết toán mùa giải; tất cả thành viên Bách Nghiệp còn có thể nhận huy chương mới **【Thái Sơn Bắc Đậu】**, **【Đậu Chuyển Càn Khôn】**.
+
+Đồng thời chúng tôi cũng quan tâm đến nhu cầu theo đuổi vinh dự Bách Nghiệp của mọi người. Trong các phiên bản sau, chúng tôi sẽ bổ sung danh thiếp hiển thị độc quyền Bách Nghiệp, cờ đặc thù Bách Nghiệp, kiến trúc đồn trú độc quyền, thời tiết độc quyền... có thể nhận được thông qua tham gia các hoạt động Bách Nghiệp. Chúc các vị đồng tâm hiệp lực, cùng tạo nên vinh dự và kỷ niệm đẹp cho Bách Nghiệp!
+
+Sau ngày 27/03, sự kiện hợp tác **Yến Vân Thập Lục Thanh × KFC** sẽ chính thức bắt đầu. Ngoài các hoạt động online/offline, phúc lợi, bộ trang phục chủ đề đã công bố, còn có hiệu ứng Kỳ thuật và hộp quà ngẫu nhiên phụ kiện chủ đề sắp lên kệ ——
+
+**Hiệu ứng Kỳ thuật 「Dĩ Nga Chi Minh」**
+
+**【Dĩ Kê Chi Minh】**
 
 ![Ảnh 35](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/df3ed29b94cd9ddf6e2ef4e2b7f083891567141152.gif&n=-1)
 
-Điên cuồng điên cuồng trân tu nhật, nộn kê lưỡng phần cửu văn cửu. Nang tu bất cảm vấn giá mục, hào kiệt tặng ngã ngũ thập phủ?
-**Ngoại trang hiệu ứng Kỳ thuật [Dĩ Kê Chi Minh] vĩnh viễn giới hạn**. Đến lúc đó du hiệp vào cửa hàng, có thể dùng **9.9 Linh Ngọc** để mua. Nhắc nhở thân thiện, tham gia hoạt động [Khai Ký Chủ Lý Nhân] có thể nhận được một tấm [Tiêu Âm Khoán - Trình Cát], có thể dùng khi mua ngoại trang hiệu ứng [Dĩ Kê Chi Minh] để **được hoàn trả 9.9 Linh Ngọc (vàng khóa)**.
+Ngày trân tu điên cuồng điên cuồng, hai phần gà non chín văn chín. Túi rỗng chẳng dám hỏi giá cả, hào kiệt tặng ta năm mươi chăng? (Crazy Thursday KFC)
+
+Ngoại trang hiệu ứng Kỳ thuật 【Dĩ Kê Chi Minh】 sẽ ra mắt giới hạn từ sau cập nhật 27/03 đến 04:59:59 ngày 17/04. Du hiệp có thể mua tại cửa hàng với giá 980 **【Trường Minh Châu】**. Lưu ý, tham gia hoạt động 【Khai Ký Chủ Lý Nhân】 có thể nhận được một tờ **【Tiêu Âm Khoán · Trình Cát】**, dùng để giảm 680 Trường Minh Châu khi mua hiệu ứng 【Dĩ Kê Chi Minh】.
+
+**Hộp quà ngẫu nhiên ngoại trang phụ kiện**
+
+**【Thùng Gà Rán】**
 
 ![Ảnh 36](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/3212d339ef57a98630601f800597fdea1567141152.png)
 
-**Hộp quà ngẫu nhiên phụ kiện [Thần kê bẩm báo]** sắp lên kệ thương thành, mỗi lần mua tiêu hao **1 Linh Ngọc**. Hộp quà ngẫu nhiên bao gồm tổng cộng 6 kiểu dáng: **[Gà Đôi Mũ], [Gà Ngậm Hoa], [Gà Phẫn Nộ], [Gà Đeo Kính], [Gà Cháy Nắng]**, cùng một mẫu **[Gà Vàng Kim] cực hiếm**, mỗi lần mở hộp quà nhận được ngoại trang phụ kiện chắc chắn không trùng lặp.
-Thu thập đủ 6 mẫu phụ kiện trong hộp quà, có thể nhận thưởng thu thập: **Động tác tương tác đôi [Kê Đồng Áp Giảng]**. Hộp quà ngẫu nhiên hỗ trợ tặng quà, mỗi nhân vật tối đa nhận tặng **6 lần**.
+Hộp quà phụ kiện chủ đề KFC 【Thùng Gà Rán】 sắp lên kệ, mỗi lần mua tiêu hao 60 Trường Minh Châu. Hộp quà gồm 6 mẫu: 【Tiểu Hỏa Kê】, 【Khóc Kê Kê】, 【Thôi Bì Kê】, 【Thái Thái Kê】, 【Đản Hoàng Bao】 và một mẫu ẩn, mỗi lần mở sẽ không bị trùng lặp.
 
-Gia yến sắp khai màn, lửa lò đang vượng. Ngờ đâu lúc chuẩn bị, bỗng có "khách không mời mà đến" nghe hương tìm tới — KFC Đại tá Sanders mang theo hương vị mà đến, vừa hay trở thành nét chấm phá tuyệt vời!
-Một phen tương phùng giang hồ, bèn thành tri kỷ. Cố nhân và tân hữu mỗi người trổ hết tuyệt học, cùng chế biến đại tiệc giang hồ.
-Ngày 27/3, gia yến đã sẵn sàng, chỉ đợi người phó yến.
+Thu thập đủ 6 mẫu sẽ nhận được phần thưởng: Ảnh đại diện nhân vật **【Hũ Vàng Đầu Tiên】**. Hộp quà có thể tặng, mỗi nhân vật nhận tối đa 6 hộp.
 
-32.4 vạn lượt xem
-76 đạn mạc (bình luận trôi)
+Tiệc nhà sắp mở, lửa lò đang vượng. Ngờ đâu trong lúc chuẩn bị, lại có "vị khách không mời" ngửi hương tìm đến —— Đại tá KFC KI mang theo hương vị đến, thật là nét chấm phá tuyệt vời!
 
-![Ảnh 37](https://wsrv.nl/?url=https://i0.hdslb.com/bfs/feed-admin/2269afa7897830b397797ebe5f032b899b405c67.png)
+Một phen tương phùng chốn giang hồ, liền hóa tri kỷ. Cố nhân và bạn mới cùng trổ tài tuyệt học, cùng chế biến bữa tiệc thịnh soạn chốn giang hồ.
+
+Ngày 27/03, tiệc đã bày sẵn, chỉ đợi người đến dự.
