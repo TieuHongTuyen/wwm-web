@@ -241,7 +241,7 @@ function buildModal() {
 function buildFooter() {
   return `<footer>
     <span>© 2026 Yến Vân Guide · </span>
-    <a href="https://tiktok.com/@tiu.hng.tuyn" target="_blank" rel="noopener">@tiu.hng.tuyn</a>
+    <a href="https://tiktok.com/@tiu.hng.tuyn" target="_blank" rel="noopener">Tiktok: Tiểu Hồng Tuyến</a>
     <span> · Where Winds Meet Fan Site</span>
   </footer>`;
 }
