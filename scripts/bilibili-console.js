@@ -9,46 +9,60 @@
     let container = document.querySelector('.opus-read, .opus-module-content, .article-holder, .dyn-card, .bili-rich-text__content');
     
     if (container) {
-        // Quét tất cả ảnh và thẻ văn bản theo đúng thứ tự xuất hiện từ trên xuống dưới
-        let elements = container.querySelectorAll('img, p, span, div.text');
-        
-        let currentTextBundle = ""; // Dùng để gom tất cả các dòng text lại thành 1 cục lớn cho đến khi gặp ảnh
-        
-        elements.forEach(el => {
-            if (el.tagName === 'IMG') {
-                // Khi gặp một bức ảnh, ta xử lý chuỗi chữ (Bundle) đã tích tụ từ trước đó
-                if (currentTextBundle.trim().length > 0) {
-                    blocks.push({ type: 'text', text: currentTextBundle.trim() });
-                    currentTextBundle = ""; // Reset cục chữ về rỗng
+        // Quét tất cả ảnh và thẻ văn bản theo đúng cấu trúc DOM thật để không bị mất chữ khi có thẻ in đậm (b), tiêu đề (h1-h6), hay canh giữa (center)
+        let walker = document.createTreeWalker(
+            container,
+            NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT,
+            {
+                acceptNode: function(node) {
+                    if (node.nodeType === 1 && ['SCRIPT', 'STYLE', 'SVG', 'NOSCRIPT'].includes(node.tagName)) {
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                    return NodeFilter.FILTER_ACCEPT;
                 }
-                
-                // Lấy link ảnh
-                let src = el.getAttribute('data-src') || el.src;
-                if (src && src.includes('hdslb.com')) {
-                    // Tránh các sticker bé
-                    if ((el.width > 50 && el.height > 50) || el.width === 0 || el.className.includes('opus') || el.className.includes('article') || el.className.includes('bili')) {
-                        if (src.startsWith('//')) src = 'https:' + src;
-                        if (src.includes('@')) src = src.split('@')[0];
-                        
-                        if (!seenImg.has(src)) {
-                            seenImg.add(src);
-                            blocks.push({ type: 'image', src: src });
-                        }
+            },
+            false
+        );
+
+        let currentTextBundle = "";
+        let node;
+        let blockTags = ['P', 'DIV', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'BR', 'CENTER', 'SECTION', 'FIGURE', 'FIGCAPTION'];
+        
+        while ((node = walker.nextNode())) {
+            if (node.nodeType === 3) { // Text node
+                let text = node.nodeValue.replace(/[\r\n\t]+/g, ' '); 
+                if (text.trim().length > 0 && !text.includes('未经作者授权')) {
+                    if (currentTextBundle.endsWith('\n')) {
+                        currentTextBundle += text.trimStart();
+                    } else {
+                        currentTextBundle += text;
                     }
                 }
-            } else {
-                // Xử lý Thẻ Văn Bản (P, DIV, SPAN)
-                // Phải chắc chắn nó là thẻ chỉ chứa chữ, ko chứa các khối block bự khác lồng vào nhau, để chống lặp chữ
-                if (el.children.length === 0 || (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3)) {
-                    let text = (el.innerText || el.textContent || "").trim();
-                    // Loại bỏ văn bản rác hoặc quá ngắn
-                    if (text.length > 3 && !text.includes('未经作者授权')) {
-                        // Nối văn bản này vào cục Bundle lớn (Xuống dòng 2 lần cho dễ đọc)
-                        currentTextBundle += text + "\n\n";
+            } else if (node.nodeType === 1) { // Element node
+                if (node.tagName === 'IMG') {
+                    if (currentTextBundle.trim().length > 0) {
+                        blocks.push({ type: 'text', text: currentTextBundle.trim() });
+                    }
+                    currentTextBundle = ""; 
+                    
+                    let src = node.getAttribute('data-src') || node.src;
+                    if (src && src.includes('hdslb.com')) {
+                        if ((node.width > 50 && node.height > 50) || node.width === 0 || node.className.includes('opus') || node.className.includes('article') || node.className.includes('bili')) {
+                            if (src.startsWith('//')) src = 'https:' + src;
+                            if (src.includes('@')) src = src.split('@')[0];
+                            if (!seenImg.has(src)) {
+                                seenImg.add(src);
+                                blocks.push({ type: 'image', src: src });
+                            }
+                        }
+                    }
+                } else if (blockTags.includes(node.tagName)) {
+                    if (currentTextBundle.trim().length > 0 && !currentTextBundle.endsWith('\n\n')) {
+                        currentTextBundle = currentTextBundle.trimEnd() + '\n\n';
                     }
                 }
             }
-        });
+        }
 
         // Xử lý nốt phần chữ còn thừa ở cuối cùng (nếu bài viết kết thúc bằng chữ thay vì ảnh)
         if (currentTextBundle.trim().length > 0) {
