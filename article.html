@@ -38,7 +38,7 @@
           <span class="art-cat-badge" id="art-badge"></span>
         </div>
         <h1 class="article-detail-title" id="art-title"></h1>
-        <p class="article-detail-lead" id="art-lead"></p>
+
         <div class="article-detail-meta" id="art-meta"></div>
       </div>
 
@@ -151,7 +151,7 @@
   document.getElementById('art-badge').className = `art-cat-badge ${badge.cls}`;
   document.getElementById('art-badge').textContent = `${badge.icon} ${article.category}`;
   document.getElementById('art-title').textContent = article.title;
-  document.getElementById('art-lead').textContent = article.description;
+
   document.getElementById('art-meta').innerHTML = `
     <span>${formatDate(article.date)}</span>`;
 
