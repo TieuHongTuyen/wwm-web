@@ -363,7 +363,43 @@ nav {
   display: block;
 }
 .art-card:hover { background: var(--bg3); }
-.art-card-big { padding: 2rem; }
+.art-card-big {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.art-card-big .art-desc {
+  -webkit-line-clamp: 5;
+  flex: 1;
+}
+.art-card-big-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border2);
+  padding-top: 1.25rem;
+}
+.art-read-more {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+.art-card:hover .art-read-more {
+  color: var(--accent2);
+}
+.art-read-more .arrow {
+  transition: transform 0.2s;
+}
+.art-card:hover .art-read-more .arrow {
+  transform: translateX(4px);
+}
 
 .art-cat-badge {
   display: inline-flex; align-items: center; gap: 0.4rem;

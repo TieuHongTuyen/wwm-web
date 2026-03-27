@@ -233,11 +233,14 @@
     const thumbInner = imgUrl ? '' : badge.icon;
 
     return `<a class="art-card art-card-big" href="article.html?id=${a.id}">
-      <div style="${thumbStyle}; height:200px; margin:-2rem -2rem 1.5rem -2rem; border-bottom:1px solid var(--border2);">${thumbInner}</div>
-      <div class="art-cat-badge ${badge.cls}">${badge.icon} ${escHtml(a.category)}</div>
-      <div class="art-title">${escHtml(a.title)}</div>
-      <div class="art-desc">${escHtml(a.description)}</div>
-      <div class="art-meta"><span>${formatDate(a.date)}</span></div>
+      <div style="${thumbStyle}; height:200px; margin:-2rem -2rem 1.5rem -2rem; border-bottom:1px solid var(--border2); flex-shrink:0;">${thumbInner}</div>
+      <div class="art-cat-badge ${badge.cls}" style="margin-bottom:0.75rem;">${badge.icon} ${escHtml(a.category)}</div>
+      <div class="art-title" style="margin-bottom:0.6rem;">${escHtml(a.title)}</div>
+      <div class="art-desc" id="big-card-desc" style="margin-bottom:1.5rem;">${escHtml(a.description)}</div>
+      <div class="art-card-big-footer">
+        <div class="art-meta"><span>${formatDate(a.date)}</span></div>
+        <div class="art-read-more">Đọc tiếp <span class="arrow">→</span></div>
+      </div>
     </a>`;
   }
 
@@ -269,6 +272,23 @@
         </div>`
       : '';
     grid.innerHTML = bigCardHtml(big) + rightHtml;
+
+    // Fetch nội dung .md để hiển thị excerpt dài hơn cho card chính
+    if (big.file) {
+      fetch(big.file)
+        .then(r => r.text())
+        .then(md => {
+          let text = md.replace(/---[\s\S]*?---/, '')
+            .replace(/!\[.*?\]\(.*?\)/g, '')
+            .replace(/[#*`>_\[\]]/g, '')
+            .replace(/\s+/g, ' ')
+            .trim();
+          if(text.length > 280) text = text.substring(0, 280) + '...';
+          const descEl = document.getElementById('big-card-desc');
+          if(descEl && text) descEl.textContent = text;
+        })
+        .catch(e => console.error('Error fetching markdown excerpt:', e));
+    }
   }
 
   // Latest videos: top 5
