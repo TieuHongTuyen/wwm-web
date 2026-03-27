@@ -279,11 +279,12 @@
         .then(r => r.text())
         .then(md => {
           let text = md.replace(/---[\s\S]*?---/, '')
+            .replace(/Nguồn bài viết[^\n]+/gi, '') // Bỏ dòng chứa Nguồn bài viết
             .replace(/!\[.*?\]\(.*?\)/g, '')
             .replace(/[#*`>_\[\]]/g, '')
             .replace(/\s+/g, ' ')
             .trim();
-          if(text.length > 280) text = text.substring(0, 280) + '...';
+          if(text.length > 500) text = text.substring(0, 500) + '...';
           const descEl = document.getElementById('big-card-desc');
           if(descEl && text) descEl.textContent = text;
         })
