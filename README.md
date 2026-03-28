@@ -1,4 +1,4 @@
-# CONTEXT.md — Yến Vân Guide (Where Winds Meet)
+# README.md — Yến Vân Guide (Where Winds Meet)
 > **Đọc toàn bộ file này trước khi làm bất cứ việc gì.**
 > Đây là tài liệu duy nhất mô tả dự án. Mọi quyết định kỹ thuật và thiết kế đều đã được thống nhất ở đây.
 
@@ -36,9 +36,8 @@
 5. Thêm bài viết = tạo file .md trong posts/ + thêm 1 dòng vào data/articles.json.
 6. Mỗi trang HTML độc lập. Hỏng 1 trang không ảnh hưởng trang khác.
 7. KHÔNG dùng localStorage, sessionStorage, hay bất kỳ browser storage nào.
-8. Ảnh bài viết lưu trong assets/images/[slug]/ — mỗi bài một thư mục riêng tên trùng slug.
-   Thumbnail video lấy URL từ CDN TikTok qua Oembed API (không lưu local).
-   KHÔNG upload ảnh lên CDN ngoài — lưu thẳng vào repo GitHub.
+8. Ảnh bài viết sử dụng Hotlink (link ảnh trực tiếp) thông qua proxy wsrv.nl thay vì lưu local, tự động trích xuất.
+   Thumbnail video thì vẫn tự động tải về lưu local tại assets/thumbnails/[id].jpg.
 9. Markdown (.md) là định dạng bài viết. KHÔNG dùng .docx hay .txt.
 ```
 
@@ -57,7 +56,8 @@ wwm-guide/
 ├── .gitignore              ← Loại bỏ file tạm và CSV local
 │
 ├── scripts/                ← Script Python tiện ích
-│   ├── new_post.py            ← Tạo bài viết mới tự động (1 lệnh)
+│   ├── bilibili-console.js    ← Mã JS chạy trong Console để cào liệu từ Bilibili
+│   ├── import_bilibili.py     ← Tạo bài viết tự động từ dữ liệu Console
 │   ├── csv_to_videos_json.py  ← Import từ file CSV analytics TikTok (tối đa 20 video)
 │   └── txt_to_videos_json.py  ← Import từ file danh-sach-video.txt (không giới hạn)
 │
@@ -72,23 +72,34 @@ wwm-guide/
 └── assets/
     ├── style.css           ← CSS chung (variables, nav, footer)
     ├── main.js             ← JS chung (render helpers, modal)
-    ├── hero_bg.png         ← Ảnh nền hero trang chủ (AI-generated)
-    └── images/             ← Ảnh bài viết, mỗi bài 1 thư mục tên = slug
-        └── [slug]/
-            ├── 01-cover.jpg
-            ├── 02-[mo-ta].jpg
-            └── 03-[mo-ta].jpg
+    └── hero_bg.png         ← Ảnh nền hero trang chủ (AI-generated)
 ```
 
 ### File chỉ dùng local, KHÔNG commit lên GitHub
 ```
 danh-sach-video.txt         ← Danh sách URL video lấy từ DevTools console TikTok
 export-tiktok-videos.csv    ← Export từ TikTok Analytics (tối đa 20 video)
+bilibili-data.json          ← Data trung gian copy từ Console Bilibili (Dùng tạo bài)
 ```
 
 ---
 
 ## 4. Quy trình cập nhật video
+
+### Thêm 1 video đơn lẻ bằng ID (nhanh nhất):
+
+```
+python scripts/txt_to_videos_json.py --add-id {VIDEO_ID}
+```
+
+Script tự động: gọi TikTok oEmbed API, lấy tiêu đề, nhận diện tag, tải thumbnail, chèn vào đầu `data/videos.json`.
+
+Sau đó deploy:
+```
+git add -A; git commit -m "add video {VIDEO_ID}"; git push
+```
+
+---
 
 ### Quy trình chuẩn (không giới hạn số lượng):
 1. Vào trang profile TikTok trên trình duyệt, cuộn để load hết video
@@ -112,12 +123,12 @@ console.log([...new Set(links)].join('\n'));
 - **Bảo toàn data cũ**: video đã có trong JSON sẽ không bị ghi đè
 - Chỉ gọi API cho video mới (chưa có trong JSON)
 
-### Quy trình làm mới thumbnail (khi ảnh bìa hết hạn trên web):
+### Quy trình làm mới thumbnail (khi ảnh bìa thay đổi):
 
-URL ảnh bìa TikTok CDN có thời hạn. Hệ thống đã được thiết lập tự động hóa qua **GitHub Actions**:
+Hệ thống được thiết lập tự động hóa qua **GitHub Actions**:
 - Workflow **Refresh TikTok Thumbnails** sẽ tự động chạy **mỗi 6 tiếng**.
-- Tự động gọi API lấy lại thumbnail cho các video hiện có trong `data/videos.json` mà không cần file `danh-sach-video.txt`.
-- Nếu có thumbnail nào thay đổi, workflow sẽ tự động commit và push cập nhật vào `data/videos.json`.
+- Tự động kiểm tra và tải về ảnh thumbnail cho các video hiện có trong `data/videos.json` mà không cần file `danh-sach-video.txt` (bỏ qua các ảnh đã tải).
+- Nếu có thumbnail nào được tải mới, workflow sẽ tự động commit và push cả file ảnh trong thư mục `assets/thumbnails/` cùng với file `data/videos.json`.
 
 **Để chạy thủ công lập tức (khi cần gấp):**
 1. Vào mục **Actions** trên GitHub repository.
@@ -216,7 +227,7 @@ Nội dung, UI, body text    : 'Be Vietnam Pro'       (Google Fonts)
     "title": "[Podcast] TIN TỨC NGÀY 13-03-2026",
     "tags": ["Tổng hợp"],
     "date": "2026-03-13",
-    "thumbnail": "https://p16-sign-va.tiktokcdn.com/...",
+    "thumbnail": "assets/thumbnails/7616618393407393045.jpg",
     "pinned": false
   }
 ]
@@ -226,7 +237,7 @@ Nội dung, UI, body text    : 'Be Vietnam Pro'       (Google Fonts)
 - `title`: Giữ nguyên prefix `[Podcast]`, `[Hướng dẫn]`, `[Phân tích]`
 - `tags`: Mảng, chỉ dùng tag chuẩn ở mục 7
 - `date`: `YYYY-MM-DD`
-- `thumbnail`: URL ảnh bìa trực tiếp từ CDN TikTok (lấy qua Oembed API). Có thể làm mới bằng cách chạy lại script.
+- `thumbnail`: Đường dẫn local đến ảnh bìa đã được tải về. Có thể làm mới/tải ảnh còn thiếu bằng cách chạy lại script với cờ `--refresh-thumbnails`.
 - `pinned`: `true` = lên đầu danh sách
 
 **Nhúng TikTok (Modal):**
@@ -258,7 +269,7 @@ Nội dung, UI, body text    : 'Be Vietnam Pro'       (Google Fonts)
 ]
 ```
 
-- `id`: Tự động tăng dần — dùng `python scripts/new_post.py` để sinh tự động
+- `id`: Tự động tăng dần — dùng `python scripts/import_bilibili.py` để sinh tự động
 - `file`: Đường dẫn đến file `.md` trong `posts/`
 - `related_video_id`: ID TikTok nhúng trong bài — để `""` nếu không có
 - **Không có** trường `readtime` hay `views` — đã loại bỏ khỏi hệ thống
@@ -331,12 +342,24 @@ Tiếp tục nội dung...
 
 ### Chèn ảnh trong Markdown
 
-Đường dẫn ảnh dùng đường dẫn tương đối từ gốc repo:
+Ảnh bài viết luôn dùng Hotlink trực tiếp từ server gốc (CDN) bọc trong proxy `wsrv.nl` để chống chết link / lỗi 403:
+
 ```markdown
-![Mô tả ảnh](assets/images/phan-tich-doanh-doanh/01-cover.jpg)
+# Ảnh tĩnh (JPG/PNG):
+
+![Ảnh 1](https://wsrv.nl/?url=https://i0.hdslb.com/...)
+
+
+# Ảnh động (GIF) — BẮT BUỘC thêm &n=-1 để giữ animation:
+
+![Ảnh 2](https://wsrv.nl/?url=https://i0.hdslb.com/...gif&n=-1)
+
 ```
 
-Ảnh đầu tiên của bài luôn đặt tên `01-cover.jpg`.
+> **Lưu ý:** Proxy `wsrv.nl` mặc định chỉ render frame đầu tiên của GIF (ảnh tĩnh).
+> Tham số `&n=-1` bắt buộc để hiển thị toàn bộ frames animation.
+> Script `import_bilibili.py` đã tự động xử lý việc này khi tạo bài mới.
+Quy trình nhập này diễn ra tự động 100% nhờ phương pháp lấy dữ liệu Console F12.
 
 ---
 
@@ -371,74 +394,47 @@ Chỉ cần nhớ slug, suy ra được vị trí mọi file liên quan.
 
 ---
 
-### Quy tắc đặt tên ảnh
+### Quy trình thêm bài mới tự động (Áp dụng từ v2)
 
-```
-[số thứ tự 2 chữ số]-[mô tả ngắn].jpg
+Nhờ hệ thống thu thập F12 và cấu hình Prompt cho AI, tiến trình xuất bản đã hoàn toàn tự động hoá:
 
-01-cover.jpg          ← ảnh đầu tiên luôn là cover
-02-ky-nang-e.jpg
-03-combo-pvp.jpg
-04-len-do.jpg
-```
-
-- Số thứ tự 2 chữ số để GitHub sort đúng thứ tự
-- Mô tả: chữ thường, gạch ngang, không dấu
-- Định dạng: `.jpg` — nén tốt nhất cho ảnh game
-- Kích thước: dưới 500KB mỗi ảnh
-
----
-
-### Ví dụ đầy đủ
-
-Slug: `phan-tich-doanh-doanh`
-
-```
-posts/phan-tich-doanh-doanh.md
-
-assets/images/phan-tich-doanh-doanh/
-├── 01-cover.jpg
-├── 02-tong-quan.jpg
-├── 03-ky-nang-e.jpg
-└── 04-len-do.jpg
-```
-
-Trong `articles.json`:
-```json
-"file": "posts/phan-tich-doanh-doanh.md"
-```
-
-Trong file `.md`:
 ```markdown
-![Doanh Doanh](assets/images/phan-tich-doanh-doanh/01-cover.jpg)
+Bước 1 — Thu thập gốc (Bilibili/Nguồn)
+  Mở bài gốc trên Web trình duyệt, bật F12 > Tab Console.
+  Paste code từ `scripts/bilibili-console.js` > Bấm Enter.
+  Mã JS sẽ tự động dọn dẹp cấu trúc DOM và Copy 1 bảng JSON Data vào bộ nhớ tạm (Clipboard).
 
-## Tổng quan nhân vật
+Bước 2 — Khởi tạo Data
+  Trong code editor, dán (Ctrl+V) đè thay thế đoạn code trên vào file `bilibili-data.json` ở mục gốc dự án.
 
-![Tổng quan](assets/images/phan-tich-doanh-doanh/02-tong-quan.jpg)
+Bước 3 — Sinh bài viết
+  Chạy lệnh: `python scripts/import_bilibili.py "Tên Tiêu Đề Bài Của Bạn" "Nhân vật"`
+  (Loại bài hợp lệ: Nhân vật · Hướng dẫn · Meta · Podcast)
+  - Python tự động tạo file `posts/[slug].md` nhúng sẵn mọi hình ảnh (proxy wsrv.nl) và giữ nguyên vị trí text nguyên bản.
+  - Tự động gắn header Prompt hướng dẫn AI dịch ẩn.
+  - Tự động ghi chèn ID mới vào `data/articles.json`.
+
+Bước 4 — Dịch tự động (Mấu chốt)
+  File `posts/[slug].md` sau khi sinh ra sẽ nằm yên đó.
+  Mở file, `Ctrl + A` chép hết và thả vứt thẳng vào ChatGPT/Claude/Gemini.
+  AI sẽ đọc câu lệnh ở trên cùng và tự xử lý. Nó sẽ trả về cho bạn y nguyên cục Markdown đó nhưng thành Tiếng Việt 100%.
+  Bạn Copy cục Markdown Tiếng Việt từ AI về và dán đè thay thế lại đúng vào file `[slug].md`. Cực nhanh và sạch sẽ.
+
+Bước 5 — Tinh chỉnh & Deploy
+  Cập nhật "description", "related_video_id" (nếu có) vào `data/articles.json`.
+  Mở Terminal gõ: `git add -A && git commit -m "bai moi" && git push`
 ```
 
----
+### Obsidian Graph View
 
-### Workflow thêm bài mới (Tự động hóa)
-
-Chỉ cần chạy lệnh Python, không cần tạo file hay thư mục bằng tay:
-
-```bash
-# Cú pháp: python scripts/new_post.py "Tiêu đề" "Danh mục"
-python scripts/new_post.py "Phân tích kĩ năng Doanh Doanh" "Nhân vật"
 ```
-
-**Script tự động làm 4 việc trong 1 giây:**
-1. Tạo slug chuẩn: `phan-tich-ki-nang-doanh-doanh`
-2. Tạo thư mục ảnh: `assets/images/phan-tich-ki-nang-doanh-doanh/`
-3. Tạo phôi Markdown: `posts/phan-tich-ki-nang-doanh-doanh.md` (có sẵn `![Cover]`)
-4. Khởi tạo thẻ bài viết mới tại `data/articles.json` (Ngày tháng hiện tại, ID tự động)
-
-**Việc của bạn:**
-1. Thả ảnh vào thư mục vừa sinh (đổi tên ảnh bìa thành `01-cover.jpg`)
-2. Mở file `.md` viết nội dung chuẩn
-3. Vô `articles.json` sửa lại dòng `"description"` và `"related_video_id"` (nếu có)
-4. `git add -A && git commit -m "bai moi" && git push`
+Nhấn Ctrl+G trong Obsidian để xem bản đồ liên kết giữa các bài.
+Các bài có link [Xem thêm] trỏ vào nhau sẽ hiện đường nối trên graph.
+Dùng graph để:
+- Phát hiện bài nào bị cô lập (chưa liên kết) → ưu tiên viết bài liên quan
+- Xác định bài nào là hub trung tâm (nhiều bài trỏ vào) → đánh dấu pinned: true
+- Lên kế hoạch nội dung theo cụm chủ đề
+```
 
 ---
 

@@ -61,41 +61,27 @@ Các thành phần chính và vai trò:
 **Kết quả mong đợi:** Web tự động có video mới ở trên cùng danh sách. Hình thumbnail được tự động tạo và tải về local thư mục `assets/thumbnails/`.
 **Nếu có lỗi:** Xem tiếp ở mục Debug bên dưới.
 
-### Thêm bài viết mới
-**Khi nào làm:** Khi muốn đăng tải bài phân tích, hướng dẫn hoặc tin tức mới lên trang web.
-**Thời gian ước tính:** 15-30 phút (chủ yếu là thời gian viết nội dung).
-**Các bước:**
-1. Chạy lệnh tạo bài viết mới tự động trong terminal (thay thế "Tên Bài Của Bạn" và "Loại Bài"):
-   ```bash
-   python scripts/new_post.py "Tên Bài Của Bạn" "Nhân vật"
-   ```
-   *(Các loại bài hợp lệ: `Nhân vật`, `Hướng dẫn`, `Meta`, `Podcast`)*
-2. Terminal sẽ tạo ra 1 file `.md` tại thư mục `posts/` và thư mục ảnh tại `assets/images/slug-ten-bai-viet/`.
-3. Kéo thả ảnh bìa (đặt tên luôn là `01-cover.jpg`) vào đúng thư mục ảnh vừa tạo. Các ảnh khác đặt `02-xxx.jpg`, `03-xxx.jpg`,...
-4. Mở phần mềm Obsidian, tìm đến file vừa tạo trong thư mục `posts/` và bắt đầu viết bài theo định dạng Markdown. Sử dụng URL ảnh tương đối như: `![ảnh 1](assets/images/slug/02-xxx.jpg)`.
-5. Mở file `data/articles.json` và bổ sung tóm tắt ngắn vào field `"description"`. Nếu bài liên kết với 1 video TikTok, hãy điền ID TikTok vào trường `"related_video_id"`.
-6. Cập nhật lên web bằng cách dùng terminal:
-   ```bash
-   git add -A
-   git commit -m "bai moi: slug-ten-bai-viet"
-   git push
-   ```
-**Kết quả mong đợi:** File MD được tạo đúng template, JSON được chèn tự động ID hợp lệ. Bài viết xuất hiện trên danh sách trang chủ và trang bài viết.
-
-
-### Việt hóa bài từ yysls.cn
-**Khi nào làm:** Khi có bài phân tích bản Trung hay trên yysls.cn cần đưa về web tiếng Việt.
+### Thêm/Việt hóa bài viết mới tự động (Áp dụng cho V2)
+**Khi nào làm:** Khi có bài phân tích bản Trung cần đưa về web, hoặc bài viết do bạn tự soạn nhưng có nguồn dữ liệu từ Bilibili.
 **Thời gian ước tính:** 5-10 phút.
 **Các bước:**
-1. Mở bài gốc trên yysls.cn, copy nội dung chữ sang công cụ dịch Claude/ChatGPT để dịch sang tiếng Việt.
-2. Mở terminal chạy lệnh tạo vỏ bài viết:
+1. Mở bài gốc trên trình duyệt Bilibili, bật `F12` > Tab `Console`. Paste code lấy từ file `scripts/bilibili-console.js` > Bấm `Enter`.
+2. Mã JS sẽ tự động copy JSON nội dung bài vào clipboard. Dán đè đoạn JSON đó vào file `bilibili-data.json` ở thư mục dự án của bạn và lưu lại.
+3. Sinh bài viết tự động: Mở terminal chạy lệnh:
    ```bash
-   python scripts/new_post.py "Tiêu đề tiếng Việt đã dịch" "Hướng dẫn"
+   python scripts/import_bilibili.py "Tiêu đề tiếng Việt của bài" "Hướng dẫn"
    ```
-3. Mở file bài viết `.md` mới sinh ra trong Obsidian.
-4. Paste nội dung chữ vừa dịch. Với các vị trí ảnh, copy nguyên link ảnh gốc từ yysls.cn để giữ nguyên link ảnh (hoặc tải ảnh về, đổi tên `01`, `02` và quăng vào thư mục `assets/images/slug-cua-bai/`).
-5. Update `data/articles.json` và đăng lên qua Git Push giống như viết bài mới.
-**Kết quả mong đợi:** Bài viết hiện đầy đủ nội dung phiên dịch, giữ được tài nguyên hình ảnh gốc.
+   *(Các loại bài hợp lệ: `Nhân vật`, `Hướng dẫn`, `Meta`, `Podcast`, `Tin tức`)*
+4. Dịch tự động với AI: File `.md` mới tự động sinh ra trong `posts/` đã được format chuẩn và nhúng sẵn hình ảnh dưới dạng proxy server (`wsrv.nl`), không cần lưu local. Mở file `.md` này lên, copy toàn bộ nội dung thả vào ChatGPT/Claude để nó tự động dịch nội dung sang tiếng Việt (do câu prompt ẩn đã được gài sẵn).
+5. Paste nội dung trả về đè lên lại nguyên bản file `.md` đó.
+6. Cập nhật Metadata: Mở file `data/articles.json` và bổ sung tóm tắt nội dung vào trường `"description"`. Nếu có liên kết tới video TikTok, chèn ID vào `"related_video_id"`.
+7. Cập nhật lên web bằng terminal:
+   ```bash
+   git add -A
+   git commit -m "them bai viet moi"
+   git push
+   ```
+**Kết quả mong đợi:** Bài viết hiện đầy đủ nội dung phiên dịch, giữ nguyên cấu trúc ảnh tuyệt đối chính xác thông qua proxy CDN. JSON bài viết được khởi tạo tự động.
 
 
 ### Cập nhật thumbnail thủ công
@@ -159,7 +145,9 @@ wwm-guide/
 │       └── refresh-thumbnails.yml  ← Config tự động thu hình của Bot (Sửa tay)
 │
 ├── scripts/
-│   ├── new_post.py             ← Tool hỗ trợ tự động sinh sườn bài (Sinh tự động / Hạn chế sửa)
+│   ├── bilibili-console.js     ← Code JS chạy Console browser để cào data Bilibili
+│   ├── import_bilibili.py      ← Tool sinh bài tự động và render hotlink wsrv
+│   ├── new_post.py             ← Tool hỗ trợ tự động sinh sườn bài kiểu cũ (V1)
 │   ├── csv_to_videos_json.py   ← Lấy data tiktok CSV import (Hạn chế sửa)
 │   └── txt_to_videos_json.py   ← Kéo metadata/ảnh từ txt/database (Hạn chế sửa)
 │
@@ -176,8 +164,7 @@ wwm-guide/
     ├── style.css        ← Thư viện giao diện, mã màu dùng chung (Sửa tay)
     ├── main.js          ← Logic API, chuyển trang, hiệu ứng Javascript (Sửa tay)
     ├── thumbnails/      ← Nơi tập kết ảnh bìa video thu thập được (Tự động sinh)
-    └── images/          ← Nơi tự do cất ảnh minh họa khi viết bài (Thêm/Sửa bằng tay)
-        └── slug-bai-viet-a/ ...
+    └── images/          ← Thư mục lịch sử lưu ảnh cũ. (Bài viết V2 hiện tại không dùng local mà gọi Hotlink trực tiếp via wsrv.nl)
 ```
 
 ---
@@ -199,8 +186,9 @@ Cơ sở dữ liệu metadata bài viết (hiển thị trang ngoài/tìm bài).
 - Tên trường | Kiểu | Mô tả | Ví dụ
 - `id` | String | Khóa ID tự tăng `art-001` | `"art-001"`
 - `title` | String | Tiêu đề lớn hiển thị ngoài | `"Hướng dẫn chạy map"`
-- `category` | String | Thể loại dùng lọc. Gồm `Nhân vật|Hướng dẫn|Meta|Podcast` | `"Hướng dẫn"`
+- `category` | String | Thể loại dùng lọc. Gồm `Nhân vật|Hướng dẫn|Meta|Podcast|Tin tức` | `"Hướng dẫn"`
 - `description` | String | Tóm tắt khoảng 2-3 câu | `"Tài liệu về chạy map nhanh chóng..."`
+- `image` | String | Link CDN proxy của ảnh bìa bài viết (auto gen) | `"https://wsrv.nl/..."`
 - `file` | String | Địa chỉ file `.md` chứa text | `"posts/huong-dan-map.md"`
 - `icon` | String | Icon hiển thị kế bên thẻ tag category | `"⚔️"`
 - `date` | String | Time khởi tạo bài viết | `"2026-03-16"`
