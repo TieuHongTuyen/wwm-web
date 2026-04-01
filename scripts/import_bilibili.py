@@ -83,7 +83,7 @@ def main():
     md_content += "1. Tuyệt đối giữ nguyên 100% cấu trúc Markdown và KHÔNG ĐƯỢC làm hỏng/tự sửa các đường link ảnh ![Ảnh](https://...).\n"
     md_content += "2. Dịch mượt mà, dùng văn phong game MMORPG cổ trang.\n"
     md_content += "3. Đầu ra (Output) chỉ trả lời bằng ĐOẠN CODE MARKDOWN CHUẨN đã được dịch toàn bộ, không cần giải thích thêm.\n"
-    md_content += "4. Thêm định dạng in đậm phù hợp.\n"
+    md_content += "4. Thêm định dạng in đậm phù hợp. Xuất Markdown\n"
     md_content += "---------------------------------------------------------\n"
     md_content += "-->\n\n"
 

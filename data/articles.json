@@ -1,5 +1,29 @@
 [
   {
+    "id": "art-008",
+    "title": "Chi chi chi chi丨Chi chi chi chi「Chi chi」Chi chi chi chi！",
+    "category": "Tin tức",
+    "description": "",
+    "image": "https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/da8e7a17da43863bb060b2c3b47da59d1567141152.jpg",
+    "file": "posts/tin-tuc-chi-chi-chi-chichi-chi-chi-chichi-chichi-chi-chi-chi.md",
+    "icon": "📰",
+    "date": "2026-04-01",
+    "pinned": false,
+    "related_video_id": ""
+  },
+  {
+    "id": "art-007",
+    "title": "Lướt bóng xuyên bụi, một chiếc lông nhẹ rơi丨Bộ trang phục mới 【Thanh Tiêu Lược Ảnh】 ra mắt",
+    "category": "Tin tức",
+    "description": "Mưa đêm gột rửa bụi trần, vạn vật chìm trong tĩnh lặng. Chợt có bóng chim ưng đơn độc lướt qua không trung, đầu cánh điểm chút kim quang rạch phá bầu trời đêm đen thẫm, trong chớp mắt mất hút sau làn mây, chỉ để lại một đạo **tàn ảnh thanh sắc**. Đúng như lời thơ của Thi Tiên tả về bậc hào hiệp khoái kiếm — **Thập bộ sát nhất nhân, thiên lý bất lưu hành.** (Mười bước giết một người, ngàn dặm không để lại dấu vết).",
+    "image": "https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/aa7f75094c7f993f924e998bac4491231567141152.png",
+    "file": "posts/tin-tuc-luot-bong-xuyen-bui-mot-chiec-long-nhe-roibo-trang-phuc-moi-thanh-tieu-luoc-anh-ra-mat.md",
+    "icon": "📰",
+    "date": "2026-04-01",
+    "pinned": false,
+    "related_video_id": ""
+  },
+  {
     "id": "art-006",
     "title": "Nâng cao chất lượng hình ảnh và hiệu năng trên thiết bị di động, chính thức ra mắt tính năng ghép trận theo phân đoạn!",
     "category": "Tin tức",
