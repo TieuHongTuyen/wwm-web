@@ -1,5 +1,29 @@
 [
   {
+    "id": "art-011",
+    "title": "Môn phái mới丨Một chút văn tâm như lửa, một thân phong lưu tựa mộng",
+    "category": "Tin tức",
+    "description": "TODO: Thêm mô tả ngắn gọn cho bài viết",
+    "image": "https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/538ed09a114e03d30af98d7084edddae1567141152.jpg",
+    "file": "posts/tin-tuc-mon-phai-moimot-chut-van-tam-nhu-lua-mot-than-phong-luu-tua-mong.md",
+    "icon": "📰",
+    "date": "2026-04-15",
+    "pinned": false,
+    "related_video_id": ""
+  },
+  {
+    "id": "art-010",
+    "title": "Lắng Nghe Tiếng Nói Hiệp Khách | Bản tin nhanh Hội thảo Du hiệp Tế Nam!",
+    "category": "Tin tức",
+    "description": "Sau bản cập nhật tuần này, các **Du hiệp** đã có thể tái thiết gia nghiệp tại **Bất Kiến Sơn**, xây dựng một chốn an cư lạc nghiệp; cũng có thể cùng hảo hữu đạp thanh thưởng ngoạn, chén tượu bên dòng nước chảy.Nhân lúc gió xuân hòa nhã, chúng tôi vô cùng vinh hạnh được mời một nhóm **Du hiệp** đến **Tế Nam**, cùng đội ngũ sáng tạo chủ chốt thực hiện một buổi giao lưu trực tiếp và chuyên sâu. Chuyến đi lần này thu hoạch được rất nhiều. Chúng tôi đã tổng hợp lại một phần nội dung trao đổi tại hiện trường để chia sẻ cùng chư vị",
+    "image": "https://wsrv.nl/?url=https://i0.hdslb.com/bfs/new_dyn/02130c01d868bd36979e75b65e3422d91567141152.png",
+    "file": "posts/tin-tuc-lang-nghe-tieng-noi-hiep-khach-ban-tin-nhanh-hoi-thao-du-hiep-te-nam.md",
+    "icon": "📰",
+    "date": "2026-04-15",
+    "pinned": false,
+    "related_video_id": ""
+  },
+  {
     "id": "art-009",
     "title": "24 tháng 4丨Sơn hà nhập hải,「Thanh Châu」nghênh khách!",
     "category": "Tin tức",
